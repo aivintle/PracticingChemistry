@@ -45,13 +45,6 @@ checkProblemButton.addEventListener("click", () => {
 });
 
 const footer = document.querySelector("footer");
-footer.style.position = "relative";
-footer.style.bottom = "0";
-footer.style.zIndex = "10";
-footer.style.backgroundColor = "#f8f9fa";
-footer.style.padding = "10px";
-footer.style.borderTop = "1px solid #ddd";
-footer.style.boxShadow = "0 -2px 5px rgba(0, 0, 0, 0.1)";
 
 // Add version number
 const versionNumber = document.createElement("div");
