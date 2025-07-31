@@ -52,3 +52,9 @@ footer.style.backgroundColor = "#f8f9fa";
 footer.style.padding = "10px";
 footer.style.borderTop = "1px solid #ddd";
 footer.style.boxShadow = "0 -2px 5px rgba(0, 0, 0, 0.1)";
+
+// Add version number
+const versionNumber = document.createElement("div");
+versionNumber.id = "version-number";
+versionNumber.textContent = `Version: ${new Date().toISOString()}`;
+footer.appendChild(versionNumber);
