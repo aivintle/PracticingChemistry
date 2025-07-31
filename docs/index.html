@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Organic Synthesis Practice</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practicing Chemistry Projects</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
-    <h1>Organic Synthesis Practice</h1>
+    <h1>Practicing Chemistry Projects</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   </header>
-
-  <section id="settings">
-    <h2>Choose Functional Groups</h2>
-    <!-- Dynamically populated checkboxes -->
-    <div id="group-options"></div>
-    <button id="generate">Generate Problem</button>
-  </section>
-
-  <section id="problem">
-    <h2>Problem</h2>
-    <p id="start-material">Starting Material:</p>
-    <p id="target-molecule">Target Molecule:</p>
-    <button id="show-answer">Show Answer</button>
-  </section>
-
-  <section id="answer" hidden>
-    <h2>Answer</h2>
-    <ol id="steps"></ol>
-  </section>
-
-  <script src="js/app.js"></script>
+  <nav>
+    <a href="apps/GeneralChemistry/index.html">General Chemistry</a>
+    <a href="apps/OrganicChemistry/SynthesisApp/index.html">Synthesis App</a>
+    <a href="apps/OrganicChemistry/NomenclatureApp/index.html">Nomenclature App</a>
+  </nav>
+  <main>
+    <h2>Welcome!</h2>
+    <p>This site offers interactive tools to help students master chemistry topics through hands-on practice and exploration.</p>
+    <p>Click a tool above to get started.</p>
+  </main>
+  <footer>
+    <p>&copy; 2025 Practicing Chemistry. All rights reserved.</p>
+  </footer>
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.body.getAttribute("data-theme");
+      document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+    }
+  </script>
 </body>
 </html>
+````
