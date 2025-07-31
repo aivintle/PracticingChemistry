@@ -43,11 +43,3 @@ checkProblemButton.addEventListener("click", () => {
   newProblemButton.style.display = "inline";
   checkProblemButton.style.display = "none";
 });
-
-const footer = document.querySelector("footer");
-
-// Add version number
-const versionNumber = document.createElement("div");
-versionNumber.id = "version-number";
-versionNumber.textContent = `Version: ${new Date().toISOString()}`;
-footer.appendChild(versionNumber);
