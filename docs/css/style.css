@@ -17,6 +17,18 @@ header {
     padding-left: 1rem;
 }
 
+footer {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 header h1 {
     margin: 0;
     font-size: 2rem;
