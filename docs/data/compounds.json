@@ -1,0 +1,13 @@
+[
+  {
+    "iupac": "ethanol",
+    "smiles": "CCO",
+    "functionalGroups": ["alcohol"]
+  },
+  {
+    "iupac": "benzaldehyde",
+    "smiles": "C1=CC=C(C=C1)C=O",
+    "functionalGroups": ["aromatic-aldehyde"]
+  }
+  // …more compounds
+]
