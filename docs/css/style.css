@@ -27,6 +27,7 @@ footer {
     padding-left: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    height: 60px;
 }
 
 header h1 {
