@@ -11,16 +11,28 @@
     <h1>Nomenclature App</h1>
     <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   </header>
+  <nav>
+    <a href="../../GeneralChemistry/index.html">General Chemistry</a>
+    <div class="dropdown">
+      <a href="#">Organic Chemistry</a>
+      <div class="dropdown-content">
+        <a href="../SynthesisApp/index.html">Synthesis App</a>
+        <a href="../NomenclatureApp/index.html">Nomenclature App</a>
+      </div>
+    </div>
+  </nav>
   <main>
     <section id="settings-panel">
       <h2>Settings</h2>
       <form>
-        <label>
-          <input type="checkbox" id="common-iupac-toggle" /> Common vs. IUPAC Nomenclature
-        </label>
-        <label>
-          <input type="checkbox" id="image-name-toggle" /> Images vs. Name
-        </label>
+        <div class="toggle-container">
+          <span class="toggle-label">Common vs. IUPAC Nomenclature</span>
+          <div class="toggle-switch" id="common-iupac-toggle"></div>
+        </div>
+        <div class="toggle-container">
+          <span class="toggle-label">Images vs. Name</span>
+          <div class="toggle-switch" id="image-name-toggle"></div>
+        </div>
         <label>
           Minimum Carbons: <input type="number" id="min-carbons" min="1" max="12" value="1" />
         </label>
@@ -60,31 +72,6 @@
   <footer>
     <p>&copy; 2025 Practicing Chemistry. All rights reserved.</p>
   </footer>
-  <script>
-    const newProblemButton = document.getElementById("new-problem-button");
-    const checkProblemButton = document.getElementById("check-problem-button");
-    const problemDisplay = document.getElementById("problem-display");
-    const answerDisplay = document.getElementById("answer-display");
-
-    newProblemButton.addEventListener("click", () => {
-      // Generate a new problem
-      problemDisplay.style.display = "block";
-      answerDisplay.style.display = "none";
-      newProblemButton.style.display = "none";
-      checkProblemButton.style.display = "inline";
-      // Example problem generation
-      document.getElementById("problem-content").textContent = "Generated Problem";
-    });
-
-    checkProblemButton.addEventListener("click", () => {
-      // Show the answer
-      problemDisplay.style.display = "block";
-      answerDisplay.style.display = "block";
-      newProblemButton.style.display = "inline";
-      checkProblemButton.style.display = "none";
-      // Example answer display
-      document.getElementById("answer-content").textContent = "Generated Answer";
-    });
-  </script>
+  <script src="nomenclature-app.js"></script>
 </body>
 </html>
