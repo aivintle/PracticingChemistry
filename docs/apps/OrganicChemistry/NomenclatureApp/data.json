@@ -1,0 +1,332 @@
+[
+  {
+    "iupac_name": "methane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "C"
+  },
+  {
+    "iupac_name": "ethane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "CC"
+  },
+  {
+    "iupac_name": "propane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "CCC"
+  },
+  {
+    "iupac_name": "butane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "CCCC"
+  },
+  {
+    "iupac_name": "pentane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "CCCCC"
+  },
+  {
+    "iupac_name": "hexane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "CCCCCC"
+  },
+  {
+    "iupac_name": "heptane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "CCCCCCC"
+  },
+  {
+    "iupac_name": "octane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "CCCCCCCC"
+  },
+  {
+    "iupac_name": "nonane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "CCCCCCCCC"
+  },
+  {
+    "iupac_name": "decane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "CCCCCCCCCC"
+  },
+  {
+    "iupac_name": "undecane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "CCCCCCCCCCC"
+  },
+  {
+    "iupac_name": "dodecane",
+    "common_name": null,
+    "functional_groups": ["alkyl"],
+    "smiles": "CCCCCCCCCCCC"
+  },
+  {
+    "iupac_name": "formaldehyde",
+    "common_name": "formalin",
+    "functional_groups": ["aldehyde"],
+    "smiles": "O=CO"
+  },
+  {
+    "iupac_name": "acetaldehyde",
+    "common_name": null,
+    "functional_groups": ["aldehyde"],
+    "smiles": "CC=O"
+  },
+  {
+    "iupac_name": "propionaldehyde",
+    "common_name": null,
+    "functional_groups": ["aldehyde"],
+    "smiles": "CCC=O"
+  },
+  {
+    "iupac_name": "butyraldehyde",
+    "common_name": null,
+    "functional_groups": ["aldehyde"],
+    "smiles": "CCCC=O"
+  },
+  {
+    "iupac_name": "valeraldehyde",
+    "common_name": null,
+    "functional_groups": ["aldehyde"],
+    "smiles": "CCCCC=O"
+  },
+  {
+    "iupac_name": "hexanal",
+    "common_name": null,
+    "functional_groups": ["aldehyde"],
+    "smiles": "CCCCCC=O"
+  },
+  {
+    "iupac_name": "heptanal",
+    "common_name": null,
+    "functional_groups": ["aldehyde"],
+    "smiles": "CCCCCCC=O"
+  },
+  {
+    "iupac_name": "octanal",
+    "common_name": null,
+    "functional_groups": ["aldehyde"],
+    "smiles": "CCCCCCCC=O"
+  },
+  {
+    "iupac_name": "nonanal",
+    "common_name": null,
+    "functional_groups": ["aldehyde"],
+    "smiles": "CCCCCCCCC=O"
+  },
+  {
+    "iupac_name": "decanal",
+    "common_name": null,
+    "functional_groups": ["aldehyde"],
+    "smiles": "CCCCCCCCCC=O"
+  },
+  {
+    "iupac_name": "undecanal",
+    "common_name": null,
+    "functional_groups": ["aldehyde"],
+    "smiles": "CCCCCCCCCCC=O"
+  },
+  {
+    "iupac_name": "dodecanal",
+    "common_name": null,
+    "functional_groups": ["aldehyde"],
+    "smiles": "CCCCCCCCCCCC=O"
+  },
+  {
+    "iupac_name": "formic acid",
+    "common_name": "methanoic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "O=CO"
+  },
+  {
+    "iupac_name": "acetic acid",
+    "common_name": "ethanoic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CC(=O)O"
+  },
+  {
+    "iupac_name": "propionic acid",
+    "common_name": "propanoic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CCC(=O)O"
+  },
+  {
+    "iupac_name": "butyric acid",
+    "common_name": "butanoic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CCCC(=O)O"
+  },
+  {
+    "iupac_name": "valeric acid",
+    "common_name": "pentanoic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CCCCC(=O)O"
+  },
+  {
+    "iupac_name": "caproic acid",
+    "common_name": "hexanoic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CCCCCC(=O)O"
+  },
+  {
+    "iupac_name": "enanthic acid",
+    "common_name": "heptanoic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CCCCCCC(=O)O"
+  },
+  {
+    "iupac_name": "caprylic acid",
+    "common_name": "octanoic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CCCCCCCC(=O)O"
+  },
+  {
+    "iupac_name": "pelargonic acid",
+    "common_name": "nonanoic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CCCCCCCCC(=O)O"
+  },
+  {
+    "iupac_name": "capric acid",
+    "common_name": "decanoic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CCCCCCCCCC(=O)O"
+  },
+  {
+    "iupac_name": "undecanoic acid",
+    "common_name": null,
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CCCCCCCCCCC(=O)O"
+  },
+  {
+    "iupac_name": "dodecanoic acid",
+    "common_name": "lauric acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CCCCCCCCCCCC(=O)O"
+  },
+  {
+    "iupac_name": "acetone",
+    "common_name": null,
+    "functional_groups": ["ketone"],
+    "smiles": "CC(=O)C"
+  },
+  {
+    "iupac_name": "butanone",
+    "common_name": null,
+    "functional_groups": ["ketone"],
+    "smiles": "CCC(=O)C"
+  },
+  {
+    "iupac_name": "pentanone",
+    "common_name": null,
+    "functional_groups": ["ketone"],
+    "smiles": "CCCC(=O)C"
+  },
+  {
+    "iupac_name": "ethanol",
+    "common_name": "ethyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCO"
+  },
+  {
+    "iupac_name": "propanol",
+    "common_name": "propyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCO"
+  },
+  {
+    "iupac_name": "butanol",
+    "common_name": "butyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCO"
+  },
+  {
+    "iupac_name": "methylamine",
+    "common_name": null,
+    "functional_groups": ["amino"],
+    "smiles": "CN"
+  },
+  {
+    "iupac_name": "ethylamine",
+    "common_name": null,
+    "functional_groups": ["amino"],
+    "smiles": "CCN"
+  },
+  {
+    "iupac_name": "propylamine",
+    "common_name": null,
+    "functional_groups": ["amino"],
+    "smiles": "CCC(N)"
+  },
+  {
+    "iupac_name": "methanethiol",
+    "common_name": null,
+    "functional_groups": ["thiol"],
+    "smiles": "CS"
+  },
+  {
+    "iupac_name": "ethanethiol",
+    "common_name": null,
+    "functional_groups": ["thiol"],
+    "smiles": "CCS"
+  },
+  {
+    "iupac_name": "propanethiol",
+    "common_name": null,
+    "functional_groups": ["thiol"],
+    "smiles": "CCCS"
+  },
+  {
+    "iupac_name": "dimethyl ether",
+    "common_name": null,
+    "functional_groups": ["ether"],
+    "smiles": "COC"
+  },
+  {
+    "iupac_name": "diethyl ether",
+    "common_name": null,
+    "functional_groups": ["ether"],
+    "smiles": "CCOCC"
+  },
+  {
+    "iupac_name": "dipropyl ether",
+    "common_name": null,
+    "functional_groups": ["ether"],
+    "smiles": "CCCOCCC"
+  },
+  {
+    "iupac_name": "methyl ethyl ether",
+    "common_name": null,
+    "functional_groups": ["ether"],
+    "smiles": "COCC"
+  },
+  {
+    "iupac_name": "methyl propyl ether",
+    "common_name": null,
+    "functional_groups": ["ether"],
+    "smiles": "COCCC"
+  },
+  {
+    "iupac_name": "ethyl propyl ether",
+    "common_name": null,
+    "functional_groups": ["ether"],
+    "smiles": "CCOCCC"
+  },
+  {
+    "iupac_name": "methyl butyl ether",
+    "common_name": null,
+    "functional_groups": ["ether"],
+    "smiles": "COCCCC"
+  }
+]

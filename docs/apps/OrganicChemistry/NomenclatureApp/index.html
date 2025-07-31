@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nomenclature App</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Nomenclature App</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  </header>
+  <main>
+    <section id="settings-panel">
+      <h2>Settings</h2>
+      <form>
+        <label>
+          <input type="checkbox" id="common-iupac-toggle" /> Common vs. IUPAC Nomenclature
+        </label>
+        <label>
+          <input type="checkbox" id="image-name-toggle" /> Images vs. Name
+        </label>
+        <label>
+          Minimum Carbons: <input type="number" id="min-carbons" min="1" max="12" value="1" />
+        </label>
+        <label>
+          Maximum Carbons: <input type="number" id="max-carbons" min="1" max="12" value="7" />
+        </label>
+        <fieldset>
+          <legend>Functional Groups</legend>
+          <label><input type="checkbox" name="functional-group" value="hydroxyl" /> Hydroxyl</label>
+          <label><input type="checkbox" name="functional-group" value="carbonyl" /> Carbonyl</label>
+          <label><input type="checkbox" name="functional-group" value="carboxyl" /> Carboxyl</label>
+          <!-- Add more functional groups as needed -->
+        </fieldset>
+      </form>
+    </section>
+    <button id="new-problem-button">New Problem</button>
+    <button id="check-problem-button" style="display: none;">Check Problem</button>
+    <section id="problem-display">
+      <h2>Problem</h2>
+      <p id="problem-content"></p>
+    </section>
+    <section id="answer-display" style="display: none;">
+      <h2>Answer</h2>
+      <p id="answer-content"></p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Practicing Chemistry. All rights reserved.</p>
+  </footer>
+  <script>
+    const newProblemButton = document.getElementById("new-problem-button");
+    const checkProblemButton = document.getElementById("check-problem-button");
+    const problemDisplay = document.getElementById("problem-display");
+    const answerDisplay = document.getElementById("answer-display");
+
+    newProblemButton.addEventListener("click", () => {
+      // Generate a new problem
+      problemDisplay.style.display = "block";
+      answerDisplay.style.display = "none";
+      newProblemButton.style.display = "none";
+      checkProblemButton.style.display = "inline";
+      // Example problem generation
+      document.getElementById("problem-content").textContent = "Generated Problem";
+    });
+
+    checkProblemButton.addEventListener("click", () => {
+      // Show the answer
+      problemDisplay.style.display = "block";
+      answerDisplay.style.display = "block";
+      newProblemButton.style.display = "inline";
+      checkProblemButton.style.display = "none";
+      // Example answer display
+      document.getElementById("answer-content").textContent = "Generated Answer";
+    });
+  </script>
+</body>
+</html>
+````
