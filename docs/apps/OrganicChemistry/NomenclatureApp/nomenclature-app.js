@@ -15,6 +15,32 @@ fetch("data.json")
     problems = data;
   });
 
+// Toggle switch function
+function toggleSwitch(id) {
+  const switchElement = document.getElementById(id);
+  switchElement.classList.toggle('active');
+
+  // Example of handling the logic after toggle
+  if (id === 'common-iupac-toggle') {
+    if (switchElement.classList.contains('active')) {
+      console.log('IUPAC Nomenclature selected');
+      // Logic for IUPAC selection
+    } else {
+      console.log('Common Nomenclature selected');
+      // Logic for Common selection
+    }
+  } else if (id === 'image-name-toggle') {
+    if (switchElement.classList.contains('active')) {
+      console.log('Images mode selected');
+      // Logic for images mode
+    } else {
+      console.log('Names mode selected');
+      // Logic for names mode
+    }
+  }
+}
+
+// Event listeners for generating and checking problems
 newProblemButton.addEventListener("click", () => {
   // Generate a new problem
   currentProblem = problems[Math.floor(Math.random() * problems.length)];

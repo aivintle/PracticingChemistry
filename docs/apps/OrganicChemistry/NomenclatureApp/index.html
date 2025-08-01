@@ -27,11 +27,11 @@
       <form>
         <div class="toggle-container">
           <span class="toggle-label">Common vs. IUPAC Nomenclature</span>
-          <div class="toggle-switch" id="common-iupac-toggle"></div>
+          <div class="toggle-switch" id="common-iupac-toggle" onclick="toggleSwitch('common-iupac-toggle')"></div>
         </div>
         <div class="toggle-container">
           <span class="toggle-label">Images vs. Name</span>
-          <div class="toggle-switch" id="image-name-toggle"></div>
+          <div class="toggle-switch" id="image-name-toggle" onclick="toggleSwitch('image-name-toggle')"></div>
         </div>
         <label>
           Minimum Carbons: <input type="number" id="min-carbons" min="1" max="12" value="1" />

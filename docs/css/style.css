@@ -40,6 +40,7 @@ header h1 {
     font-size: 2rem;
 }
 
+/* Navigation Styles */
 nav {
     background: #444;
     color: #fff;
@@ -71,7 +72,7 @@ nav .dropdown-content {
     position: absolute;
     background-color: #444;
     min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
@@ -90,6 +91,7 @@ nav .dropdown:hover .dropdown-content {
     display: block;
 }
 
+/* Main Content Styles */
 main {
     padding: 2rem;
     flex: 1; /* Ensures the main content takes up the remaining space */
@@ -119,6 +121,7 @@ body {
     color: var(--text-color);
 }
 
+/* Theme Toggle Button */
 .theme-toggle {
     position: fixed;
     top: 1rem;
@@ -133,4 +136,71 @@ body {
 
 .theme-toggle:hover {
     background: #555;
+}
+
+/* Toggle Switch Styles */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.toggle-label {
+    margin-right: 10px;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Inner circle of the switch */
+.toggle-switch:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: left 0.3s;
+}
+
+/* When the switch is toggled on */
+.toggle-switch.active {
+    background-color: #4caf50;
+}
+
+/* When the inner circle moves to the right */
+.toggle-switch.active:before {
+    left: 30px;
+}
+
+/* Problem Display Styles */
+#problem-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+/* Answer Display Styles */
+#answer-display {
+    display: none;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
