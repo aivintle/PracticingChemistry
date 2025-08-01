@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -5,6 +6,9 @@ body {
     padding: 0;
     background-color: #f4f4f9;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
@@ -28,6 +32,7 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
     height: 60px;
+    margin-top: auto; /* Ensures footer sticks to the bottom */
 }
 
 header h1 {
@@ -86,6 +91,7 @@ nav .dropdown:hover .dropdown-content {
 
 main {
     padding: 2rem;
+    flex: 1; /* Ensures the main content takes up the remaining space */
 }
 
 main h2, main p {
@@ -94,16 +100,6 @@ main h2, main p {
     margin-bottom: 1rem;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
 }
 
 /* Light/Dark Theme Toggle */
