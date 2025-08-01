@@ -12,8 +12,8 @@ body {
 }
 
 header {
-    background: #333;
-    color: #fff;
+    background: #008040;
+    color: #333;
     padding: 1rem 0;
     text-align: left;
     display: flex;
@@ -22,8 +22,8 @@ header {
 }
 
 footer {
-    background: #333;
-    color: #008040;
+    background: #008040;
+    color: #333;
     padding: 1rem 0;
     text-align: center;
     display: flex;
@@ -51,6 +51,7 @@ nav {
 }
 
 nav a, nav .dropdown {
+    background: #333;
     color: #fff;
     text-decoration: none;
     margin: 0 1rem;
