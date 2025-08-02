@@ -90,6 +90,108 @@
     "smiles": "CCCCCCCCCCCC"
   },
   {
+    "iupac_name": "ethene",
+    "common_name": "ethylene",
+    "functional_groups": ["alkene"],
+    "smiles": "C=C"
+  },
+  {
+    "iupac_name": "propene",
+    "common_name": "propylene",
+    "functional_groups": ["alkene"],
+    "smiles": "CC=C"
+  },
+  {
+    "iupac_name": "but-1-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "CCC=C"
+  },
+  {
+    "iupac_name": "cis-but-2-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "C/C=C\\C"
+  },
+  {
+    "iupac_name": "trans-but-2-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "C/C=C/C"
+  },
+  {
+    "iupac_name": "2-methylpropene",
+    "common_name": "isobutylene",
+    "functional_groups": ["alkene"],
+    "smiles": "C=C(C)C"
+  },
+  {
+    "iupac_name": "pent-1-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "CCCC=C"
+  },
+  {
+    "iupac_name": "cis-pent-2-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "CC/C=C\\C"
+  },
+  {
+    "iupac_name": "trans-pent-2-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "CC/C=C/C"
+  },
+  {
+    "iupac_name": "2-methylbut-1-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "C=C(C)CC"
+  },
+  {
+    "iupac_name": "3-methylbut-1-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "C=CC(C)C"
+  },
+  {
+    "iupac_name": "2-methylbut-2-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "CC=C(C)C"
+  },
+  {
+    "iupac_name": "hex-1-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "CCCCC=C"
+  },
+  {
+    "iupac_name": "cis-hex-2-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "CCC/C=C\\C"
+  },
+  {
+    "iupac_name": "trans-hex-2-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "CCC/C=C/C"
+  },
+  {
+    "iupac_name": "cis-hex-3-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "CC/C=C\\CC"
+  },
+  {
+    "iupac_name": "trans-hex-3-ene",
+    "common_name": null,
+    "functional_groups": ["alkene"],
+    "smiles": "CC/C=C/CC"
+  },
+  {
     "iupac_name": "methanal",
     "common_name": "formaldehyde",
     "functional_groups": ["aldehyde"],

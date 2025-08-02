@@ -14,7 +14,10 @@
         "smiles": "CC=O"
       }
     ],
-    "functional_groups": ["alcohol", "aldehyde"]
+    "functional_groups": [
+      "alcohol",
+      "aldehyde"
+    ]
   },
   {
     "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
@@ -31,7 +34,10 @@
         "smiles": "CC(=O)O"
       }
     ],
-    "functional_groups": ["alcohol", "carboxylic-acid"]
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
   },
   {
     "reaction_name": "Alcohol oxidation (secondary to ketone)",
@@ -48,7 +54,10 @@
         "smiles": "CC(=O)C"
       }
     ],
-    "functional_groups": ["alcohol", "ketone"]
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
   },
   {
     "reaction_name": "Hydrohalogenation of alkene",
@@ -65,7 +74,10 @@
         "smiles": "CCBr"
       }
     ],
-    "functional_groups": ["alkene", "halide"]
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
   },
   {
     "reaction_name": "Dehydrohalogenation (E2)",
@@ -82,7 +94,10 @@
         "smiles": "C=C"
       }
     ],
-    "functional_groups": ["halide", "alkene"]
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
   },
   {
     "reaction_name": "SN2 substitution",
@@ -99,7 +114,10 @@
         "smiles": "CCO"
       }
     ],
-    "functional_groups": ["halide", "alcohol"]
+    "functional_groups": [
+      "halide",
+      "alcohol"
+    ]
   },
   {
     "reaction_name": "Esterification",
@@ -120,7 +138,11 @@
         "smiles": "CCOC(=O)C"
       }
     ],
-    "functional_groups": ["carboxylic-acid", "alcohol", "ester"]
+    "functional_groups": [
+      "carboxylic-acid",
+      "alcohol",
+      "ester"
+    ]
   },
   {
     "reaction_name": "Reduction of ketone",
@@ -137,7 +159,10 @@
         "smiles": "CC(O)C"
       }
     ],
-    "functional_groups": ["ketone", "alcohol"]
+    "functional_groups": [
+      "ketone",
+      "alcohol"
+    ]
   },
   {
     "reaction_name": "Reduction of aldehyde",
@@ -154,7 +179,10 @@
         "smiles": "CCO"
       }
     ],
-    "functional_groups": ["aldehyde", "alcohol"]
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
   },
   {
     "reaction_name": "Hydrolysis of ester",
@@ -175,6 +203,1510 @@
         "smiles": "CCO"
       }
     ],
-    "functional_groups": ["ester", "carboxylic-acid", "alcohol"]
+    "functional_groups": [
+      "ester",
+      "carboxylic-acid",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to aldehyde)",
+    "reactants": [
+      {
+        "iupac_name": "methanol",
+        "smiles": "CO"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "methanal",
+        "smiles": "C=O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "aldehyde"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to aldehyde)",
+    "reactants": [
+      {
+        "iupac_name": "propan-1-ol",
+        "smiles": "CCCO"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "propanal",
+        "smiles": "CCC=O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "aldehyde"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "butan-2-ol",
+        "smiles": "CCC(C)O"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "butan-2-one",
+        "smiles": "CCC(=O)C"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "pentan-2-ol",
+        "smiles": "CCCC(C)O"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "pentan-2-one",
+        "smiles": "CCCC(=O)C"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "pentan-3-ol",
+        "smiles": "CCC(O)CC"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "hexan-3-one",
+        "smiles": "CCC(=O)CCC"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "hexan-2-ol",
+        "smiles": "CCCCC(C)O"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "hexan-2-one",
+        "smiles": "CCCCC(=O)C"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "heptan-2-ol",
+        "smiles": "CCCCCC(C)O"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "heptan-2-one",
+        "smiles": "CCCCCC(=O)C"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "heptan-4-ol",
+        "smiles": "CCCC(O)CCC"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "heptan-4-one",
+        "smiles": "CCCC(=O)CCC"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "octan-3-ol",
+        "smiles": "CCCCC(O)CC"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "octan-3-one",
+        "smiles": "CCC(=O)CCCCC"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "octan-4-ol",
+        "smiles": "CCCC(O)CCCC"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "octan-4-one",
+        "smiles": "CCCC(=O)CCCC"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "methanal",
+        "smiles": "C=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "methanol",
+        "smiles": "CO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "propanal",
+        "smiles": "CCC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "propan-1-ol",
+        "smiles": "CCCO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "butanal",
+        "smiles": "CCCC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "butan-1-ol",
+        "smiles": "CCCCO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "pentanal",
+        "smiles": "CCCCC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "pentan-1-ol",
+        "smiles": "CCCCCO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "hexanal",
+        "smiles": "CCCCCC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "hexan-1-ol",
+        "smiles": "CCCCCCO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "heptanal",
+        "smiles": "CCCCCCC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "heptan-1-ol",
+        "smiles": "CCCCCCCO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "octanal",
+        "smiles": "CCCCCCCC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "octan-1-ol",
+        "smiles": "CCCCCCCCO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "nonanal",
+        "smiles": "CCCCCCCCC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "nonan-1-ol",
+        "smiles": "CCCCCCCCCO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "decanal",
+        "smiles": "CCCCCCCCCC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "decan-1-ol",
+        "smiles": "CCCCCCCCCO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "undecanal",
+        "smiles": "CCCCCCCCCCC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "undecan-1-ol",
+        "smiles": "CCCCCCCCCCCO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "dodecanal",
+        "smiles": "CCCCCCCCCCCC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "dodecan-1-ol",
+        "smiles": "CCCCCCCCCCCCO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropanal",
+        "smiles": "CC(C)C=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "2-methylpropan-1-ol",
+        "smiles": "CC(C)CO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "3-methylbutanal",
+        "smiles": "CC(C)CC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "3-methylbutan-1-ol",
+        "smiles": "CC(C)CCO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "2,2-dimethylpropanal",
+        "smiles": "CC(C)(C)C=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "2,2-dimethylpropan-1-ol",
+        "smiles": "CC(C)(C)CO"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of ketone",
+    "reactants": [
+      {
+        "iupac_name": "butan-2-one",
+        "smiles": "CCC(=O)C"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "butan-2-ol",
+        "smiles": "CCC(C)O"
+      }
+    ],
+    "functional_groups": [
+      "ketone",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of ketone",
+    "reactants": [
+      {
+        "iupac_name": "pentan-2-one",
+        "smiles": "CCCC(=O)C"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "pentan-2-ol",
+        "smiles": "CCCC(C)O"
+      }
+    ],
+    "functional_groups": [
+      "ketone",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of ketone",
+    "reactants": [
+      {
+        "iupac_name": "hexan-2-one",
+        "smiles": "CCCCC(=O)C"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "hexan-2-ol",
+        "smiles": "CCCCC(C)O"
+      }
+    ],
+    "functional_groups": [
+      "ketone",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of ketone",
+    "reactants": [
+      {
+        "iupac_name": "hexan-3-one",
+        "smiles": "CCC(=O)CCC"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "pentan-3-ol",
+        "smiles": "CCC(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "ketone",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of ketone",
+    "reactants": [
+      {
+        "iupac_name": "heptan-2-one",
+        "smiles": "CCCCCC(=O)C"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "heptan-2-ol",
+        "smiles": "CCCCCC(C)O"
+      }
+    ],
+    "functional_groups": [
+      "ketone",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of ketone",
+    "reactants": [
+      {
+        "iupac_name": "heptan-4-one",
+        "smiles": "CCCC(=O)CCC"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "heptan-4-ol",
+        "smiles": "CCCC(O)CCC"
+      }
+    ],
+    "functional_groups": [
+      "ketone",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of ketone",
+    "reactants": [
+      {
+        "iupac_name": "octan-3-one",
+        "smiles": "CCC(=O)CCCCC"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "octan-3-ol",
+        "smiles": "CCCCC(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "ketone",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of ketone",
+    "reactants": [
+      {
+        "iupac_name": "octan-4-one",
+        "smiles": "CCCC(=O)CCCC"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "octan-4-ol",
+        "smiles": "CCCC(O)CCCC"
+      }
+    ],
+    "functional_groups": [
+      "ketone",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "methanol",
+        "smiles": "CO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "methanoic acid",
+        "smiles": "C(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "propan-1-ol",
+        "smiles": "CCCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "propanoic acid",
+        "smiles": "CCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "butan-1-ol",
+        "smiles": "CCCCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "butanoic acid",
+        "smiles": "CCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "pentan-1-ol",
+        "smiles": "CCCCCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "pentanoic acid",
+        "smiles": "CCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "hexan-1-ol",
+        "smiles": "CCCCCCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "hexanoic acid",
+        "smiles": "CCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "heptan-1-ol",
+        "smiles": "CCCCCCCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "heptanoic acid",
+        "smiles": "CCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "octan-1-ol",
+        "smiles": "CCCCCCCCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "octanoic acid",
+        "smiles": "CCCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "nonan-1-ol",
+        "smiles": "CCCCCCCCCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "nonanoic acid",
+        "smiles": "CCCCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "decan-1-ol",
+        "smiles": "CCCCCCCCCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "decanoic acid",
+        "smiles": "CCCCCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "undecan-1-ol",
+        "smiles": "CCCCCCCCCCCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "undecanoic acid",
+        "smiles": "CCCCCCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "dodecan-1-ol",
+        "smiles": "CCCCCCCCCCCCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "dodecanoic acid",
+        "smiles": "CCCCCCCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropan-1-ol",
+        "smiles": "CC(C)CO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "2-methylpropanoic acid",
+        "smiles": "CC(C)C(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "3-methylbutan-1-ol",
+        "smiles": "CC(C)CCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "3-methylbutanoic acid",
+        "smiles": "CC(C)CC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "2,2-dimethylpropan-1-ol",
+        "smiles": "CC(C)(C)CO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "2,2-dimethylpropanoic acid",
+        "smiles": "CC(C)(C)C(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "methanal",
+        "smiles": "C=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "methanoic acid",
+        "smiles": "C(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "ethanal",
+        "smiles": "CC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "ethanoic acid",
+        "smiles": "CC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "propanal",
+        "smiles": "CCC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "propanoic acid",
+        "smiles": "CCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "butanal",
+        "smiles": "CCCC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "butanoic acid",
+        "smiles": "CCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "pentanal",
+        "smiles": "CCCCC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "pentanoic acid",
+        "smiles": "CCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "hexanal",
+        "smiles": "CCCCCC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "hexanoic acid",
+        "smiles": "CCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "heptanal",
+        "smiles": "CCCCCCC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "heptanoic acid",
+        "smiles": "CCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "octanal",
+        "smiles": "CCCCCCCC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "octanoic acid",
+        "smiles": "CCCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "nonanal",
+        "smiles": "CCCCCCCCC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "nonanoic acid",
+        "smiles": "CCCCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "decanal",
+        "smiles": "CCCCCCCCCC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "decanoic acid",
+        "smiles": "CCCCCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "undecanal",
+        "smiles": "CCCCCCCCCCC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "undecanoic acid",
+        "smiles": "CCCCCCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "dodecanal",
+        "smiles": "CCCCCCCCCCCC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "dodecanoic acid",
+        "smiles": "CCCCCCCCCCCC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropanal",
+        "smiles": "CC(C)C=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "2-methylpropanoic acid",
+        "smiles": "CC(C)C(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "3-methylbutanal",
+        "smiles": "CC(C)CC=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "3-methylbutanoic acid",
+        "smiles": "CC(C)CC(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Aldehyde oxidation",
+    "reactants": [
+      {
+        "iupac_name": "2,2-dimethylpropanal",
+        "smiles": "CC(C)(C)C=O"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "2,2-dimethylpropanoic acid",
+        "smiles": "CC(C)(C)C(=O)O"
+      }
+    ],
+    "functional_groups": [
+      "aldehyde",
+      "carboxylic-acid"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "chloroethane",
+        "smiles": "CCCl"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "1-chloropropane",
+        "smiles": "CCCCl"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "2-chloropropane",
+        "smiles": "CC(C)Cl"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "1-chlorobutane",
+        "smiles": "CCCCCl"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "2-chlorobutane",
+        "smiles": "CCC(C)Cl"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      },
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      },
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "1-chloro-2-methylpropane",
+        "smiles": "CC(C)CCl"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "1-chloropentane",
+        "smiles": "CCCCCCl"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "2-chloropentane",
+        "smiles": "CCCC(C)Cl"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      },
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      },
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "3-chloropentane",
+        "smiles": "CCC(Cl)CC"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      },
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "1-chlorohexane",
+        "smiles": "CCCCCCCl"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "2-chlorohexane",
+        "smiles": "CCCCC(C)Cl"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      },
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      },
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "3-chlorohexane",
+        "smiles": "CCCC(Cl)CC"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      },
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      },
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      },
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "functional_groups": [
+      "halide",
+      "alkene"
+    ]
   }
 ]
