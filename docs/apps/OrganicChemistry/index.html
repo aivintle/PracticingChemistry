@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Organic Chemistry</title>
+  <link rel="stylesheet" href="/PracticingChemistry/css/style.css" />
+  <style>
+    main {
+      max-width: 800px;
+      margin: 2.5rem auto 0 auto;
+      padding: 2rem 3vw 2rem 3vw;
+      background: var(--card-bg, #fff);
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(0,99,65,0.09);
+      min-height: 50vh;
+    }
+    .orgchem-title {
+      font-size: 2.3rem;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 0.5rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 2px;
+      color: var(--siena-green, #006341);
+      text-shadow: 1px 1px 3px rgba(0,99,65,0.10);
+    }
+    .app-links {
+      margin: 2rem 0;
+      padding: 1.2rem 0.5rem;
+      background: var(--siena-tan, #e7e2d6);
+      border-radius: 10px;
+      text-align: center;
+    }
+    .app-links a {
+      display: inline-block;
+      margin: 0.7rem 2rem 0.7rem 2rem;
+      padding: 1rem 2.2rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--white, #fff);
+      background: var(--siena-green, #006341);
+      border-radius: 7px;
+      text-decoration: none;
+      transition: background 0.18s;
+      box-shadow: 0 2px 10px rgba(0,99,65,0.11);
+    }
+    .app-links a:hover {
+      background: var(--siena-gold, #fbb040);
+      color: var(--siena-dark-green, #003d25);
+    }
+    @media (max-width: 700px) {
+      main {
+        padding: 1.1rem 1vw 1.1rem 1vw;
+      }
+      .orgchem-title {
+        font-size: 1.45rem;
+        margin-bottom: 0.7rem;
+      }
+      .app-links a {
+        font-size: 1.01rem;
+        margin: 0.5rem 0.7rem;
+        padding: 0.8rem 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/PracticingChemistry/index.html" class="header-title-link">Practicing Chemistry</a>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+  </header>
+  <nav>
+    <a href="/PracticingChemistry/index.html">Home</a>
+    <a href="/PracticingChemistry/apps/GeneralChemistry/index.html">General Chemistry</a>
+    <span style="color:var(--siena-gold,#fbb040);font-weight:bold;">Organic Chemistry</span>
+  </nav>
+  <main>
+    <div class="orgchem-title">Organic Chemistry</div>
+    <p style="text-align:center;max-width:600px;margin:0 auto 2rem auto;">
+      Welcome to the Organic Chemistry site! Here you can practice and explore interactive tools to help you master concepts in organic chemistry.
+    </p>
+    <div class="app-links">
+      <a href="/PracticingChemistry/apps/OrganicChemistry/NomenclatureApp/index.html">Nomenclature Practice App</a>
+      <!-- Future apps can be added here -->
+    </div>
+    <section>
+      <h2>About This Site</h2>
+      <p>
+        Practice organic chemistry concepts, including nomenclature, synthesis, and more. Use the navigation above to access other parts of Practicing Chemistry.
+      </p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Practicing Chemistry. All rights reserved.</p>
+    <p>Version 1.000</p>
+  </footer>
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.body.getAttribute("data-theme");
+      document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+    }
+  </script>
+</body>
+</html>
