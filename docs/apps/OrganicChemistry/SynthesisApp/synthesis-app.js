@@ -52,22 +52,26 @@ deselectAllBtn.addEventListener('click', function() {
   fgCheckboxesDiv.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
 });
 
-// Validate min/max steps
+// Validate min/max steps as positive integers and min ≤ max
 function validateStepRange() {
   let min = parseInt(minStepsInput.value, 10);
   let max = parseInt(maxStepsInput.value, 10);
 
+  // Only allow positive integers within the range 1-15
   if (isNaN(min) || min < 1) min = 1;
+  if (!Number.isInteger(min)) min = Math.floor(min);
   if (min > 15) min = 15;
   if (isNaN(max) || max < 1) max = 1;
+  if (!Number.isInteger(max)) max = Math.floor(max);
   if (max > 15) max = 15;
-  if (min > max) min = max;
+
+  // Fix the fields if user input was invalid
   minStepsInput.value = min;
   maxStepsInput.value = max;
 
   if (min > max) {
     stepRangeError.style.display = '';
-    stepRangeError.textContent = "Min steps must be <= max steps.";
+    stepRangeError.textContent = "Min steps must be less than or equal to max steps.";
     return false;
   } else {
     stepRangeError.style.display = 'none';
@@ -83,6 +87,35 @@ function getSelectedFunctionalGroups() {
   return Array.from(fgCheckboxesDiv.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
 }
 
+// --- NEW: Find a path from start to end compound using allowed reactions (DFS, no cycles), up to maxDepth ---
+
+function findSynthesisPathDFS(start, end, allowedReactions, allowedCompounds, maxDepth, visited = new Set()) {
+  // Returns an array of steps or null if not found
+  if (start.smiles === end.smiles) return [];
+  if (maxDepth === 0) return null;
+  visited.add(start.smiles);
+
+  // Try all reactions that can be done from start
+  const nextReactions = allowedReactions.filter(r =>
+    r.reactants.length === 1 &&
+    r.reactants[0].smiles === start.smiles &&
+    r.products.length === 1 &&
+    !visited.has(r.products[0].smiles)
+  );
+  for (const reaction of nextReactions) {
+    const nextCompound = allowedCompounds.find(c => c.smiles === reaction.products[0].smiles);
+    if (!nextCompound) continue;
+    if (nextCompound.smiles === end.smiles) {
+      return [{ reaction, from: start, to: nextCompound }];
+    }
+    const subpath = findSynthesisPathDFS(nextCompound, end, allowedReactions, allowedCompounds, maxDepth - 1, new Set(visited));
+    if (subpath !== null) {
+      return [{ reaction, from: start, to: nextCompound }, ...subpath];
+    }
+  }
+  return null;
+}
+
 // Generate a new synthesis problem
 newProblemButton.addEventListener('click', () => {
   selectedFunctionalGroups = getSelectedFunctionalGroups();
@@ -93,7 +126,7 @@ newProblemButton.addEventListener('click', () => {
     return;
   }
   if (!validateStepRange()) {
-    problemContent.innerHTML = `<span style="color:red;">Please enter a valid step range (min ≤ max, both 1-15).</span>`;
+    problemContent.innerHTML = `<span style="color:red;">Please enter a valid step range (min ≤ max, both 1-15, integers only).</span>`;
     showSolutionButton.style.display = "none";
     solutionDisplay.style.display = "none";
     return;
@@ -119,56 +152,42 @@ newProblemButton.addEventListener('click', () => {
     return;
   }
 
-  // Choose a random starting material from allowedCompounds
-  let start = allowedCompounds[Math.floor(Math.random() * allowedCompounds.length)];
-
-  // Try to build a random path of reactions without cycles, with path length between minSteps and maxSteps
-  let maxTries = 40;
+  // --- NEW LOGIC: Only allow a problem if there is a valid solution (with the desired step count) ---
   let found = false;
   let path = [];
   let product = null;
+  let start = null;
+  let maxTries = 60;
 
-  for (let tries = 0; tries < maxTries && !found; tries++) {
-    let curr = start;
-    let currPath = [];
-    let visited = new Set([curr.smiles]);
-    let steps = 0;
-    let possible = true;
+  // Build a pool of possible start/end pairs (excluding same compound)
+  let possiblePairs = [];
+  for (let i = 0; i < allowedCompounds.length; i++) {
+    for (let j = 0; j < allowedCompounds.length; j++) {
+      if (i !== j) {
+        possiblePairs.push([allowedCompounds[i], allowedCompounds[j]]);
+      }
+    }
+  }
 
-    // Pick a random path length in the allowed range (inclusive)
+  // Shuffle the possiblePairs array (Fisher-Yates)
+  for (let i = possiblePairs.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [possiblePairs[i], possiblePairs[j]] = [possiblePairs[j], possiblePairs[i]];
+  }
+
+  for (let tries = 0; tries < maxTries && !found && possiblePairs.length > 0; tries++) {
+    // Pick a pair
+    let [tryStart, tryEnd] = possiblePairs.pop();
+    // Pick a random pathLen in allowed range
     let pathLen = (maxSteps === minSteps) ? minSteps 
                   : minSteps + Math.floor(Math.random() * (maxSteps - minSteps + 1));
-
-    while (steps < pathLen) {
-      // Find possible next reactions for this compound
-      const nextReactions = allowedReactions.filter(r =>
-        r.reactants.length === 1 &&
-        r.reactants[0].smiles === curr.smiles &&
-        r.products.length === 1 &&
-        !visited.has(r.products[0].smiles)
-      );
-      if (nextReactions.length === 0) {
-        possible = false;
-        break;
-      }
-      // Randomly pick a next reaction
-      const reaction = nextReactions[Math.floor(Math.random() * nextReactions.length)];
-      const next = allowedCompounds.find(c => c.smiles === reaction.products[0].smiles);
-      if (!next) {
-        possible = false;
-        break;
-      }
-      currPath.push({ reaction, from: curr, to: next });
-      visited.add(next.smiles);
-      curr = next;
-      steps++;
-    }
-    // Only accept non-circular, proper paths, and ending material different than starting
-    if (possible && currPath.length >= minSteps && curr.smiles !== start.smiles) {
-      path = currPath;
-      product = curr;
+    // Find a path of exactly pathLen steps
+    let out = findSynthesisPathWithExactSteps(tryStart, tryEnd, allowedReactions, allowedCompounds, pathLen);
+    if (out !== null && out.length === pathLen) {
+      path = out;
+      product = tryEnd;
+      start = tryStart;
       found = true;
-      break;
     }
   }
 
@@ -184,6 +203,43 @@ newProblemButton.addEventListener('click', () => {
   showSolutionButton.style.display = "inline-block";
   solutionDisplay.style.display = "none";
 });
+
+// Helper: Find a path of exactly n steps (DFS, no cycles)
+function findSynthesisPathWithExactSteps(start, end, allowedReactions, allowedCompounds, steps, visited = new Set()) {
+  if (steps < 1) return null;
+  if (steps === 1) {
+    // Direct connection
+    const direct = allowedReactions.find(r =>
+      r.reactants.length === 1 &&
+      r.reactants[0].smiles === start.smiles &&
+      r.products.length === 1 &&
+      r.products[0].smiles === end.smiles
+    );
+    if (direct) {
+      return [{ reaction: direct, from: start, to: end }];
+    } else {
+      return null;
+    }
+  }
+  visited.add(start.smiles);
+  // Try all reactions from start
+  const nextReactions = allowedReactions.filter(r =>
+    r.reactants.length === 1 &&
+    r.reactants[0].smiles === start.smiles &&
+    r.products.length === 1 &&
+    !visited.has(r.products[0].smiles)
+  );
+  for (const reaction of nextReactions) {
+    const nextCompound = allowedCompounds.find(c => c.smiles === reaction.products[0].smiles);
+    if (!nextCompound) continue;
+    if (nextCompound.smiles === end.smiles) continue; // Don't shortcut
+    const subpath = findSynthesisPathWithExactSteps(nextCompound, end, allowedReactions, allowedCompounds, steps - 1, new Set(visited));
+    if (subpath !== null) {
+      return [{ reaction, from: start, to: nextCompound }, ...subpath];
+    }
+  }
+  return null;
+}
 
 // Render the synthesis problem
 function renderProblem(start, end) {
