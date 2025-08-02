@@ -69,7 +69,7 @@
 <body>
   <header>
     <a href="/PracticingChemistry/index.html" class="header-title-link">Practicing Chemistry</a>
-    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    <button class="theme-toggle">Toggle Theme</button>
   </header>
   <nav>
     <a href="/PracticingChemistry/index.html">Home</a>
@@ -131,25 +131,11 @@
   </main>
   <footer>
     <p>&copy; 2025 Practicing Chemistry. All rights reserved.</p>
-    <p>Version 1.001</p>
+    <p>Version 1.002</p>
   </footer>
   <script src="synthesis-app.js"></script>
   <script>
-    // Collapsible settings logic
-    const toggleButton = document.getElementById('settings-toggle-button');
-    const settingsPanel = document.getElementById('settings-panel');
-    toggleButton.addEventListener('click', () => {
-      const isHidden = settingsPanel.style.display === "none";
-      settingsPanel.style.display = isHidden ? "block" : "none";
-      toggleButton.textContent = isHidden ? "Hide Settings" : "Show Settings";
-      toggleButton.setAttribute('aria-expanded', isHidden ? "true" : "false");
-    });
-    function toggleTheme() {
-      const currentTheme = document.body.getAttribute("data-theme");
-      document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
-    }
-
-    // --- Min/Max Step Live Validation ---
+    // Min/Max Step Live Validation in HTML
     const minStepsInput = document.getElementById('min-steps');
     const maxStepsInput = document.getElementById('max-steps');
     minStepsInput.addEventListener('input', function() {

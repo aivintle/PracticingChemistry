@@ -1,8 +1,21 @@
-// Path to the compound and reactions data
-const DATA_PATH = "../NomenclatureApp/data.json";
-const REACTIONS_PATH = "reactions.json";
+// Theme toggle
+document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
+function toggleTheme() {
+  const currentTheme = document.body.getAttribute("data-theme");
+  document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+}
 
-// DOM elements
+// Settings panel toggle
+const toggleButton = document.getElementById('settings-toggle-button');
+const settingsPanel = document.getElementById('settings-panel');
+toggleButton.addEventListener('click', () => {
+  const isHidden = settingsPanel.style.display === "none";
+  settingsPanel.style.display = isHidden ? "block" : "none";
+  toggleButton.textContent = isHidden ? "Hide Settings" : "Show Settings";
+  toggleButton.setAttribute('aria-expanded', isHidden ? "true" : "false");
+});
+
+// DOM elements for rest of app
 const fgCheckboxesDiv = document.getElementById("functional-group-checkboxes");
 const newProblemButton = document.getElementById("new-problem-button");
 const showSolutionButton = document.getElementById("show-solution-button");
@@ -23,8 +36,8 @@ let currentProblem = null; // {start: compound, end: compound, path: [steps]}
 
 // Fetch compounds and reactions data
 Promise.all([
-  fetch(DATA_PATH).then(res => res.json()),
-  fetch(REACTIONS_PATH).then(res => res.json())
+  fetch("../NomenclatureApp/data.json").then(res => res.json()),
+  fetch("reactions.json").then(res => res.json())
 ]).then(([compoundsData, reactionsData]) => {
   compounds = compoundsData;
   reactions = reactionsData;
