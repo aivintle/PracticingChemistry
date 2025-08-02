@@ -27,11 +27,7 @@ function toggleSwitch(id) {
     updateImageNameToggleLabel();
   }
   if (id === 'common-iupac-toggle') {
-    if (switchElement.classList.contains('active')) {
-      // IUPAC Nomenclature selected
-    } else {
-      // Common Nomenclature selected
-    }
+    // nothing else needed for this toggle
   }
 }
 
@@ -47,7 +43,7 @@ imageNameToggle.addEventListener('keydown', function(e) {
   }
 });
 
-// Helper: Get checked functional groups
+// Helper: Get checked functional groups (now matches the new group names)
 function getCheckedFunctionalGroups() {
   return Array.from(document.querySelectorAll('input[type="checkbox"][name="functional-group"]:checked'))
     .map(cb => cb.value);
@@ -55,7 +51,6 @@ function getCheckedFunctionalGroups() {
 
 // Helper: Check if molecule matches allowed functional groups
 function moleculeHasAllowedFunctionalGroup(molecule, allowedGroups) {
-  // Return true if molecule has any of the allowed groups
   return molecule.functional_groups.some(grp => allowedGroups.includes(grp));
 }
 
@@ -64,7 +59,7 @@ function carbonCount(smiles) {
   return (smiles.match(/C(?![a-z])/g) || []).length;
 }
 
-// Helper: Get validated carbon range from settings; will clamp values as in the HTML
+// Helper: Get validated carbon range from settings
 function getCarbonRange() {
   let min = parseInt(document.getElementById("min-carbons").value, 10);
   let max = parseInt(document.getElementById("max-carbons").value, 10);

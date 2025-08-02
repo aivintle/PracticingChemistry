@@ -6,14 +6,12 @@
   <title>Nomenclature App</title>
   <link rel="stylesheet" href="/PracticingChemistry/css/style.css" />
   <style>
-    /* Multi-column functional group checkboxes */
     .functional-group-checkboxes {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
       gap: 0.5em 2em;
       margin-bottom: 0.5em;
     }
-    /* Make the main content area wider */
     main {
       min-width: 80vw;
       width: 80vw !important;
@@ -93,20 +91,20 @@
               <button type="button" id="deselect-all-fg-btn">Deselect All</button>
             </div>
             <div class="functional-group-checkboxes">
-              <label><input type="checkbox" name="functional-group" value="alkyl" checked /> Alkyl (–R)</label>
+              <label><input type="checkbox" name="functional-group" value="alkane" checked /> Alkane (–R)</label>
               <label><input type="checkbox" name="functional-group" value="halide" checked /> Halide (–X)</label>
               <label><input type="checkbox" name="functional-group" value="alcohol" checked /> Alcohol (–OH)</label>
               <label><input type="checkbox" name="functional-group" value="ketone" checked /> Ketone</label>
               <label><input type="checkbox" name="functional-group" value="aldehyde" checked /> Aldehyde</label>
               <label><input type="checkbox" name="functional-group" value="carboxylic-acid" checked /> Carboxylic Acid</label>
-              <label><input type="checkbox" name="functional-group" value="amino" /> Amino (–NH₂)</label>
+              <label><input type="checkbox" name="functional-group" value="amine" /> Amine (–NH₂)</label>
               <label><input type="checkbox" name="functional-group" value="ester" /> Ester (–COO–)</label>
               <label><input type="checkbox" name="functional-group" value="amide" /> Amide (–CONH₂)</label>
               <label><input type="checkbox" name="functional-group" value="nitrile" /> Nitrile (–C≡N)</label>
               <label><input type="checkbox" name="functional-group" value="ether" /> Ether (–O–)</label>
               <label><input type="checkbox" name="functional-group" value="thiol" /> Thiol (–SH)</label>
               <label><input type="checkbox" name="functional-group" value="aromatic" /> Aromatic Groups</label>
-              <label><input type="checkbox" name="functional-group" value="alkyl-halide" /> Alkyl Halide</label>
+              <label><input type="checkbox" name="functional-group" value="acyl-halide" /> Acyl Halide</label>
             </div>
           </fieldset>
         </form>
@@ -125,7 +123,7 @@
   </main>
   <footer>
     <p>&copy; 2025 Practicing Chemistry. All rights reserved. </p>
-    <p>Version 1.024</p>
+    <p>Version 1.025</p>
   </footer>
   <script src="nomenclature-app.js"></script>
   <script>
@@ -142,7 +140,7 @@
     // Set default functional group checkboxes (in case page is reloaded and browser doesn't preserve state)
     window.addEventListener('DOMContentLoaded', () => {
       [
-        "alkyl",
+        "alkane",
         "halide",
         "alcohol",
         "ketone",
