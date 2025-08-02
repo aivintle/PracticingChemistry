@@ -6,17 +6,20 @@
   <title>Organic Chemistry Synthesis Practice App</title>
   <link rel="stylesheet" href="/PracticingChemistry/css/style.css" />
   <style>
-    .header-title-link {
-      color: inherit;
-      text-decoration: none;
+    .app-title {
       font-size: 2.2rem;
       font-weight: 700;
+      text-align: center;
+      margin: 1.5rem 0 2rem 0;
       letter-spacing: 2px;
-      transition: color 0.2s, text-shadow 0.2s;
+      color: var(--siena-green, #006341);
+      text-shadow: 1px 1px 3px rgba(0,99,65,0.08);
     }
-    .header-title-link:hover {
-      color: var(--siena-gold, #fbb040);
-      text-shadow: 1px 1px 6px rgba(251,176,64,0.12);
+    @media (max-width: 700px) {
+      .app-title {
+        font-size: 1.45rem;
+        margin: 0.7rem 0 1.2rem 0;
+      }
     }
   </style>
 </head>
@@ -35,17 +38,50 @@
       </div>
     </div>
   </nav>
+  <div class="app-title">Synthesis Practice App</div>
   <main>
-    <h2>Organic Chemistry Synthesis Practice App</h2>
-    <p>
-      This is a stub for the Organic Chemistry Synthesis Practice App. Interactive synthesis practice tools will appear here in the future!
-    </p>
+    <section id="settings-panel-section">
+      <button id="settings-toggle-button" type="button" aria-expanded="false" aria-controls="settings-panel" style="margin-bottom: 0.5rem;">
+        Show Settings
+      </button>
+      <div id="settings-panel" style="display:none;">
+        <h2>Settings</h2>
+        <form id="settings-form" autocomplete="off">
+          <fieldset>
+            <legend>Functional Groups</legend>
+            <div id="functional-group-checkboxes">
+              <!-- JS will fill this in -->
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+    <button id="new-problem-button">New Synthesis Problem</button>
+    <button id="show-solution-button" style="display:none;">Show Solution</button>
+    <section id="problem-display">
+      <h2>Synthesis Problem</h2>
+      <div id="problem-content"></div>
+    </section>
+    <section id="solution-display" style="display: none;">
+      <h2>Solution Path</h2>
+      <div id="solution-content"></div>
+    </section>
   </main>
   <footer>
     <p>&copy; 2025 Practicing Chemistry. All rights reserved.</p>
     <p>Version 1.000</p>
   </footer>
+  <script src="synthesis-app.js"></script>
   <script>
+    // Collapsible settings logic
+    const toggleButton = document.getElementById('settings-toggle-button');
+    const settingsPanel = document.getElementById('settings-panel');
+    toggleButton.addEventListener('click', () => {
+      const isHidden = settingsPanel.style.display === "none";
+      settingsPanel.style.display = isHidden ? "block" : "none";
+      toggleButton.textContent = isHidden ? "Hide Settings" : "Show Settings";
+      toggleButton.setAttribute('aria-expanded', isHidden ? "true" : "false");
+    });
     function toggleTheme() {
       const currentTheme = document.body.getAttribute("data-theme");
       document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");

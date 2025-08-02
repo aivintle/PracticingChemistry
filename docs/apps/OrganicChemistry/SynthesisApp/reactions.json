@@ -1,0 +1,180 @@
+[
+  {
+    "reaction_name": "Alcohol oxidation (primary to aldehyde)",
+    "reactants": [
+      {
+        "iupac_name": "ethanol",
+        "smiles": "CCO"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "ethanal",
+        "smiles": "CC=O"
+      }
+    ],
+    "functional_groups": ["alcohol", "aldehyde"]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to carboxylic acid)",
+    "reactants": [
+      {
+        "iupac_name": "ethanol",
+        "smiles": "CCO"
+      }
+    ],
+    "reagents": "Jones reagent",
+    "products": [
+      {
+        "iupac_name": "ethanoic acid",
+        "smiles": "CC(=O)O"
+      }
+    ],
+    "functional_groups": ["alcohol", "carboxylic-acid"]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "propan-2-ol",
+        "smiles": "CC(O)C"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "propan-2-one",
+        "smiles": "CC(=O)C"
+      }
+    ],
+    "functional_groups": ["alcohol", "ketone"]
+  },
+  {
+    "reaction_name": "Hydrohalogenation of alkene",
+    "reactants": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "bromoethane",
+        "smiles": "CCBr"
+      }
+    ],
+    "functional_groups": ["alkene", "halide"]
+  },
+  {
+    "reaction_name": "Dehydrohalogenation (E2)",
+    "reactants": [
+      {
+        "iupac_name": "bromoethane",
+        "smiles": "CCBr"
+      }
+    ],
+    "reagents": "KOtBu",
+    "products": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "functional_groups": ["halide", "alkene"]
+  },
+  {
+    "reaction_name": "SN2 substitution",
+    "reactants": [
+      {
+        "iupac_name": "bromoethane",
+        "smiles": "CCBr"
+      }
+    ],
+    "reagents": "NaOH",
+    "products": [
+      {
+        "iupac_name": "ethanol",
+        "smiles": "CCO"
+      }
+    ],
+    "functional_groups": ["halide", "alcohol"]
+  },
+  {
+    "reaction_name": "Esterification",
+    "reactants": [
+      {
+        "iupac_name": "ethanoic acid",
+        "smiles": "CC(=O)O"
+      },
+      {
+        "iupac_name": "ethanol",
+        "smiles": "CCO"
+      }
+    ],
+    "reagents": "H2SO4",
+    "products": [
+      {
+        "iupac_name": "ethyl ethanoate",
+        "smiles": "CCOC(=O)C"
+      }
+    ],
+    "functional_groups": ["carboxylic-acid", "alcohol", "ester"]
+  },
+  {
+    "reaction_name": "Reduction of ketone",
+    "reactants": [
+      {
+        "iupac_name": "propan-2-one",
+        "smiles": "CC(=O)C"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "propan-2-ol",
+        "smiles": "CC(O)C"
+      }
+    ],
+    "functional_groups": ["ketone", "alcohol"]
+  },
+  {
+    "reaction_name": "Reduction of aldehyde",
+    "reactants": [
+      {
+        "iupac_name": "ethanal",
+        "smiles": "CC=O"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "ethanol",
+        "smiles": "CCO"
+      }
+    ],
+    "functional_groups": ["aldehyde", "alcohol"]
+  },
+  {
+    "reaction_name": "Hydrolysis of ester",
+    "reactants": [
+      {
+        "iupac_name": "ethyl ethanoate",
+        "smiles": "CCOC(=O)C"
+      }
+    ],
+    "reagents": "NaOH (aq)",
+    "products": [
+      {
+        "iupac_name": "ethanoic acid",
+        "smiles": "CC(=O)O"
+      },
+      {
+        "iupac_name": "ethanol",
+        "smiles": "CCO"
+      }
+    ],
+    "functional_groups": ["ester", "carboxylic-acid", "alcohol"]
+  }
+]
