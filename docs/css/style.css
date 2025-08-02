@@ -1,90 +1,141 @@
+/* Siena College Brand Colors */
+:root {
+    --siena-green: #006341;
+    --siena-gold: #fbb040;
+    --siena-dark-green: #003d25;
+    --siena-light-green: #3ac569;
+    --siena-tan: #e7e2d6;
+    --siena-gray: #b6b1a9;
+    --white: #fff;
+    --black: #222;
+    --background-color: var(--siena-tan);
+    --text-color: var(--siena-dark-green);
+    --card-bg: var(--white);
+    --card-border: var(--siena-gray);
+    --nav-bg: var(--siena-green);
+    --nav-link: var(--white);
+    --nav-link-hover: var(--siena-gold);
+    --footer-bg: var(--siena-green);
+    --footer-text: var(--white);
+    --button-bg: var(--siena-gold);
+    --button-text: var(--siena-dark-green);
+    --button-hover-bg: var(--siena-light-green);
+    --button-hover-text: var(--siena-dark-green);
+    --toggle-bg: var(--siena-gray);
+    --toggle-active: var(--siena-gold);
+    --toggle-circle: var(--white);
+    --dropdown-bg: var(--siena-green);
+    --dropdown-link-hover: var(--siena-light-green);
+}
+
+[data-theme="dark"] {
+    --background-color: var(--siena-dark-green);
+    --text-color: var(--siena-tan);
+    --card-bg: #26322e;
+    --card-border: #46554c;
+    --nav-bg: #00291a;
+    --nav-link: var(--siena-gold);
+    --nav-link-hover: var(--white);
+    --footer-bg: #00291a;
+    --footer-text: var(--siena-gold);
+    --button-bg: var(--siena-gold);
+    --button-text: var(--siena-dark-green);
+    --button-hover-bg: var(--siena-light-green);
+    --button-hover-text: var(--siena-dark-green);
+    --toggle-bg: #46554c;
+    --toggle-active: var(--siena-gold);
+    --toggle-circle: var(--siena-dark-green);
+    --dropdown-bg: #153c2b;
+    --dropdown-link-hover: var(--siena-gold);
+}
+
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    transition: background 0.4s, color 0.4s;
 }
 
 header {
-    background: #008040;
-    color: #333;
-    padding: 1rem 0;
-    text-align: left;
+    background: var(--nav-bg);
+    color: var(--nav-link);
+    padding: 1.5rem 2rem 1rem 2rem;
     display: flex;
     align-items: center;
-    padding-left: 1rem;
-}
-
-footer {
-    background: #008040;
-    color: #333;
-    padding: 1rem 0;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    height: 60px;
-    margin-top: auto; /* Ensures footer sticks to the bottom */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-bottom: 4px solid var(--siena-gold);
+    position: relative;
 }
 
 header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0,99,65,0.08);
+    flex: 1;
 }
 
 /* Navigation Styles */
 nav {
-    background: #444;
-    color: #fff;
-    padding: 0.5rem;
-    text-align: left;
+    background: var(--nav-bg);
+    color: var(--nav-link);
+    padding: 0.5rem 2rem;
     display: flex;
     align-items: center;
-    padding-left: 1rem;
+    gap: 1rem;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.04);
 }
 
-nav a, nav .dropdown {
-    background: #333;
-    color: #fff;
+nav a, nav .dropdown > a {
+    color: var(--nav-link);
     text-decoration: none;
-    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s;
     position: relative;
+    display: inline-block;
 }
 
 nav a:hover, nav .dropdown:hover > a {
-    text-decoration: underline;
+    background: var(--nav-link-hover);
+    color: var(--siena-dark-green);
 }
 
 nav .dropdown {
-    cursor: pointer;
+    position: relative;
 }
 
 nav .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #444;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    left: 0;
+    background: var(--dropdown-bg);
+    min-width: 180px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    z-index: 2;
+    border-radius: 0 0 6px 6px;
+    margin-top: 2px;
+    overflow: hidden;
 }
 
 nav .dropdown-content a {
-    color: #fff;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
+    color: var(--nav-link);
+    padding: 0.8rem 1.2rem;
     display: block;
+    transition: background 0.2s, color 0.2s;
 }
 
 nav .dropdown-content a:hover {
-    background-color: #555;
+    background: var(--dropdown-link-hover);
+    color: var(--siena-dark-green);
 }
 
 nav .dropdown:hover .dropdown-content {
@@ -93,49 +144,107 @@ nav .dropdown:hover .dropdown-content {
 
 /* Main Content Styles */
 main {
-    padding: 2rem;
-    flex: 1; /* Ensures the main content takes up the remaining space */
+    padding: 2.5rem 3vw 2rem 3vw;
+    flex: 1;
+    max-width: 820px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-main h2, main p {
-    background: #fff;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+main h2 {
+    background: var(--card-bg);
+    color: var(--siena-green);
+    font-size: 1.7rem;
+    margin-bottom: 1.2rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px 8px 0 0;
+    border: 1px solid var(--card-border);
+    border-bottom: none;
+    letter-spacing: 1px;
+    font-weight: 700;
 }
 
-/* Light/Dark Theme Toggle */
-:root {
-    --background-color: #f4f4f9;
-    --text-color: #333;
-}
-
-[data-theme="dark"] {
-    --background-color: #333;
-    --text-color: #f4f4f9;
-}
-
-body {
-    background-color: var(--background-color);
+main p, section, form, fieldset, label {
+    background: var(--card-bg);
     color: var(--text-color);
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.2rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0 0 8px 8px;
+    font-size: 1.08rem;
+}
+
+main p {
+    border-radius: 8px;
+}
+
+section {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+fieldset {
+    border: 1.5px solid var(--siena-gray);
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+legend {
+    background: var(--siena-gold);
+    color: var(--siena-dark-green);
+    font-weight: 600;
+    padding: 0.2rem 0.9rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    letter-spacing: 1px;
+}
+
+label {
+    display: block;
+    margin: 0.7em 0 0.3em 0;
+    font-weight: 500;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+input[type="number"], input[type="text"] {
+    border: 1px solid var(--siena-gray);
+    border-radius: 4px;
+    padding: 0.35rem 0.7rem;
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-left: 0.3rem;
+    margin-right: 0.8rem;
+    transition: border 0.2s;
+}
+input[type="number"]:focus, input[type="text"]:focus {
+    border: 1.5px solid var(--siena-green);
+    outline: none;
 }
 
 /* Theme Toggle Button */
 .theme-toggle {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background: #444;
-    color: #fff;
+    position: absolute;
+    top: 1.3rem;
+    right: 2.2rem;
+    background: var(--button-bg);
+    color: var(--button-text);
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 6px;
     cursor: pointer;
-    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s;
+    z-index: 10;
 }
 
 .theme-toggle:hover {
-    background: #555;
+    background: var(--button-hover-bg);
+    color: var(--button-hover-text);
+    outline: 2px solid var(--siena-gold);
 }
 
 /* Toggle Switch Styles */
@@ -143,64 +252,137 @@ body {
     display: flex;
     align-items: center;
     margin: 10px 0;
+    gap: 12px;
 }
 
 .toggle-label {
-    margin-right: 10px;
+    margin-right: 8px;
+    font-weight: 500;
 }
 
 .toggle-switch {
     position: relative;
     width: 50px;
-    height: 25px;
-    background-color: #ccc;
+    height: 26px;
+    background-color: var(--toggle-bg);
     border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s;
+    border: 2px solid var(--siena-gold);
+    box-sizing: border-box;
 }
 
-/* Inner circle of the switch */
 .toggle-switch:before {
     content: '';
     position: absolute;
-    top: 50%;
-    left: 5px;
-    width: 15px;
-    height: 15px;
-    background-color: white;
+    top: 4px;
+    left: 6px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--toggle-circle);
     border-radius: 50%;
-    transform: translateY(-50%);
-    transition: left 0.3s;
+    transition: left 0.3s, background 0.2s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.10);
 }
 
-/* When the switch is toggled on */
 .toggle-switch.active {
-    background-color: #4caf50;
+    background-color: var(--toggle-active);
 }
 
-/* When the inner circle moves to the right */
 .toggle-switch.active:before {
-    left: 30px;
+    left: 28px;
+    background: var(--siena-light-green);
 }
 
-/* Problem Display Styles */
+/* Buttons */
+button {
+    padding: 0.7rem 2.4rem;
+    font-size: 1.09rem;
+    font-weight: 600;
+    color: var(--button-text);
+    background: var(--button-bg);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 1.2rem 0.5rem 1rem 0;
+    box-shadow: 0 2px 8px rgba(0,99,65,0.07);
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+button:hover, button:focus {
+    background: var(--button-hover-bg);
+    color: var(--button-hover-text);
+    transform: translateY(-2px) scale(1.03);
+    outline: 2px solid var(--siena-gold);
+}
+
+/* Problem & Answer Display */
 #problem-content img {
     max-width: 100%;
     height: auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 14px rgba(0,99,65,0.10);
+    border: 2px solid var(--siena-gold);
+    background: var(--siena-tan);
+    margin-bottom: 1rem;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 1rem;
-}
-
-/* Answer Display Styles */
 #answer-display {
     display: none;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 5px;
-    border: 1px solid #ddd;
+    background: var(--card-bg);
+    border-radius: 8px;
+    border: 1.5px solid var(--siena-gray);
+    padding: 1rem 1.5rem;
+    color: var(--siena-dark-green);
+    box-shadow: 0 2px 10px rgba(0,99,65,0.08);
+    margin-bottom: 1.5rem;
+    font-size: 1.13rem;
+}
+
+/* Footer Styles */
+footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: auto;
+    font-size: 1.08rem;
+    margin-top: auto;
+    border-top: 4px solid var(--siena-gold);
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    background: none;
+    border: none;
+    color: var(--footer-text);
+    padding: 0.1rem 1rem;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 700px) {
+    main {
+        padding: 1.2rem 2vw 1rem 2vw;
+    }
+    header, nav, footer {
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+    .theme-toggle {
+        right: 1vw;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: var(--background-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--siena-gray);
+    border-radius: 4px;
 }
