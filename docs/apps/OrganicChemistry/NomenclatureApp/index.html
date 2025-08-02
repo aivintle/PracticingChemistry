@@ -28,7 +28,7 @@
       </button>
       <div id="settings-panel" style="display:none;">
         <h2>Settings</h2>
-        <form>
+        <form id="settings-form" autocomplete="off">
           <div class="toggle-container">
             <span class="toggle-label">Common vs. IUPAC Nomenclature</span>
             <div class="toggle-switch" id="common-iupac-toggle" onclick="toggleSwitch('common-iupac-toggle')"></div>
@@ -38,11 +38,16 @@
             <div class="toggle-switch" id="image-name-toggle" onclick="toggleSwitch('image-name-toggle')"></div>
           </div>
           <label>
-            Minimum Carbons: <input type="number" id="min-carbons" min="1" max="12" value="1" />
+            Minimum Carbons:
+            <input type="number" id="min-carbons" min="1" max="11" step="1" value="1" required aria-label="Minimum Carbons" />
           </label>
           <label>
-            Maximum Carbons: <input type="number" id="max-carbons" min="1" max="12" value="7" />
+            Maximum Carbons:
+            <input type="number" id="max-carbons" min="2" max="12" step="1" value="7" required aria-label="Maximum Carbons" />
           </label>
+          <div style="margin-bottom:0.5em;">
+            <span id="carbon-range-error" style="color:red;display:none;"></span>
+          </div>
           <fieldset>
             <legend>Functional Groups</legend>
             <label><input type="checkbox" name="functional-group" value="alkyl" checked /> Alkyl (–R)</label>
@@ -76,7 +81,7 @@
   </main>
   <footer>
     <p>&copy; 2025 Practicing Chemistry. All rights reserved. </p>
-    <p>Version 1.017</p>
+    <p>Version 1.018</p>
   </footer>
   <script src="nomenclature-app.js"></script>
   <script>
@@ -104,6 +109,48 @@
         if (box) box.checked = true;
       });
     });
+
+    // Carbon range form validation logic
+    const minCarbonsInput = document.getElementById('min-carbons');
+    const maxCarbonsInput = document.getElementById('max-carbons');
+    const errorSpan = document.getElementById('carbon-range-error');
+
+    function validateCarbons() {
+      let min = parseInt(minCarbonsInput.value, 10);
+      let max = parseInt(maxCarbonsInput.value, 10);
+
+      // Clamp values to allowed ranges
+      if (isNaN(min) || min < 1) min = 1;
+      if (min > 11) min = 11;
+      if (isNaN(max) || max < 2) max = 2;
+      if (max > 12) max = 12;
+
+      // Adjust min and max so min <= max
+      if (min > max) {
+        min = max;
+      }
+      // Ensure min is not above 11 and max is not below 2
+      if (min > 11) min = 11;
+      if (max < 2) max = 2;
+
+      minCarbonsInput.value = min;
+      maxCarbonsInput.value = max;
+
+      if (min > max) {
+        errorSpan.style.display = '';
+        errorSpan.textContent = "Minimum carbons must be less than or equal to maximum.";
+        return false;
+      } else {
+        errorSpan.style.display = 'none';
+        errorSpan.textContent = "";
+        return true;
+      }
+    }
+
+    minCarbonsInput.addEventListener('input', validateCarbons);
+    maxCarbonsInput.addEventListener('input', validateCarbons);
+    // Also prevent form submit on enter
+    document.getElementById('settings-form').addEventListener('submit', e => e.preventDefault());
   </script>
 </body>
 </html>

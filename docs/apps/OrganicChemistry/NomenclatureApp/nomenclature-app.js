@@ -59,11 +59,28 @@ function carbonCount(smiles) {
   return (smiles.match(/C(?![a-z])/g) || []).length;
 }
 
+// Helper: Get validated carbon range from settings; will clamp values as in the HTML
+function getCarbonRange() {
+  let min = parseInt(document.getElementById("min-carbons").value, 10);
+  let max = parseInt(document.getElementById("max-carbons").value, 10);
+
+  // Clamp values to allowed ranges
+  if (isNaN(min) || min < 1) min = 1;
+  if (min > 11) min = 11;
+  if (isNaN(max) || max < 2) max = 2;
+  if (max > 12) max = 12;
+  // Adjust min and max so min <= max
+  if (min > max) min = max;
+  if (min > 11) min = 11;
+  if (max < 2) max = 2;
+
+  return [min, max];
+}
+
 newProblemButton.addEventListener("click", () => {
   // Restrict problem selection to only currently selected functional groups and carbon number range
   const allowedFunctionalGroups = getCheckedFunctionalGroups();
-  const minCarbons = parseInt(document.getElementById("min-carbons").value, 10) || 1;
-  const maxCarbons = parseInt(document.getElementById("max-carbons").value, 10) || 12;
+  const [minCarbons, maxCarbons] = getCarbonRange();
 
   // Filter problems by group and carbon count
   const filteredProblems = problems.filter(molecule => {
