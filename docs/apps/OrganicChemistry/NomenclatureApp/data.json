@@ -216,22 +216,58 @@
     "smiles": "CCCCCCCCCCCC(=O)O"
   },
   {
-    "iupac_name": "acetone",
-    "common_name": null,
+    "iupac_name": "2-propanone",
+    "common_name": "acetone",
     "functional_groups": ["ketone"],
     "smiles": "CC(=O)C"
   },
   {
-    "iupac_name": "butanone",
+    "iupac_name": "2-butanone",
     "common_name": null,
     "functional_groups": ["ketone"],
     "smiles": "CCC(=O)C"
   },
   {
-    "iupac_name": "pentanone",
+    "iupac_name": "2-pentanone",
     "common_name": null,
     "functional_groups": ["ketone"],
     "smiles": "CCCC(=O)C"
+  },
+  {
+    "iupac_name": "2-hexanone",
+    "common_name": "hexan-2-one",
+    "functional_groups": ["ketone"],
+    "smiles": "CCCCC(=O)C"
+  },
+  {
+    "iupac_name": "3-hexanone",
+    "common_name": "hexan-3-one",
+    "functional_groups": ["ketone"],
+    "smiles": "CCC(=O)CCC"
+  },
+  {
+    "iupac_name": "2-heptanone",
+    "common_name": "heptan-2-one",
+    "functional_groups": ["ketone"],
+    "smiles": "CCCCCC(=O)C"
+  },
+  {
+    "iupac_name": "4-heptanone",
+    "common_name": "heptan-4-one",
+    "functional_groups": ["ketone"],
+    "smiles": "CC(=O)CCCC"
+  },
+  {
+    "iupac_name": "3-octanone",
+    "common_name": "octan-3-one",
+    "functional_groups": ["ketone"],
+    "smiles": "CCC(=O)CCCCC"
+  },
+  {
+    "iupac_name": "4-octanone",
+    "common_name": "octan-4-one",
+    "functional_groups": ["ketone"],
+    "smiles": "CCCC(=O)CCCC"
   },
   {
     "iupac_name": "ethanol",
