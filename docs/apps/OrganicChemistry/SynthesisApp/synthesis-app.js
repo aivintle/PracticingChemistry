@@ -3,28 +3,23 @@ const DATA_PATH = "../NomenclatureApp/data.json";
 const REACTIONS_PATH = "reactions.json";
 
 // DOM elements
-const settingsPanel = document.getElementById("settings-panel");
-const settingsToggleButton = document.getElementById("settings-toggle-button");
 const fgCheckboxesDiv = document.getElementById("functional-group-checkboxes");
 const newProblemButton = document.getElementById("new-problem-button");
 const showSolutionButton = document.getElementById("show-solution-button");
 const problemContent = document.getElementById("problem-content");
 const solutionDisplay = document.getElementById("solution-display");
 const solutionContent = document.getElementById("solution-content");
+const selectAllBtn = document.getElementById("select-all-fg-btn");
+const deselectAllBtn = document.getElementById("deselect-all-fg-btn");
+const minStepsInput = document.getElementById("min-steps");
+const maxStepsInput = document.getElementById("max-steps");
+const stepRangeError = document.getElementById("step-range-error");
 
 // App state
 let compounds = [];
 let reactions = [];
 let selectedFunctionalGroups = [];
 let currentProblem = null; // {start: compound, end: compound, path: [steps]}
-
-// Collapsible settings panel logic
-settingsToggleButton.addEventListener('click', () => {
-  const isHidden = settingsPanel.style.display === "none";
-  settingsPanel.style.display = isHidden ? "block" : "none";
-  settingsToggleButton.textContent = isHidden ? "Hide Settings" : "Show Settings";
-  settingsToggleButton.setAttribute('aria-expanded', isHidden ? "true" : "false");
-});
 
 // Fetch compounds and reactions data
 Promise.all([
@@ -49,6 +44,40 @@ function populateFunctionalGroupCheckboxes() {
   ).join("\n");
 }
 
+// Select/Deselect All Functional Group Checkboxes
+selectAllBtn.addEventListener('click', function() {
+  fgCheckboxesDiv.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
+});
+deselectAllBtn.addEventListener('click', function() {
+  fgCheckboxesDiv.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+});
+
+// Validate min/max steps
+function validateStepRange() {
+  let min = parseInt(minStepsInput.value, 10);
+  let max = parseInt(maxStepsInput.value, 10);
+
+  if (isNaN(min) || min < 1) min = 1;
+  if (min > 15) min = 15;
+  if (isNaN(max) || max < 1) max = 1;
+  if (max > 15) max = 15;
+  if (min > max) min = max;
+  minStepsInput.value = min;
+  maxStepsInput.value = max;
+
+  if (min > max) {
+    stepRangeError.style.display = '';
+    stepRangeError.textContent = "Min steps must be <= max steps.";
+    return false;
+  } else {
+    stepRangeError.style.display = 'none';
+    stepRangeError.textContent = "";
+    return true;
+  }
+}
+minStepsInput.addEventListener('input', validateStepRange);
+maxStepsInput.addEventListener('input', validateStepRange);
+
 // Get the functional groups selected by the user
 function getSelectedFunctionalGroups() {
   return Array.from(fgCheckboxesDiv.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
@@ -57,36 +86,101 @@ function getSelectedFunctionalGroups() {
 // Generate a new synthesis problem
 newProblemButton.addEventListener('click', () => {
   selectedFunctionalGroups = getSelectedFunctionalGroups();
-  // Filter compounds according to selected functional groups
-  const compoundsWithFG = compounds.filter(c =>
+  if (selectedFunctionalGroups.length === 0) {
+    problemContent.innerHTML = `<span style="color:red;">Please select at least one functional group.</span>`;
+    showSolutionButton.style.display = "none";
+    solutionDisplay.style.display = "none";
+    return;
+  }
+  if (!validateStepRange()) {
+    problemContent.innerHTML = `<span style="color:red;">Please enter a valid step range (min ≤ max, both 1-15).</span>`;
+    showSolutionButton.style.display = "none";
+    solutionDisplay.style.display = "none";
+    return;
+  }
+  // Get min/max steps from settings
+  const minSteps = parseInt(minStepsInput.value, 10);
+  const maxSteps = parseInt(maxStepsInput.value, 10);
+
+  // Filter compounds according to selected functional groups (for possible end products)
+  const allowedCompounds = compounds.filter(c =>
     c.functional_groups.some(fg => selectedFunctionalGroups.includes(fg))
   );
 
-  if (compoundsWithFG.length < 2) {
-    problemContent.innerHTML = `<span style="color:red;">Not enough compounds found for the selected functional groups. Please select more.</span>`;
+  // Filter reactions that only use allowed functional groups
+  const allowedReactions = reactions.filter(r =>
+    r.functional_groups.some(fg => selectedFunctionalGroups.includes(fg))
+  );
+
+  if (allowedCompounds.length < 2 || allowedReactions.length === 0) {
+    problemContent.innerHTML = `<span style="color:red;">Not enough data for selected functional groups. Please select more.</span>`;
     showSolutionButton.style.display = "none";
     solutionDisplay.style.display = "none";
     return;
   }
 
-  // Randomly select two different compounds
-  let start, end;
-  let tries = 0;
-  do {
-    start = compoundsWithFG[Math.floor(Math.random() * compoundsWithFG.length)];
-    end = compoundsWithFG[Math.floor(Math.random() * compoundsWithFG.length)];
-    tries++;
-  } while (start.smiles === end.smiles && tries < 10);
+  // Choose a random starting material from allowedCompounds
+  let start = allowedCompounds[Math.floor(Math.random() * allowedCompounds.length)];
 
-  if (start.smiles === end.smiles) {
-    problemContent.innerHTML = `<span style="color:red;">Failed to generate a problem. Please try again.</span>`;
+  // Try to build a random path of reactions without cycles, with path length between minSteps and maxSteps
+  let maxTries = 40;
+  let found = false;
+  let path = [];
+  let product = null;
+
+  for (let tries = 0; tries < maxTries && !found; tries++) {
+    let curr = start;
+    let currPath = [];
+    let visited = new Set([curr.smiles]);
+    let steps = 0;
+    let possible = true;
+
+    // Pick a random path length in the allowed range (inclusive)
+    let pathLen = (maxSteps === minSteps) ? minSteps 
+                  : minSteps + Math.floor(Math.random() * (maxSteps - minSteps + 1));
+
+    while (steps < pathLen) {
+      // Find possible next reactions for this compound
+      const nextReactions = allowedReactions.filter(r =>
+        r.reactants.length === 1 &&
+        r.reactants[0].smiles === curr.smiles &&
+        r.products.length === 1 &&
+        !visited.has(r.products[0].smiles)
+      );
+      if (nextReactions.length === 0) {
+        possible = false;
+        break;
+      }
+      // Randomly pick a next reaction
+      const reaction = nextReactions[Math.floor(Math.random() * nextReactions.length)];
+      const next = allowedCompounds.find(c => c.smiles === reaction.products[0].smiles);
+      if (!next) {
+        possible = false;
+        break;
+      }
+      currPath.push({ reaction, from: curr, to: next });
+      visited.add(next.smiles);
+      curr = next;
+      steps++;
+    }
+    // Only accept non-circular, proper paths, and ending material different than starting
+    if (possible && currPath.length >= minSteps && curr.smiles !== start.smiles) {
+      path = currPath;
+      product = curr;
+      found = true;
+      break;
+    }
+  }
+
+  if (!found || !product) {
+    problemContent.innerHTML = `<span style="color:red;">Failed to generate a synthesis path. Please try again or select more functional groups, or a different step range.</span>`;
     showSolutionButton.style.display = "none";
     solutionDisplay.style.display = "none";
     return;
   }
 
-  currentProblem = { start, end, path: null };
-  renderProblem(start, end);
+  currentProblem = { start, end: product, path };
+  renderProblem(start, product);
   showSolutionButton.style.display = "inline-block";
   solutionDisplay.style.display = "none";
 });
@@ -119,48 +213,14 @@ function renderProblem(start, end) {
 // Show solution button
 showSolutionButton.addEventListener('click', () => {
   if (!currentProblem) return;
-  // "Path finding": Check if there is a direct reaction. For now, just search one-step paths.
-  const path = findSynthesisPath(currentProblem.start, currentProblem.end);
-  currentProblem.path = path;
-  renderSolution(path);
+  renderSolution(currentProblem.path);
   solutionDisplay.style.display = "block";
 });
 
-// Simple path finding: direct or one-step
-function findSynthesisPath(start, end) {
-  // Direct (one-step)
-  const direct = reactions.find(r =>
-    r.reactants.length === 1 &&
-    r.reactants[0].smiles === start.smiles &&
-    r.products.length === 1 &&
-    r.products[0].smiles === end.smiles
-  );
-  if (direct) {
-    return [{ reaction: direct, from: start, to: end }];
-  }
-  // Try two-step: start -> intermediate -> end
-  for (const r1 of reactions) {
-    if (r1.reactants.length === 1 && r1.reactants[0].smiles === start.smiles) {
-      const intermediate = r1.products[0];
-      for (const r2 of reactions) {
-        if (r2.reactants.length === 1 && r2.reactants[0].smiles === intermediate.smiles &&
-            r2.products.length === 1 && r2.products[0].smiles === end.smiles) {
-          return [
-            { reaction: r1, from: start, to: intermediate },
-            { reaction: r2, from: intermediate, to: end }
-          ];
-        }
-      }
-    }
-  }
-  // Not found
-  return null;
-}
-
 // Render the solution path
 function renderSolution(path) {
-  if (!path) {
-    solutionContent.innerHTML = `<span style="color:red;">No solution found using available reactions (one or two steps).</span>`;
+  if (!path || !Array.isArray(path) || path.length === 0) {
+    solutionContent.innerHTML = `<span style="color:red;">No solution path found.</span>`;
     return;
   }
   const html = path.map((step, idx) => {
@@ -183,7 +243,7 @@ function renderSolution(path) {
   solutionContent.innerHTML = html;
 }
 
-// Accessibility: Hide solution on new problem
+// Hide solution on new problem
 newProblemButton.addEventListener('click', () => {
   solutionDisplay.style.display = "none";
 });

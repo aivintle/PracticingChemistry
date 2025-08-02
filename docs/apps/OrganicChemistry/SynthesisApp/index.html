@@ -6,20 +6,48 @@
   <title>Organic Chemistry Synthesis Practice App</title>
   <link rel="stylesheet" href="/PracticingChemistry/css/style.css" />
   <style>
-    .app-title {
+    .header-title-link {
+      color: inherit;
+      text-decoration: none;
       font-size: 2.2rem;
       font-weight: 700;
-      text-align: center;
-      margin: 1.5rem 0 2rem 0;
       letter-spacing: 2px;
-      color: var(--siena-green, #006341);
-      text-shadow: 1px 1px 3px rgba(0,99,65,0.08);
+      transition: color 0.2s, text-shadow 0.2s;
     }
-    @media (max-width: 700px) {
-      .app-title {
-        font-size: 1.45rem;
-        margin: 0.7rem 0 1.2rem 0;
-      }
+    .header-title-link:hover {
+      color: var(--siena-gold, #fbb040);
+      text-shadow: 1px 1px 6px rgba(251,176,64,0.12);
+    }
+    .select-deselect-btns {
+      margin-bottom: 0.5em;
+      margin-top: 0.5em;
+    }
+    .step-range-fields {
+      margin-bottom: 1em;
+      display: flex;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .step-range-fields label {
+      display: inline-block;
+      margin: 0;
+      font-weight: 500;
+      padding: 0;
+      background: none;
+      border: none;
+    }
+    .step-range-fields input[type="number"] {
+      width: 3em;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
+    #step-range-error {
+      color: red;
+      font-size: 0.95em;
+      margin-left: 1.5em;
+      margin-top: 0.5em;
+      display: block;
     }
   </style>
 </head>
@@ -29,6 +57,7 @@
     <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   </header>
   <nav>
+    <a href="/PracticingChemistry/index.html">Home</a>
     <a href="/PracticingChemistry/apps/GeneralChemistry/index.html">General Chemistry</a>
     <div class="dropdown">
       <a href="/PracticingChemistry/apps/OrganicChemistry/index.html">Organic Chemistry</a>
@@ -48,7 +77,25 @@
         <h2>Settings</h2>
         <form id="settings-form" autocomplete="off">
           <fieldset>
+            <legend>Step Range</legend>
+            <div class="step-range-fields">
+              <label>
+                Min Steps:
+                <input type="number" id="min-steps" min="1" max="15" value="1" required />
+              </label>
+              <label>
+                Max Steps:
+                <input type="number" id="max-steps" min="1" max="15" value="3" required />
+              </label>
+              <span id="step-range-error" style="display:none;"></span>
+            </div>
+          </fieldset>
+          <fieldset>
             <legend>Functional Groups</legend>
+            <div class="select-deselect-btns">
+              <button type="button" id="select-all-fg-btn">Select All</button>
+              <button type="button" id="deselect-all-fg-btn">Deselect All</button>
+            </div>
             <div id="functional-group-checkboxes">
               <!-- JS will fill this in -->
             </div>
@@ -69,7 +116,7 @@
   </main>
   <footer>
     <p>&copy; 2025 Practicing Chemistry. All rights reserved.</p>
-    <p>Version 1.000</p>
+    <p>Version 1.001</p>
   </footer>
   <script src="synthesis-app.js"></script>
   <script>
