@@ -2,132 +2,150 @@
   {
     "iupac_name": "methane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "C"
   },
   {
     "iupac_name": "ethane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "CC"
   },
   {
     "iupac_name": "propane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "CCC"
   },
   {
     "iupac_name": "butane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "CCCC"
+  },
+  {
+    "iupac_name": "2-methylpropane",
+    "common_name": "isobutane",
+    "functional_groups": ["alkane"],
+    "smiles": "CC(C)C"
   },
   {
     "iupac_name": "pentane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "CCCCC"
+  },
+  {
+    "iupac_name": "2-methylbutane",
+    "common_name": "isopentane",
+    "functional_groups": ["alkane"],
+    "smiles": "CCC(C)C"
+  },
+  {
+    "iupac_name": "2,2-dimethylpropane",
+    "common_name": "neopentane",
+    "functional_groups": ["alkane"],
+    "smiles": "CC(C)(C)C"
   },
   {
     "iupac_name": "hexane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "CCCCCC"
   },
   {
     "iupac_name": "heptane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "CCCCCCC"
   },
   {
     "iupac_name": "octane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "CCCCCCCC"
   },
   {
     "iupac_name": "nonane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "CCCCCCCCC"
   },
   {
     "iupac_name": "decane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "CCCCCCCCCC"
   },
   {
     "iupac_name": "undecane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "CCCCCCCCCCC"
   },
   {
     "iupac_name": "dodecane",
     "common_name": null,
-    "functional_groups": ["alkyl"],
+    "functional_groups": ["alkane"],
     "smiles": "CCCCCCCCCCCC"
   },
   {
-    "iupac_name": "formaldehyde",
-    "common_name": "formalin",
+    "iupac_name": "methanal",
+    "common_name": "formaldehyde",
     "functional_groups": ["aldehyde"],
-    "smiles": "O=CO"
+    "smiles": "C=O"
   },
   {
-    "iupac_name": "acetaldehyde",
-    "common_name": null,
+    "iupac_name": "ethanal",
+    "common_name": "acetaldehyde",
     "functional_groups": ["aldehyde"],
     "smiles": "CC=O"
   },
   {
-    "iupac_name": "propionaldehyde",
-    "common_name": null,
+    "iupac_name": "propanal",
+    "common_name": "propionaldehyde",
     "functional_groups": ["aldehyde"],
     "smiles": "CCC=O"
   },
   {
-    "iupac_name": "butyraldehyde",
-    "common_name": null,
+    "iupac_name": "butanal",
+    "common_name": "butyraldehyde",
     "functional_groups": ["aldehyde"],
     "smiles": "CCCC=O"
   },
   {
-    "iupac_name": "valeraldehyde",
-    "common_name": null,
+    "iupac_name": "pentanal",
+    "common_name": "valeraldehyde",
     "functional_groups": ["aldehyde"],
     "smiles": "CCCCC=O"
   },
   {
     "iupac_name": "hexanal",
-    "common_name": null,
+    "common_name": "caproaldehyde",
     "functional_groups": ["aldehyde"],
     "smiles": "CCCCCC=O"
   },
   {
     "iupac_name": "heptanal",
-    "common_name": null,
+    "common_name": "enanthaldehyde",
     "functional_groups": ["aldehyde"],
     "smiles": "CCCCCCC=O"
   },
   {
     "iupac_name": "octanal",
-    "common_name": null,
+    "common_name": "caprylaldehyde",
     "functional_groups": ["aldehyde"],
     "smiles": "CCCCCCCC=O"
   },
   {
     "iupac_name": "nonanal",
-    "common_name": null,
+    "common_name": "pelargonaldehyde",
     "functional_groups": ["aldehyde"],
     "smiles": "CCCCCCCCC=O"
   },
   {
     "iupac_name": "decanal",
-    "common_name": null,
+    "common_name": "capraldehyde",
     "functional_groups": ["aldehyde"],
     "smiles": "CCCCCCCCCC=O"
   },
@@ -139,67 +157,85 @@
   },
   {
     "iupac_name": "dodecanal",
-    "common_name": null,
+    "common_name": "lauraldehyde",
     "functional_groups": ["aldehyde"],
     "smiles": "CCCCCCCCCCCC=O"
   },
   {
-    "iupac_name": "formic acid",
-    "common_name": "methanoic acid",
-    "functional_groups": ["carboxylic-acid"],
-    "smiles": "O=CO"
+    "iupac_name": "2-methylpropanal",
+    "common_name": "isobutyraldehyde",
+    "functional_groups": ["aldehyde"],
+    "smiles": "CC(C)C=O"
   },
   {
-    "iupac_name": "acetic acid",
-    "common_name": "ethanoic acid",
+    "iupac_name": "3-methylbutanal",
+    "common_name": "isovaleraldehyde",
+    "functional_groups": ["aldehyde"],
+    "smiles": "CC(C)CC=O"
+  },
+  {
+    "iupac_name": "2,2-dimethylpropanal",
+    "common_name": "pivaldehyde",
+    "functional_groups": ["aldehyde"],
+    "smiles": "CC(C)(C)C=O"
+  },
+  {
+    "iupac_name": "methanoic acid",
+    "common_name": "formic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "C(=O)O"
+  },
+  {
+    "iupac_name": "ethanoic acid",
+    "common_name": "acetic acid",
     "functional_groups": ["carboxylic-acid"],
     "smiles": "CC(=O)O"
   },
   {
-    "iupac_name": "propionic acid",
-    "common_name": "propanoic acid",
+    "iupac_name": "propanoic acid",
+    "common_name": "propionic acid",
     "functional_groups": ["carboxylic-acid"],
     "smiles": "CCC(=O)O"
   },
   {
-    "iupac_name": "butyric acid",
-    "common_name": "butanoic acid",
+    "iupac_name": "butanoic acid",
+    "common_name": "butyric acid",
     "functional_groups": ["carboxylic-acid"],
     "smiles": "CCCC(=O)O"
   },
   {
-    "iupac_name": "valeric acid",
-    "common_name": "pentanoic acid",
+    "iupac_name": "pentanoic acid",
+    "common_name": "valeric acid",
     "functional_groups": ["carboxylic-acid"],
     "smiles": "CCCCC(=O)O"
   },
   {
-    "iupac_name": "caproic acid",
-    "common_name": "hexanoic acid",
+    "iupac_name": "hexanoic acid",
+    "common_name": "caproic acid",
     "functional_groups": ["carboxylic-acid"],
     "smiles": "CCCCCC(=O)O"
   },
   {
-    "iupac_name": "enanthic acid",
-    "common_name": "heptanoic acid",
+    "iupac_name": "heptanoic acid",
+    "common_name": "enanthic acid",
     "functional_groups": ["carboxylic-acid"],
     "smiles": "CCCCCCC(=O)O"
   },
   {
-    "iupac_name": "caprylic acid",
-    "common_name": "octanoic acid",
+    "iupac_name": "octanoic acid",
+    "common_name": "caprylic acid",
     "functional_groups": ["carboxylic-acid"],
     "smiles": "CCCCCCCC(=O)O"
   },
   {
-    "iupac_name": "pelargonic acid",
-    "common_name": "nonanoic acid",
+    "iupac_name": "nonanoic acid",
+    "common_name": "pelargonic acid",
     "functional_groups": ["carboxylic-acid"],
     "smiles": "CCCCCCCCC(=O)O"
   },
   {
-    "iupac_name": "capric acid",
-    "common_name": "decanoic acid",
+    "iupac_name": "decanoic acid",
+    "common_name": "capric acid",
     "functional_groups": ["carboxylic-acid"],
     "smiles": "CCCCCCCCCC(=O)O"
   },
@@ -216,58 +252,82 @@
     "smiles": "CCCCCCCCCCCC(=O)O"
   },
   {
-    "iupac_name": "2-propanone",
+    "iupac_name": "2-methylpropanoic acid",
+    "common_name": "isobutyric acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CC(C)C(=O)O"
+  },
+  {
+    "iupac_name": "3-methylbutanoic acid",
+    "common_name": "isovaleric acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CC(C)CC(=O)O"
+  },
+  {
+    "iupac_name": "2,2-dimethylpropanoic acid",
+    "common_name": "pivalic acid",
+    "functional_groups": ["carboxylic-acid"],
+    "smiles": "CC(C)(C)C(=O)O"
+  },
+  {
+    "iupac_name": "propan-2-one",
     "common_name": "acetone",
     "functional_groups": ["ketone"],
     "smiles": "CC(=O)C"
   },
   {
-    "iupac_name": "2-butanone",
-    "common_name": null,
+    "iupac_name": "butan-2-one",
+    "common_name": "methyl ethyl ketone",
     "functional_groups": ["ketone"],
     "smiles": "CCC(=O)C"
   },
   {
-    "iupac_name": "2-pentanone",
-    "common_name": null,
+    "iupac_name": "pentan-2-one",
+    "common_name": "methyl propyl ketone",
     "functional_groups": ["ketone"],
     "smiles": "CCCC(=O)C"
   },
   {
-    "iupac_name": "2-hexanone",
-    "common_name": "hexan-2-one",
+    "iupac_name": "hexan-2-one",
+    "common_name": "butyl methyl ketone",
     "functional_groups": ["ketone"],
     "smiles": "CCCCC(=O)C"
   },
   {
-    "iupac_name": "3-hexanone",
-    "common_name": "hexan-3-one",
+    "iupac_name": "hexan-3-one",
+    "common_name": "diethyl ketone",
     "functional_groups": ["ketone"],
     "smiles": "CCC(=O)CCC"
   },
   {
-    "iupac_name": "2-heptanone",
-    "common_name": "heptan-2-one",
+    "iupac_name": "heptan-2-one",
+    "common_name": "methyl pentyl ketone",
     "functional_groups": ["ketone"],
     "smiles": "CCCCCC(=O)C"
   },
   {
-    "iupac_name": "4-heptanone",
-    "common_name": "heptan-4-one",
+    "iupac_name": "heptan-4-one",
+    "common_name": "dipropyl ketone",
     "functional_groups": ["ketone"],
-    "smiles": "CC(=O)CCCC"
+    "smiles": "CCCC(=O)CCC"
   },
   {
-    "iupac_name": "3-octanone",
-    "common_name": "octan-3-one",
+    "iupac_name": "octan-3-one",
+    "common_name": "ethyl pentyl ketone",
     "functional_groups": ["ketone"],
     "smiles": "CCC(=O)CCCCC"
   },
   {
-    "iupac_name": "4-octanone",
-    "common_name": "octan-4-one",
+    "iupac_name": "octan-4-one",
+    "common_name": "butyl propyl ketone",
     "functional_groups": ["ketone"],
     "smiles": "CCCC(=O)CCCC"
+  },
+  {
+    "iupac_name": "methanol",
+    "common_name": "methyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CO"
   },
   {
     "iupac_name": "ethanol",
@@ -276,93 +336,933 @@
     "smiles": "CCO"
   },
   {
-    "iupac_name": "propanol",
+    "iupac_name": "propan-1-ol",
     "common_name": "propyl alcohol",
     "functional_groups": ["alcohol"],
     "smiles": "CCCO"
   },
   {
-    "iupac_name": "butanol",
+    "iupac_name": "propan-2-ol",
+    "common_name": "isopropyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CC(C)O"
+  },
+  {
+    "iupac_name": "butan-1-ol",
     "common_name": "butyl alcohol",
     "functional_groups": ["alcohol"],
     "smiles": "CCCCO"
   },
   {
-    "iupac_name": "methylamine",
+    "iupac_name": "butan-2-ol",
+    "common_name": "sec-butyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCC(C)O"
+  },
+  {
+    "iupac_name": "pentan-1-ol",
+    "common_name": "pentyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCCO"
+  },
+  {
+    "iupac_name": "pentan-2-ol",
     "common_name": null,
-    "functional_groups": ["amino"],
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCC(C)O"
+  },
+  {
+    "iupac_name": "pentan-3-ol",
+    "common_name": null,
+    "functional_groups": ["alcohol"],
+    "smiles": "CCC(O)CC"
+  },
+  {
+    "iupac_name": "hexan-1-ol",
+    "common_name": "hexyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCCCO"
+  },
+  {
+    "iupac_name": "hexan-2-ol",
+    "common_name": null,
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCC(C)O"
+  },
+  {
+    "iupac_name": "hexan-3-ol",
+    "common_name": null,
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCC(O)CC"
+  },
+  {
+    "iupac_name": "heptan-1-ol",
+    "common_name": "heptyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCCCCO"
+  },
+  {
+    "iupac_name": "octan-1-ol",
+    "common_name": "octyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCCCCCO"
+  },
+  {
+    "iupac_name": "nonan-1-ol",
+    "common_name": "nonyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCCCCCCO"
+  },
+  {
+    "iupac_name": "decan-1-ol",
+    "common_name": "decyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCCCCCCO"
+  },
+  {
+    "iupac_name": "undecan-1-ol",
+    "common_name": "undecyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCCCCCCCCO"
+  },
+  {
+    "iupac_name": "dodecan-1-ol",
+    "common_name": "dodecyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCCCCCCCCCO"
+  },
+  {
+    "iupac_name": "2-methylpropan-1-ol",
+    "common_name": "isobutyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CC(C)CO"
+  },
+  {
+    "iupac_name": "3-methylbutan-1-ol",
+    "common_name": "isoamyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CC(C)CCO"
+  },
+  {
+    "iupac_name": "2,2-dimethylpropan-1-ol",
+    "common_name": "neopentyl alcohol",
+    "functional_groups": ["alcohol"],
+    "smiles": "CC(C)(C)CO"
+  },
+  {
+    "iupac_name": "heptan-2-ol",
+    "common_name": null,
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCCC(C)O"
+  },
+  {
+    "iupac_name": "heptan-4-ol",
+    "common_name": null,
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCC(O)CCC"
+  },
+  {
+    "iupac_name": "octan-3-ol",
+    "common_name": null,
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCCC(O)CC"
+  },
+  {
+    "iupac_name": "octan-4-ol",
+    "common_name": null,
+    "functional_groups": ["alcohol"],
+    "smiles": "CCCC(O)CCCC"
+  },
+  {
+    "iupac_name": "methanamine",
+    "common_name": "methylamine",
+    "functional_groups": ["amine"],
     "smiles": "CN"
   },
   {
-    "iupac_name": "ethylamine",
-    "common_name": null,
-    "functional_groups": ["amino"],
+    "iupac_name": "ethanamine",
+    "common_name": "ethylamine",
+    "functional_groups": ["amine"],
     "smiles": "CCN"
   },
   {
-    "iupac_name": "propylamine",
+    "iupac_name": "propan-1-amine",
+    "common_name": "propylamine",
+    "functional_groups": ["amine"],
+    "smiles": "CCCN"
+  },
+  {
+    "iupac_name": "propan-2-amine",
+    "common_name": "isopropylamine",
+    "functional_groups": ["amine"],
+    "smiles": "CC(N)C"
+  },
+  {
+    "iupac_name": "butan-1-amine",
+    "common_name": "butylamine",
+    "functional_groups": ["amine"],
+    "smiles": "CCCCN"
+  },
+  {
+    "iupac_name": "butan-2-amine",
+    "common_name": "sec-butylamine",
+    "functional_groups": ["amine"],
+    "smiles": "CCC(N)C"
+  },
+  {
+    "iupac_name": "pentan-1-amine",
+    "common_name": "pentylamine",
+    "functional_groups": ["amine"],
+    "smiles": "CCCCCN"
+  },
+  {
+    "iupac_name": "pentan-2-amine",
     "common_name": null,
-    "functional_groups": ["amino"],
-    "smiles": "CCC(N)"
+    "functional_groups": ["amine"],
+    "smiles": "CCCC(N)C"
+  },
+  {
+    "iupac_name": "pentan-3-amine",
+    "common_name": null,
+    "functional_groups": ["amine"],
+    "smiles": "CCC(N)CC"
+  },
+  {
+    "iupac_name": "hexan-1-amine",
+    "common_name": "hexylamine",
+    "functional_groups": ["amine"],
+    "smiles": "CCCCCCN"
+  },
+  {
+    "iupac_name": "hexan-2-amine",
+    "common_name": null,
+    "functional_groups": ["amine"],
+    "smiles": "CCCCC(N)C"
+  },
+  {
+    "iupac_name": "hexan-3-amine",
+    "common_name": null,
+    "functional_groups": ["amine"],
+    "smiles": "CCCC(N)CC"
   },
   {
     "iupac_name": "methanethiol",
-    "common_name": null,
+    "common_name": "methyl mercaptan",
     "functional_groups": ["thiol"],
     "smiles": "CS"
   },
   {
     "iupac_name": "ethanethiol",
-    "common_name": null,
+    "common_name": "ethyl mercaptan",
     "functional_groups": ["thiol"],
     "smiles": "CCS"
   },
   {
-    "iupac_name": "propanethiol",
-    "common_name": null,
+    "iupac_name": "propan-1-thiol",
+    "common_name": "propyl mercaptan",
     "functional_groups": ["thiol"],
     "smiles": "CCCS"
   },
   {
-    "iupac_name": "dimethyl ether",
-    "common_name": null,
+    "iupac_name": "methoxymathane",
+    "common_name": "dimethyl ether",
     "functional_groups": ["ether"],
     "smiles": "COC"
   },
   {
-    "iupac_name": "diethyl ether",
-    "common_name": null,
+    "iupac_name": "ethoxyethane",
+    "common_name": "diethyl ether",
     "functional_groups": ["ether"],
     "smiles": "CCOCC"
   },
   {
-    "iupac_name": "dipropyl ether",
-    "common_name": null,
+    "iupac_name": "1-propoxypropane",
+    "common_name": "dipropyl ether",
     "functional_groups": ["ether"],
     "smiles": "CCCOCCC"
   },
   {
-    "iupac_name": "methyl ethyl ether",
-    "common_name": null,
+    "iupac_name": "methoxyethane",
+    "common_name": "methyl ethyl ether",
     "functional_groups": ["ether"],
     "smiles": "COCC"
   },
   {
-    "iupac_name": "methyl propyl ether",
-    "common_name": null,
+    "iupac_name": "1-methoxypropane",
+    "common_name": "methyl propyl ether",
     "functional_groups": ["ether"],
     "smiles": "COCCC"
   },
   {
-    "iupac_name": "ethyl propyl ether",
-    "common_name": null,
+    "iupac_name": "1-ethoxypropane",
+    "common_name": "ethyl propyl ether",
     "functional_groups": ["ether"],
     "smiles": "CCOCCC"
   },
   {
-    "iupac_name": "methyl butyl ether",
-    "common_name": null,
+    "iupac_name": "1-methoxybutane",
+    "common_name": "methyl butyl ether",
     "functional_groups": ["ether"],
     "smiles": "COCCCC"
+  },
+  {
+    "iupac_name": "2-propoxypropane",
+    "common_name": "diisopropyl ether",
+    "functional_groups": ["ether"],
+    "smiles": "CC(C)OC(C)C"
+  },
+  {
+    "iupac_name": "2-methoxybutane",
+    "common_name": "sec-butyl methyl ether",
+    "functional_groups": ["ether"],
+    "smiles": "CCC(C)OC"
+  },
+  {
+    "iupac_name": "1-ethoxybutane",
+    "common_name": "butyl ethyl ether",
+    "functional_groups": ["ether"],
+    "smiles": "CCCCOCC"
+  },
+  {
+    "iupac_name": "2-ethoxybutane",
+    "common_name": "sec-butyl ethyl ether",
+    "functional_groups": ["ether"],
+    "smiles": "CCC(C)OCC"
+  },
+  {
+    "iupac_name": "2-ethoxypropane",
+    "common_name": "ethyl isopropyl ether",
+    "functional_groups": ["ether"],
+    "smiles": "CC(C)OCC"
+  },
+  {
+    "iupac_name": "1-butoxybutane",
+    "common_name": "dibutyl ether",
+    "functional_groups": ["ether"],
+    "smiles": "CCCCOCCCC"
+  },
+  {
+    "iupac_name": "3-methoxypentane",
+    "common_name": null,
+    "functional_groups": ["ether"],
+    "smiles": "CCC(OC)CC"
+  },
+  {
+    "iupac_name": "2-ethoxyhexane",
+    "common_name": null,
+    "functional_groups": ["ether"],
+    "smiles": "CCCCC(C)OCC"
+  },
+  {
+    "iupac_name": "methanoyl chloride",
+    "common_name": "formyl chloride",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "C(=O)Cl"
+  },
+  {
+    "iupac_name": "methanoyl bromide",
+    "common_name": "formyl bromide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "C(=O)Br"
+  },
+  {
+    "iupac_name": "methanoyl iodide",
+    "common_name": "formyl iodide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "C(=O)I"
+  },
+  {
+    "iupac_name": "ethanoyl chloride",
+    "common_name": "acetyl chloride",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(=O)Cl"
+  },
+  {
+    "iupac_name": "ethanoyl bromide",
+    "common_name": "acetyl bromide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(=O)Br"
+  },
+  {
+    "iupac_name": "ethanoyl iodide",
+    "common_name": "acetyl iodide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(=O)I"
+  },
+  {
+    "iupac_name": "propanoyl chloride",
+    "common_name": "propionyl chloride",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCC(=O)Cl"
+  },
+  {
+    "iupac_name": "propanoyl bromide",
+    "common_name": "propionyl bromide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCC(=O)Br"
+  },
+  {
+    "iupac_name": "propanoyl iodide",
+    "common_name": "propionyl iodide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCC(=O)I"
+  },
+  {
+    "iupac_name": "butanoyl chloride",
+    "common_name": "butyryl chloride",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCCC(=O)Cl"
+  },
+  {
+    "iupac_name": "butanoyl bromide",
+    "common_name": "butyryl bromide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCCC(=O)Br"
+  },
+  {
+    "iupac_name": "butanoyl iodide",
+    "common_name": "butyryl iodide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCCC(=O)I"
+  },
+  {
+    "iupac_name": "pentanoyl chloride",
+    "common_name": "valeryl chloride",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCCCC(=O)Cl"
+  },
+  {
+    "iupac_name": "pentanoyl bromide",
+    "common_name": "valeryl bromide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCCCC(=O)Br"
+  },
+  {
+    "iupac_name": "pentanoyl iodide",
+    "common_name": "valeryl iodide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCCCC(=O)I"
+  },
+  {
+    "iupac_name": "hexanoyl chloride",
+    "common_name": "caproyl chloride",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCCCCC(=O)Cl"
+  },
+  {
+    "iupac_name": "hexanoyl bromide",
+    "common_name": "caproyl bromide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCCCCC(=O)Br"
+  },
+  {
+    "iupac_name": "hexanoyl iodide",
+    "common_name": "caproyl iodide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CCCCCC(=O)I"
+  },
+  {
+    "iupac_name": "2-methylpropanoyl chloride",
+    "common_name": "isobutyryl chloride",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(C)C(=O)Cl"
+  },
+  {
+    "iupac_name": "2-methylpropanoyl bromide",
+    "common_name": "isobutyryl bromide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(C)C(=O)Br"
+  },
+  {
+    "iupac_name": "2-methylpropanoyl iodide",
+    "common_name": "isobutyryl iodide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(C)C(=O)I"
+  },
+  {
+    "iupac_name": "3-methylbutanoyl chloride",
+    "common_name": "isovaleryl chloride",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(C)CC(=O)Cl"
+  },
+  {
+    "iupac_name": "3-methylbutanoyl bromide",
+    "common_name": "isovaleryl bromide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(C)CC(=O)Br"
+  },
+  {
+    "iupac_name": "3-methylbutanoyl iodide",
+    "common_name": "isovaleryl iodide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(C)CC(=O)I"
+  },
+  {
+    "iupac_name": "2,2-dimethylpropanoyl chloride",
+    "common_name": "pivaloyl chloride",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(C)(C)C(=O)Cl"
+  },
+  {
+    "iupac_name": "2,2-dimethylpropanoyl bromide",
+    "common_name": "pivaloyl bromide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(C)(C)C(=O)Br"
+  },
+  {
+    "iupac_name": "2,2-dimethylpropanoyl iodide",
+    "common_name": "pivaloyl iodide",
+    "functional_groups": ["acyl-halide"],
+    "smiles": "CC(C)(C)C(=O)I"
+  },
+  {
+    "iupac_name": "chloromethane",
+    "common_name": "methyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCl"
+  },
+  {
+    "iupac_name": "bromomethane",
+    "common_name": "methyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CBr"
+  },
+  {
+    "iupac_name": "iodomethane",
+    "common_name": "methyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CI"
+  },
+  {
+    "iupac_name": "chloroethane",
+    "common_name": "ethyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCCl"
+  },
+  {
+    "iupac_name": "bromoethane",
+    "common_name": "ethyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCBr"
+  },
+  {
+    "iupac_name": "iodoethane",
+    "common_name": "ethyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCI"
+  },
+  {
+    "iupac_name": "1-chloropropane",
+    "common_name": "propyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCl"
+  },
+  {
+    "iupac_name": "1-bromopropane",
+    "common_name": "propyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCBr"
+  },
+  {
+    "iupac_name": "1-iodopropane",
+    "common_name": "propyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCI"
+  },
+  {
+    "iupac_name": "2-chloropropane",
+    "common_name": "isopropyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)Cl"
+  },
+  {
+    "iupac_name": "2-bromopropane",
+    "common_name": "isopropyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)Br"
+  },
+  {
+    "iupac_name": "2-iodopropane",
+    "common_name": "isopropyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)I"
+  },
+  {
+    "iupac_name": "1-chlorobutane",
+    "common_name": "butyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCl"
+  },
+  {
+    "iupac_name": "1-bromobutane",
+    "common_name": "butyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCBr"
+  },
+  {
+    "iupac_name": "1-iodobutane",
+    "common_name": "butyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCI"
+  },
+  {
+    "iupac_name": "2-chlorobutane",
+    "common_name": "sec-butyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCC(C)Cl"
+  },
+  {
+    "iupac_name": "2-bromobutane",
+    "common_name": "sec-butyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCC(C)Br"
+  },
+  {
+    "iupac_name": "2-iodobutane",
+    "common_name": "sec-butyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCC(C)I"
+  },
+  {
+    "iupac_name": "1-chloropentane",
+    "common_name": "pentyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCl"
+  },
+  {
+    "iupac_name": "1-bromopentane",
+    "common_name": "pentyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCBr"
+  },
+  {
+    "iupac_name": "1-iodopentane",
+    "common_name": "pentyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCI"
+  },
+  {
+    "iupac_name": "2-chloropentane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(C)Cl"
+  },
+  {
+    "iupac_name": "2-bromopentane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(C)Br"
+  },
+  {
+    "iupac_name": "2-iodopentane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(C)I"
+  },
+  {
+    "iupac_name": "3-chloropentane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCC(Cl)CC"
+  },
+  {
+    "iupac_name": "3-bromopentane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCC(Br)CC"
+  },
+  {
+    "iupac_name": "3-iodopentane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCC(I)CC"
+  },
+  {
+    "iupac_name": "1-chlorohexane",
+    "common_name": "hexyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCl"
+  },
+  {
+    "iupac_name": "1-bromohexane",
+    "common_name": "hexyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCBr"
+  },
+  {
+    "iupac_name": "1-iodohexane",
+    "common_name": "hexyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCI"
+  },
+  {
+    "iupac_name": "2-chlorohexane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCCC(C)Cl"
+  },
+  {
+    "iupac_name": "2-bromohexane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCCC(C)Br"
+  },
+  {
+    "iupac_name": "2-iodohexane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCCC(C)I"
+  },
+  {
+    "iupac_name": "3-chlorohexane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(Cl)CC"
+  },
+  {
+    "iupac_name": "3-bromohexane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(Br)CC"
+  },
+  {
+    "iupac_name": "3-iodohexane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(I)CC"
+  },
+  {
+    "iupac_name": "1-chloroheptane",
+    "common_name": "heptyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCl"
+  },
+  {
+    "iupac_name": "1-bromoheptane",
+    "common_name": "heptyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCBr"
+  },
+  {
+    "iupac_name": "1-iodoheptane",
+    "common_name": "heptyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCI"
+  },
+  {
+    "iupac_name": "1-chlorooctane",
+    "common_name": "octyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCl"
+  },
+  {
+    "iupac_name": "1-bromooctane",
+    "common_name": "octyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCBr"
+  },
+  {
+    "iupac_name": "1-iodooctane",
+    "common_name": "octyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCI"
+  },
+  {
+    "iupac_name": "1-chlorononane",
+    "common_name": "nonyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCCl"
+  },
+  {
+    "iupac_name": "1-bromononane",
+    "common_name": "nonyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCBr"
+  },
+  {
+    "iupac_name": "1-iodononane",
+    "common_name": "nonyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCI"
+  },
+  {
+    "iupac_name": "1-chlorodecane",
+    "common_name": "decyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCCCl"
+  },
+  {
+    "iupac_name": "1-bromodecane",
+    "common_name": "decyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCCBr"
+  },
+  {
+    "iupac_name": "1-iododecane",
+    "common_name": "decyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCCI"
+  },
+  {
+    "iupac_name": "1-chloroundecane",
+    "common_name": "undecyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCCCCl"
+  },
+  {
+    "iupac_name": "1-bromoundecane",
+    "common_name": "undecyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCCCBr"
+  },
+  {
+    "iupac_name": "1-iodoundecane",
+    "common_name": "undecyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCCCI"
+  },
+  {
+    "iupac_name": "1-chlorododecane",
+    "common_name": "dodecyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCCCCCl"
+  },
+  {
+    "iupac_name": "1-bromododecane",
+    "common_name": "dodecyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCCCCBr"
+  },
+  {
+    "iupac_name": "1-iodododecane",
+    "common_name": "dodecyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCCCCCCCCI"
+  },
+  {
+    "iupac_name": "1-chloro-2-methylpropane",
+    "common_name": "isobutyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)CCl"
+  },
+  {
+    "iupac_name": "1-bromo-2-methylpropane",
+    "common_name": "isobutyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)CBr"
+  },
+  {
+    "iupac_name": "1-iodo-2-methylpropane",
+    "common_name": "isobutyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)CI"
+  },
+  {
+    "iupac_name": "1-chloro-3-methylbutane",
+    "common_name": "isoamyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)CCCl"
+  },
+  {
+    "iupac_name": "1-bromo-3-methylbutane",
+    "common_name": "isoamyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)CCBr"
+  },
+  {
+    "iupac_name": "1-iodo-3-methylbutane",
+    "common_name": "isoamyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)CCI"
+  },
+  {
+    "iupac_name": "1-chloro-2,2-dimethylpropane",
+    "common_name": "neopentyl chloride",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)(C)CCl"
+  },
+  {
+    "iupac_name": "1-bromo-2,2-dimethylpropane",
+    "common_name": "neopentyl bromide",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)(C)CBr"
+  },
+  {
+    "iupac_name": "1-iodo-2,2-dimethylpropane",
+    "common_name": "neopentyl iodide",
+    "functional_groups": ["halide"],
+    "smiles": "CC(C)(C)CI"
+  },
+  {
+    "iupac_name": "2-chloroheptane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCC(C)Cl"
+  },
+  {
+    "iupac_name": "2-bromoheptane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCC(C)Br"
+  },
+  {
+    "iupac_name": "2-iodoheptane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCCCC(C)I"
+  },
+  {
+    "iupac_name": "4-chloroheptane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(Cl)CCC"
+  },
+  {
+    "iupac_name": "4-bromoheptane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(Br)CCC"
+  },
+  {
+    "iupac_name": "4-iodoheptane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(I)CCC"
+  },
+  {
+    "iupac_name": "3-chlorooctane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCCC(Cl)CC"
+  },
+  {
+    "iupac_name": "3-bromooctane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCCC(Br)CC"
+  },
+  {
+    "iupac_name": "3-iodooctane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCCC(I)CC"
+  },
+  {
+    "iupac_name": "4-chlorooctane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(Cl)CCCC"
+  },
+  {
+    "iupac_name": "4-bromooctane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(Br)CCCC"
+  },
+  {
+    "iupac_name": "4-iodooctane",
+    "common_name": null,
+    "functional_groups": ["halide"],
+    "smiles": "CCCC(I)CCCC"
   }
 ]
