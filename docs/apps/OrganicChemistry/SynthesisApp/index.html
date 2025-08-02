@@ -148,6 +148,20 @@
       const currentTheme = document.body.getAttribute("data-theme");
       document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
     }
+
+    // --- Min/Max Step Live Validation ---
+    const minStepsInput = document.getElementById('min-steps');
+    const maxStepsInput = document.getElementById('max-steps');
+    minStepsInput.addEventListener('input', function() {
+      if (parseInt(minStepsInput.value, 10) > parseInt(maxStepsInput.value, 10)) {
+        maxStepsInput.value = minStepsInput.value;
+      }
+    });
+    maxStepsInput.addEventListener('input', function() {
+      if (parseInt(maxStepsInput.value, 10) < parseInt(minStepsInput.value, 10)) {
+        minStepsInput.value = maxStepsInput.value;
+      }
+    });
   </script>
 </body>
 </html>

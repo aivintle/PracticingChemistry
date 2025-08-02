@@ -54,18 +54,15 @@ deselectAllBtn.addEventListener('click', function() {
 
 // Validate min/max steps as positive integers and min ≤ max
 function validateStepRange() {
-  let min = parseInt(minStepsInput.value, 10);
-  let max = parseInt(maxStepsInput.value, 10);
+  let min = Number(minStepsInput.value);
+  let max = Number(maxStepsInput.value);
 
   // Only allow positive integers within the range 1-15
-  if (isNaN(min) || min < 1) min = 1;
-  if (!Number.isInteger(min)) min = Math.floor(min);
+  if (!Number.isInteger(min) || min < 1) min = 1;
   if (min > 15) min = 15;
-  if (isNaN(max) || max < 1) max = 1;
-  if (!Number.isInteger(max)) max = Math.floor(max);
+  if (!Number.isInteger(max) || max < 1) max = 1;
   if (max > 15) max = 15;
 
-  // Fix the fields if user input was invalid
   minStepsInput.value = min;
   maxStepsInput.value = max;
 
@@ -87,15 +84,25 @@ function getSelectedFunctionalGroups() {
   return Array.from(fgCheckboxesDiv.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
 }
 
-// --- NEW: Find a path from start to end compound using allowed reactions (DFS, no cycles), up to maxDepth ---
-
-function findSynthesisPathDFS(start, end, allowedReactions, allowedCompounds, maxDepth, visited = new Set()) {
-  // Returns an array of steps or null if not found
-  if (start.smiles === end.smiles) return [];
-  if (maxDepth === 0) return null;
+// --- Find a path from start to end compound using allowed reactions (DFS, no cycles), up to maxDepth ---
+function findSynthesisPathWithExactSteps(start, end, allowedReactions, allowedCompounds, steps, visited = new Set()) {
+  if (steps < 1) return null;
+  if (steps === 1) {
+    // Direct connection
+    const direct = allowedReactions.find(r =>
+      r.reactants.length === 1 &&
+      r.reactants[0].smiles === start.smiles &&
+      r.products.length === 1 &&
+      r.products[0].smiles === end.smiles
+    );
+    if (direct) {
+      return [{ reaction: direct, from: start, to: end }];
+    } else {
+      return null;
+    }
+  }
   visited.add(start.smiles);
-
-  // Try all reactions that can be done from start
+  // Try all reactions from start
   const nextReactions = allowedReactions.filter(r =>
     r.reactants.length === 1 &&
     r.reactants[0].smiles === start.smiles &&
@@ -105,10 +112,8 @@ function findSynthesisPathDFS(start, end, allowedReactions, allowedCompounds, ma
   for (const reaction of nextReactions) {
     const nextCompound = allowedCompounds.find(c => c.smiles === reaction.products[0].smiles);
     if (!nextCompound) continue;
-    if (nextCompound.smiles === end.smiles) {
-      return [{ reaction, from: start, to: nextCompound }];
-    }
-    const subpath = findSynthesisPathDFS(nextCompound, end, allowedReactions, allowedCompounds, maxDepth - 1, new Set(visited));
+    if (nextCompound.smiles === end.smiles) continue; // Don't shortcut
+    const subpath = findSynthesisPathWithExactSteps(nextCompound, end, allowedReactions, allowedCompounds, steps - 1, new Set(visited));
     if (subpath !== null) {
       return [{ reaction, from: start, to: nextCompound }, ...subpath];
     }
@@ -135,14 +140,24 @@ newProblemButton.addEventListener('click', () => {
   const minSteps = parseInt(minStepsInput.value, 10);
   const maxSteps = parseInt(maxStepsInput.value, 10);
 
-  // Filter compounds according to selected functional groups (for possible end products)
-  const allowedCompounds = compounds.filter(c =>
-    c.functional_groups.some(fg => selectedFunctionalGroups.includes(fg))
-  );
-
   // Filter reactions that only use allowed functional groups
   const allowedReactions = reactions.filter(r =>
     r.functional_groups.some(fg => selectedFunctionalGroups.includes(fg))
+  );
+
+  // Find all unique reactant SMILES from allowed reactions
+  const allowedReactantSmiles = new Set();
+  allowedReactions.forEach(r => {
+    r.reactants.forEach(reactant => {
+      allowedReactantSmiles.add(reactant.smiles);
+    });
+  });
+
+  // Only include compounds that are used as reactants in allowed reactions
+  const allowedCompounds = compounds.filter(
+    c =>
+      allowedReactantSmiles.has(c.smiles) &&
+      c.functional_groups.some(fg => selectedFunctionalGroups.includes(fg))
   );
 
   if (allowedCompounds.length < 2 || allowedReactions.length === 0) {
@@ -152,12 +167,12 @@ newProblemButton.addEventListener('click', () => {
     return;
   }
 
-  // --- NEW LOGIC: Only allow a problem if there is a valid solution (with the desired step count) ---
+  // --- Only allow a problem if there is a valid solution (with the desired step count) ---
   let found = false;
   let path = [];
   let product = null;
   let start = null;
-  let maxTries = 60;
+  let maxTries = 80;
 
   // Build a pool of possible start/end pairs (excluding same compound)
   let possiblePairs = [];
@@ -203,43 +218,6 @@ newProblemButton.addEventListener('click', () => {
   showSolutionButton.style.display = "inline-block";
   solutionDisplay.style.display = "none";
 });
-
-// Helper: Find a path of exactly n steps (DFS, no cycles)
-function findSynthesisPathWithExactSteps(start, end, allowedReactions, allowedCompounds, steps, visited = new Set()) {
-  if (steps < 1) return null;
-  if (steps === 1) {
-    // Direct connection
-    const direct = allowedReactions.find(r =>
-      r.reactants.length === 1 &&
-      r.reactants[0].smiles === start.smiles &&
-      r.products.length === 1 &&
-      r.products[0].smiles === end.smiles
-    );
-    if (direct) {
-      return [{ reaction: direct, from: start, to: end }];
-    } else {
-      return null;
-    }
-  }
-  visited.add(start.smiles);
-  // Try all reactions from start
-  const nextReactions = allowedReactions.filter(r =>
-    r.reactants.length === 1 &&
-    r.reactants[0].smiles === start.smiles &&
-    r.products.length === 1 &&
-    !visited.has(r.products[0].smiles)
-  );
-  for (const reaction of nextReactions) {
-    const nextCompound = allowedCompounds.find(c => c.smiles === reaction.products[0].smiles);
-    if (!nextCompound) continue;
-    if (nextCompound.smiles === end.smiles) continue; // Don't shortcut
-    const subpath = findSynthesisPathWithExactSteps(nextCompound, end, allowedReactions, allowedCompounds, steps - 1, new Set(visited));
-    if (subpath !== null) {
-      return [{ reaction, from: start, to: nextCompound }, ...subpath];
-    }
-  }
-  return null;
-}
 
 // Render the synthesis problem
 function renderProblem(start, end) {
