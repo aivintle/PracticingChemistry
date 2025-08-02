@@ -40,10 +40,50 @@ function toggleSwitch(id) {
   }
 }
 
-// Event listeners for generating and checking problems
+// Helper: Get checked functional groups
+function getCheckedFunctionalGroups() {
+  return Array.from(document.querySelectorAll('input[type="checkbox"][name="functional-group"]:checked'))
+    .map(cb => cb.value);
+}
+
+// Helper: Check if molecule matches allowed functional groups
+function moleculeHasAllowedFunctionalGroup(molecule, allowedGroups) {
+  // Return true if molecule has any of the allowed groups
+  return molecule.functional_groups.some(grp => allowedGroups.includes(grp));
+}
+
+// Helper: Check carbon count in SMILES
+function carbonCount(smiles) {
+  // Simple count of 'C' not followed by another uppercase letter (not in ring, etc.)
+  // This is a naive implementation, but works for small molecules in this set.
+  return (smiles.match(/C(?![a-z])/g) || []).length;
+}
+
 newProblemButton.addEventListener("click", () => {
-  // Generate a new problem
-  currentProblem = problems[Math.floor(Math.random() * problems.length)];
+  // Restrict problem selection to only currently selected functional groups and carbon number range
+  const allowedFunctionalGroups = getCheckedFunctionalGroups();
+  const minCarbons = parseInt(document.getElementById("min-carbons").value, 10) || 1;
+  const maxCarbons = parseInt(document.getElementById("max-carbons").value, 10) || 12;
+
+  // Filter problems by group and carbon count
+  const filteredProblems = problems.filter(molecule => {
+    // Must have at least one allowed functional group
+    if (!moleculeHasAllowedFunctionalGroup(molecule, allowedFunctionalGroups)) return false;
+    // Must be within carbon range
+    const cCount = carbonCount(molecule.smiles);
+    return cCount >= minCarbons && cCount <= maxCarbons;
+  });
+
+  if (filteredProblems.length === 0) {
+    problemContent.innerHTML = `<span style="color:red;">No molecules found for the selected settings. Try expanding your functional groups or carbon range.</span>`;
+    answerDisplay.style.display = "none";
+    newProblemButton.style.display = "inline";
+    checkProblemButton.style.display = "none";
+    return;
+  }
+
+  // Pick a random problem from the filtered list
+  currentProblem = filteredProblems[Math.floor(Math.random() * filteredProblems.length)];
   
   const smilesImageUrl = `https://cactus.nci.nih.gov/chemical/structure/${currentProblem.smiles}/image`;
   
@@ -53,7 +93,7 @@ newProblemButton.addEventListener("click", () => {
          style="max-width: 100%; height: auto;" 
          onerror="this.onerror=null; this.src='fallback-image.png';">
   `;
-  
+
   problemDisplay.style.display = "block";
   answerDisplay.style.display = "none";
   newProblemButton.style.display = "none";

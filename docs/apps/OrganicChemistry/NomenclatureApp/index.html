@@ -22,41 +22,46 @@
     </div>
   </nav>
   <main>
-    <section id="settings-panel">
-      <h2>Settings</h2>
-      <form>
-        <div class="toggle-container">
-          <span class="toggle-label">Common vs. IUPAC Nomenclature</span>
-          <div class="toggle-switch" id="common-iupac-toggle" onclick="toggleSwitch('common-iupac-toggle')"></div>
-        </div>
-        <div class="toggle-container">
-          <span class="toggle-label">Images vs. Name</span>
-          <div class="toggle-switch" id="image-name-toggle" onclick="toggleSwitch('image-name-toggle')"></div>
-        </div>
-        <label>
-          Minimum Carbons: <input type="number" id="min-carbons" min="1" max="12" value="1" />
-        </label>
-        <label>
-          Maximum Carbons: <input type="number" id="max-carbons" min="1" max="12" value="7" />
-        </label>
-        <fieldset>
-          <legend>Functional Groups</legend>
-          <label><input type="checkbox" name="functional-group" value="alkyl" /> Alkyl (–R)</label>
-          <label><input type="checkbox" name="functional-group" value="halide" /> Halide (–X)</label>
-          <label><input type="checkbox" name="functional-group" value="alcohol" /> Alcohol (–OH)</label>
-          <label><input type="checkbox" name="functional-group" value="ketone" /> Ketone</label>
-          <label><input type="checkbox" name="functional-group" value="aldehyde" /> Aldehyde</label>
-          <label><input type="checkbox" name="functional-group" value="carboxylic-acid" /> Carboxylic Acid</label>
-          <label><input type="checkbox" name="functional-group" value="amino" /> Amino (–NH₂)</label>
-          <label><input type="checkbox" name="functional-group" value="ester" /> Ester (–COO–)</label>
-          <label><input type="checkbox" name="functional-group" value="amide" /> Amide (–CONH₂)</label>
-          <label><input type="checkbox" name="functional-group" value="nitrile" /> Nitrile (–C≡N)</label>
-          <label><input type="checkbox" name="functional-group" value="ether" /> Ether (–O–)</label>
-          <label><input type="checkbox" name="functional-group" value="thiol" /> Thiol (–SH)</label>
-          <label><input type="checkbox" name="functional-group" value="aromatic" /> Aromatic Groups</label>
-          <label><input type="checkbox" name="functional-group" value="alkyl-halide" /> Alkyl Halide</label>
-        </fieldset>
-      </form>
+    <section id="settings-panel-section">
+      <button id="settings-toggle-button" type="button" aria-expanded="false" aria-controls="settings-panel" style="margin-bottom: 0.5rem;">
+        Show Settings
+      </button>
+      <div id="settings-panel" style="display:none;">
+        <h2>Settings</h2>
+        <form>
+          <div class="toggle-container">
+            <span class="toggle-label">Common vs. IUPAC Nomenclature</span>
+            <div class="toggle-switch" id="common-iupac-toggle" onclick="toggleSwitch('common-iupac-toggle')"></div>
+          </div>
+          <div class="toggle-container">
+            <span class="toggle-label">Images vs. Name</span>
+            <div class="toggle-switch" id="image-name-toggle" onclick="toggleSwitch('image-name-toggle')"></div>
+          </div>
+          <label>
+            Minimum Carbons: <input type="number" id="min-carbons" min="1" max="12" value="1" />
+          </label>
+          <label>
+            Maximum Carbons: <input type="number" id="max-carbons" min="1" max="12" value="7" />
+          </label>
+          <fieldset>
+            <legend>Functional Groups</legend>
+            <label><input type="checkbox" name="functional-group" value="alkyl" checked /> Alkyl (–R)</label>
+            <label><input type="checkbox" name="functional-group" value="halide" checked /> Halide (–X)</label>
+            <label><input type="checkbox" name="functional-group" value="alcohol" checked /> Alcohol (–OH)</label>
+            <label><input type="checkbox" name="functional-group" value="ketone" checked /> Ketone</label>
+            <label><input type="checkbox" name="functional-group" value="aldehyde" checked /> Aldehyde</label>
+            <label><input type="checkbox" name="functional-group" value="carboxylic-acid" checked /> Carboxylic Acid</label>
+            <label><input type="checkbox" name="functional-group" value="amino" /> Amino (–NH₂)</label>
+            <label><input type="checkbox" name="functional-group" value="ester" /> Ester (–COO–)</label>
+            <label><input type="checkbox" name="functional-group" value="amide" /> Amide (–CONH₂)</label>
+            <label><input type="checkbox" name="functional-group" value="nitrile" /> Nitrile (–C≡N)</label>
+            <label><input type="checkbox" name="functional-group" value="ether" /> Ether (–O–)</label>
+            <label><input type="checkbox" name="functional-group" value="thiol" /> Thiol (–SH)</label>
+            <label><input type="checkbox" name="functional-group" value="aromatic" /> Aromatic Groups</label>
+            <label><input type="checkbox" name="functional-group" value="alkyl-halide" /> Alkyl Halide</label>
+          </fieldset>
+        </form>
+      </div>
     </section>
     <button id="new-problem-button">New Problem</button>
     <button id="check-problem-button" style="display: none;">Check Problem</button>
@@ -74,5 +79,31 @@
     <p>Version 1.016</p>
   </footer>
   <script src="nomenclature-app.js"></script>
+  <script>
+    // Collapsible settings panel logic
+    const toggleButton = document.getElementById('settings-toggle-button');
+    const settingsPanel = document.getElementById('settings-panel');
+    toggleButton.addEventListener('click', () => {
+      const isHidden = settingsPanel.style.display === "none";
+      settingsPanel.style.display = isHidden ? "block" : "none";
+      toggleButton.textContent = isHidden ? "Hide Settings" : "Show Settings";
+      toggleButton.setAttribute('aria-expanded', isHidden ? "true" : "false");
+    });
+
+    // Set default functional group checkboxes (in case page is reloaded and browser doesn't preserve state)
+    window.addEventListener('DOMContentLoaded', () => {
+      [
+        "alkyl",
+        "halide",
+        "alcohol",
+        "ketone",
+        "aldehyde",
+        "carboxylic-acid"
+      ].forEach(val => {
+        const box = document.querySelector('input[type="checkbox"][value="'+val+'"]');
+        if (box) box.checked = true;
+      });
+    });
+  </script>
 </body>
 </html>
