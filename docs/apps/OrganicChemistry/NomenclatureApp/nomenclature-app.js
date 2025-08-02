@@ -7,6 +7,7 @@ const answerContent = document.getElementById("answer-content");
 
 let problems = [];
 let currentProblem = null;
+let problemShowMode = "image"; // "image" or "name"
 
 // Fetch problems from JSON file
 fetch("data.json")
@@ -30,13 +31,7 @@ function toggleSwitch(id) {
       // Logic for Common selection
     }
   } else if (id === 'image-name-toggle') {
-    if (switchElement.classList.contains('active')) {
-      console.log('Images mode selected');
-      // Logic for images mode
-    } else {
-      console.log('Names mode selected');
-      // Logic for names mode
-    }
+    updateImageNameToggleLabel();
   }
 }
 
@@ -77,6 +72,25 @@ function getCarbonRange() {
   return [min, max];
 }
 
+// Helper: Get the image/name toggle mode ("image" or "name")
+function getImageNameToggleMode() {
+  const toggle = document.getElementById('image-name-toggle');
+  return toggle.classList.contains('active') ? "name" : "image";
+}
+
+// Helper: Update the label next to the image/name toggle
+function updateImageNameToggleLabel() {
+  const label = document.getElementById('image-name-toggle-label');
+  if (!label) return;
+  const mode = getImageNameToggleMode();
+  label.textContent = (mode === "name") ? "Molecule Name" : "Molecule Image";
+}
+
+// Ensure label is correct on load
+window.addEventListener('DOMContentLoaded', () => {
+  updateImageNameToggleLabel();
+});
+
 newProblemButton.addEventListener("click", () => {
   // Restrict problem selection to only currently selected functional groups and carbon number range
   const allowedFunctionalGroups = getCheckedFunctionalGroups();
@@ -102,14 +116,34 @@ newProblemButton.addEventListener("click", () => {
   // Pick a random problem from the filtered list
   currentProblem = filteredProblems[Math.floor(Math.random() * filteredProblems.length)];
   
-  const smilesImageUrl = `https://cactus.nci.nih.gov/chemical/structure/${currentProblem.smiles}/image`;
-  
-  problemContent.innerHTML = `
-    <img src="${smilesImageUrl}" 
-         alt="SMILES code: ${currentProblem.smiles}" 
-         style="max-width: 100%; height: auto;" 
-         onerror="this.onerror=null; this.src='fallback-image.png';">
-  `;
+  // Decide problemShowMode ("image" or "name") for this problem based on toggle
+  problemShowMode = getImageNameToggleMode();
+
+  // Pick which name to use (IUPAC or common) for display
+  const iupacActive = document.getElementById('common-iupac-toggle').classList.contains('active');
+  let moleculeName = iupacActive ? currentProblem.iupac_name : (currentProblem.common_name || currentProblem.iupac_name);
+
+  if (problemShowMode === "image") {
+    // Show image as problem, name as answer
+    const smilesImageUrl = `https://cactus.nci.nih.gov/chemical/structure/${currentProblem.smiles}/image`;
+    problemContent.innerHTML = `
+      <img src="${smilesImageUrl}" 
+           alt="SMILES code: ${currentProblem.smiles}" 
+           style="max-width: 100%; height: auto;" 
+           onerror="this.onerror=null; this.src='fallback-image.png';">
+    `;
+    answerContent.textContent = moleculeName;
+  } else {
+    // Show name as problem, image as answer
+    problemContent.textContent = moleculeName;
+    const smilesImageUrl = `https://cactus.nci.nih.gov/chemical/structure/${currentProblem.smiles}/image`;
+    answerContent.innerHTML = `
+      <img src="${smilesImageUrl}" 
+           alt="SMILES code: ${currentProblem.smiles}" 
+           style="max-width: 100%; height: auto;" 
+           onerror="this.onerror=null; this.src='fallback-image.png';">
+    `;
+  }
 
   problemDisplay.style.display = "block";
   answerDisplay.style.display = "none";
@@ -119,10 +153,8 @@ newProblemButton.addEventListener("click", () => {
 
 checkProblemButton.addEventListener("click", () => {
   // Show the answer
-  answerContent.textContent = `IUPAC Name: ${currentProblem.iupac_name}, Common Name: ${currentProblem.common_name || "N/A"}`;
-  
-  problemDisplay.style.display = "block";
   answerDisplay.style.display = "block";
+  problemDisplay.style.display = "block";
   newProblemButton.style.display = "inline";
   checkProblemButton.style.display = "none";
 });
