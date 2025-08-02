@@ -66,8 +66,8 @@
         <h2>Settings</h2>
         <form id="settings-form" autocomplete="off">
           <div class="toggle-container">
-            <span class="toggle-label">Common vs. IUPAC Nomenclature</span>
-            <div class="toggle-switch" id="common-iupac-toggle" onclick="toggleSwitch('common-iupac-toggle')"></div>
+            <span class="toggle-label" id="common-iupac-toggle-label">Common Name</span>
+            <div class="toggle-switch" id="common-iupac-toggle" tabindex="0" role="button" aria-pressed="false" aria-label="Toggle between Common and IUPAC Name"></div>
           </div>
           <div class="toggle-container">
             <span class="toggle-label" id="image-name-toggle-label">Molecule Image</span>
@@ -123,7 +123,7 @@
   </main>
   <footer>
     <p>&copy; 2025 Practicing Chemistry. All rights reserved. </p>
-    <p>Version 1.025</p>
+    <p>Version 1.026</p>
   </footer>
   <script src="nomenclature-app.js"></script>
   <script>

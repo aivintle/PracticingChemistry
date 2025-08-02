@@ -21,13 +21,14 @@ function toggleSwitch(id) {
   const switchElement = document.getElementById(id);
   switchElement.classList.toggle('active');
 
-  // Set aria-pressed for accessibility (only for image-name-toggle)
+  // Set aria-pressed for accessibility (only for toggles)
   if (id === 'image-name-toggle') {
     switchElement.setAttribute('aria-pressed', switchElement.classList.contains('active') ? 'true' : 'false');
     updateImageNameToggleLabel();
   }
   if (id === 'common-iupac-toggle') {
-    // nothing else needed for this toggle
+    switchElement.setAttribute('aria-pressed', switchElement.classList.contains('active') ? 'true' : 'false');
+    updateCommonIupacToggleLabel();
   }
 }
 
@@ -40,6 +41,18 @@ imageNameToggle.addEventListener('keydown', function(e) {
   if (e.key === " " || e.key === "Enter") {
     e.preventDefault();
     toggleSwitch('image-name-toggle');
+  }
+});
+
+// Keyboard accessibility and click for common-iupac-toggle
+const commonIupacToggle = document.getElementById('common-iupac-toggle');
+commonIupacToggle.addEventListener('click', function() {
+  toggleSwitch('common-iupac-toggle');
+});
+commonIupacToggle.addEventListener('keydown', function(e) {
+  if (e.key === " " || e.key === "Enter") {
+    e.preventDefault();
+    toggleSwitch('common-iupac-toggle');
   }
 });
 
@@ -81,6 +94,12 @@ function getImageNameToggleMode() {
   return toggle.classList.contains('active') ? "name" : "image";
 }
 
+// Helper: Get the current "name" mode: "iupac" or "common"
+function getNameMode() {
+  const toggle = document.getElementById('common-iupac-toggle');
+  return toggle.classList.contains('active') ? "iupac" : "common";
+}
+
 // Helper: Update the label next to the image/name toggle
 function updateImageNameToggleLabel() {
   const label = document.getElementById('image-name-toggle-label');
@@ -89,9 +108,18 @@ function updateImageNameToggleLabel() {
   label.textContent = (mode === "name") ? "Molecule Name" : "Molecule Image";
 }
 
-// Ensure label is correct on page load
+// Helper: Update the label next to the common/iupac toggle
+function updateCommonIupacToggleLabel() {
+  const label = document.getElementById('common-iupac-toggle-label');
+  if (!label) return;
+  const mode = getNameMode();
+  label.textContent = (mode === "iupac") ? "IUPAC Name" : "Common Name";
+}
+
+// Ensure labels are correct on page load
 window.addEventListener('DOMContentLoaded', () => {
   updateImageNameToggleLabel();
+  updateCommonIupacToggleLabel();
 });
 
 newProblemButton.addEventListener("click", () => {
@@ -115,8 +143,10 @@ newProblemButton.addEventListener("click", () => {
   currentProblem = filteredProblems[Math.floor(Math.random() * filteredProblems.length)];
   problemShowMode = getImageNameToggleMode();
 
-  const iupacActive = document.getElementById('common-iupac-toggle').classList.contains('active');
-  let moleculeName = iupacActive ? currentProblem.iupac_name : (currentProblem.common_name || currentProblem.iupac_name);
+  const nameMode = getNameMode();
+  let moleculeName = (nameMode === "iupac")
+    ? currentProblem.iupac_name
+    : (currentProblem.common_name || currentProblem.iupac_name);
 
   if (problemShowMode === "image") {
     // Show image as problem, name as answer
