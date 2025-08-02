@@ -30,10 +30,18 @@ function toggleSwitch(id) {
       console.log('Common Nomenclature selected');
       // Logic for Common selection
     }
-  } else if (id === 'image-name-toggle') {
+  }
+
+  // If the image/name toggle is changed, update the label accordingly.
+  if (id === 'image-name-toggle') {
     updateImageNameToggleLabel();
   }
 }
+
+// Also allow clicking anywhere on the toggle area:
+document.getElementById('image-name-toggle').addEventListener('click', function() {
+  toggleSwitch('image-name-toggle');
+});
 
 // Helper: Get checked functional groups
 function getCheckedFunctionalGroups() {
@@ -49,8 +57,6 @@ function moleculeHasAllowedFunctionalGroup(molecule, allowedGroups) {
 
 // Helper: Check carbon count in SMILES
 function carbonCount(smiles) {
-  // Simple count of 'C' not followed by another uppercase letter (not in ring, etc.)
-  // This is a naive implementation, but works for small molecules in this set.
   return (smiles.match(/C(?![a-z])/g) || []).length;
 }
 
@@ -59,12 +65,10 @@ function getCarbonRange() {
   let min = parseInt(document.getElementById("min-carbons").value, 10);
   let max = parseInt(document.getElementById("max-carbons").value, 10);
 
-  // Clamp values to allowed ranges
   if (isNaN(min) || min < 1) min = 1;
   if (min > 11) min = 11;
   if (isNaN(max) || max < 2) max = 2;
   if (max > 12) max = 12;
-  // Adjust min and max so min <= max
   if (min > max) min = max;
   if (min > 11) min = 11;
   if (max < 2) max = 2;
@@ -86,21 +90,17 @@ function updateImageNameToggleLabel() {
   label.textContent = (mode === "name") ? "Molecule Name" : "Molecule Image";
 }
 
-// Ensure label is correct on load
+// Ensure label is correct on page load
 window.addEventListener('DOMContentLoaded', () => {
   updateImageNameToggleLabel();
 });
 
 newProblemButton.addEventListener("click", () => {
-  // Restrict problem selection to only currently selected functional groups and carbon number range
   const allowedFunctionalGroups = getCheckedFunctionalGroups();
   const [minCarbons, maxCarbons] = getCarbonRange();
 
-  // Filter problems by group and carbon count
   const filteredProblems = problems.filter(molecule => {
-    // Must have at least one allowed functional group
     if (!moleculeHasAllowedFunctionalGroup(molecule, allowedFunctionalGroups)) return false;
-    // Must be within carbon range
     const cCount = carbonCount(molecule.smiles);
     return cCount >= minCarbons && cCount <= maxCarbons;
   });
@@ -113,13 +113,9 @@ newProblemButton.addEventListener("click", () => {
     return;
   }
 
-  // Pick a random problem from the filtered list
   currentProblem = filteredProblems[Math.floor(Math.random() * filteredProblems.length)];
-  
-  // Decide problemShowMode ("image" or "name") for this problem based on toggle
   problemShowMode = getImageNameToggleMode();
 
-  // Pick which name to use (IUPAC or common) for display
   const iupacActive = document.getElementById('common-iupac-toggle').classList.contains('active');
   let moleculeName = iupacActive ? currentProblem.iupac_name : (currentProblem.common_name || currentProblem.iupac_name);
 
@@ -152,7 +148,6 @@ newProblemButton.addEventListener("click", () => {
 });
 
 checkProblemButton.addEventListener("click", () => {
-  // Show the answer
   answerDisplay.style.display = "block";
   problemDisplay.style.display = "block";
   newProblemButton.style.display = "inline";
