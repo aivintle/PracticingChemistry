@@ -40,11 +40,39 @@
     .select-deselect-btns {
       margin-bottom: 0.5em;
     }
+    /* New: Centered title below nav */
+    .app-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 1.5rem 0 2rem 0;
+      letter-spacing: 2px;
+      color: var(--siena-green, #006341);
+      text-shadow: 1px 1px 3px rgba(0,99,65,0.08);
+    }
+    @media (max-width: 700px) {
+      .app-title {
+        font-size: 1.45rem;
+        margin: 0.7rem 0 1.2rem 0;
+      }
+    }
+    .header-title-link {
+      color: inherit;
+      text-decoration: none;
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      transition: color 0.2s, text-shadow 0.2s;
+    }
+    .header-title-link:hover {
+      color: var(--siena-gold, #fbb040);
+      text-shadow: 1px 1px 6px rgba(251,176,64,0.12);
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Nomenclature App</h1>
+    <a href="/PracticingChemistry/index.html" class="header-title-link">Practicing Chemistry</a>
     <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   </header>
   <nav>
@@ -57,6 +85,7 @@
       </div>
     </div>
   </nav>
+  <div class="app-title">Nomenclature App</div>
   <main>
     <section id="settings-panel-section">
       <button id="settings-toggle-button" type="button" aria-expanded="false" aria-controls="settings-panel" style="margin-bottom: 0.5rem;">
