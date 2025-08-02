@@ -21,26 +21,30 @@ function toggleSwitch(id) {
   const switchElement = document.getElementById(id);
   switchElement.classList.toggle('active');
 
-  // Example of handling the logic after toggle
+  // Set aria-pressed for accessibility (only for image-name-toggle)
+  if (id === 'image-name-toggle') {
+    switchElement.setAttribute('aria-pressed', switchElement.classList.contains('active') ? 'true' : 'false');
+    updateImageNameToggleLabel();
+  }
   if (id === 'common-iupac-toggle') {
     if (switchElement.classList.contains('active')) {
-      console.log('IUPAC Nomenclature selected');
-      // Logic for IUPAC selection
+      // IUPAC Nomenclature selected
     } else {
-      console.log('Common Nomenclature selected');
-      // Logic for Common selection
+      // Common Nomenclature selected
     }
-  }
-
-  // If the image/name toggle is changed, update the label accordingly.
-  if (id === 'image-name-toggle') {
-    updateImageNameToggleLabel();
   }
 }
 
-// Also allow clicking anywhere on the toggle area:
-document.getElementById('image-name-toggle').addEventListener('click', function() {
+// Keyboard accessibility and click for image-name-toggle
+const imageNameToggle = document.getElementById('image-name-toggle');
+imageNameToggle.addEventListener('click', function() {
   toggleSwitch('image-name-toggle');
+});
+imageNameToggle.addEventListener('keydown', function(e) {
+  if (e.key === " " || e.key === "Enter") {
+    e.preventDefault();
+    toggleSwitch('image-name-toggle');
+  }
 });
 
 // Helper: Get checked functional groups
