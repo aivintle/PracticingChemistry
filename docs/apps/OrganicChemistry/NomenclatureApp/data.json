@@ -1366,5 +1366,455 @@
     "common_name": null,
     "functional_groups": ["halide"],
     "smiles": "CCCC(I)CCCC"
+  },
+  {
+    "iupac_name": "1-chloromethane magnesium chloride",
+    "common_name": "methylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "C[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chloroethane magnesium chloride",
+    "common_name": "ethylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CC[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chloropropane magnesium chloride",
+    "common_name": "propylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CCC[Mg]Cl"
+  },
+  {
+    "iupac_name": "2-chloropropane magnesium chloride",
+    "common_name": "isopropylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chlorobutane magnesium chloride",
+    "common_name": "butylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC[Mg]Cl"
+  },
+  {
+    "iupac_name": "2-chlorobutane magnesium chloride",
+    "common_name": "sec-butylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CCC(C)[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chloropentane magnesium chloride",
+    "common_name": "pentylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCC[Mg]Cl"
+  },
+  {
+    "iupac_name": "2-chloropentane magnesium chloride",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC(C)[Mg]Cl"
+  },
+  {
+    "iupac_name": "3-chloropentane magnesium chloride",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCC([Mg]Cl)CC"
+  },
+  {
+    "iupac_name": "1-chlorohexane magnesium chloride",
+    "common_name": "hexylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCC[Mg]Cl"
+  },
+  {
+    "iupac_name": "2-chlorohexane magnesium chloride",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCC(C)[Mg]Cl"
+  },
+  {
+    "iupac_name": "3-chlorohexane magnesium chloride",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC([Mg]Cl)CC"
+  },
+  {
+    "iupac_name": "1-chloroheptane magnesium chloride",
+    "common_name": "heptylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCC[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chlorooctane magnesium chloride",
+    "common_name": "octylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCC[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chlorononane magnesium chloride",
+    "common_name": "nonylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCC[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chlorodecane magnesium chloride",
+    "common_name": "decylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCCC[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chloroundecane magnesium chloride",
+    "common_name": "undecylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCCCC[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chlorododecane magnesium chloride",
+    "common_name": "dodecylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCCCCC[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chloro-2-methylpropane magnesium chloride",
+    "common_name": "isobutylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)C[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chloro-3-methylbutane magnesium chloride",
+    "common_name": "isoamylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)CC[Mg]Cl"
+  },
+  {
+    "iupac_name": "1-chloro-2,2-dimethylpropane magnesium chloride",
+    "common_name": "neopentylmagnesium chloride",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)(C)C[Mg]Cl"
+  },
+  {
+    "iupac_name": "2-chloroheptane magnesium chloride",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCC(C)[Mg]Cl"
+  },
+  {
+    "iupac_name": "4-chloroheptane magnesium chloride",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC([Mg]Cl)CCC"
+  },
+  {
+    "iupac_name": "3-chlorooctane magnesium chloride",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCC([Mg]Cl)CC"
+  },
+  {
+    "iupac_name": "4-chlorooctane magnesium chloride",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC([Mg]Cl)CCCC"
+  },
+  {
+    "iupac_name": "1-chloromethane magnesium bromide",
+    "common_name": "methylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "C[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chloroethane magnesium bromide",
+    "common_name": "ethylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CC[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chloropropane magnesium bromide",
+    "common_name": "propylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCC[Mg]Br"
+  },
+  {
+    "iupac_name": "2-chloropropane magnesium bromide",
+    "common_name": "isopropylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chlorobutane magnesium bromide",
+    "common_name": "butylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC[Mg]Br"
+  },
+  {
+    "iupac_name": "2-chlorobutane magnesium bromide",
+    "common_name": "sec-butylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCC(C)[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chloropentane magnesium bromide",
+    "common_name": "pentylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCC[Mg]Br"
+  },
+  {
+    "iupac_name": "2-chloropentane magnesium bromide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC(C)[Mg]Br"
+  },
+  {
+    "iupac_name": "3-chloropentane magnesium bromide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCC([Mg]Br)CC"
+  },
+  {
+    "iupac_name": "1-chlorohexane magnesium bromide",
+    "common_name": "hexylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCC[Mg]Br"
+  },
+  {
+    "iupac_name": "2-chlorohexane magnesium bromide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCC(C)[Mg]Br"
+  },
+  {
+    "iupac_name": "3-chlorohexane magnesium bromide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC([Mg]Br)CC"
+  },
+  {
+    "iupac_name": "1-chloroheptane magnesium bromide",
+    "common_name": "heptylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCC[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chlorooctane magnesium bromide",
+    "common_name": "octylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCC[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chlorononane magnesium bromide",
+    "common_name": "nonylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCC[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chlorodecane magnesium bromide",
+    "common_name": "decylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCCC[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chloroundecane magnesium bromide",
+    "common_name": "undecylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCCCC[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chlorododecane magnesium bromide",
+    "common_name": "dodecylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCCCCC[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chloro-2-methylpropane magnesium bromide",
+    "common_name": "isobutylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)C[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chloro-3-methylbutane magnesium bromide",
+    "common_name": "isoamylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)CC[Mg]Br"
+  },
+  {
+    "iupac_name": "1-chloro-2,2-dimethylpropane magnesium bromide",
+    "common_name": "neopentylmagnesium bromide",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)(C)C[Mg]Br"
+  },
+  {
+    "iupac_name": "2-chloroheptane magnesium bromide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCC(C)[Mg]Br"
+  },
+  {
+    "iupac_name": "4-chloroheptane magnesium bromide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC([Mg]Br)CCC"
+  },
+  {
+    "iupac_name": "3-chlorooctane magnesium bromide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCC([Mg]Br)CC"
+  },
+  {
+    "iupac_name": "4-chlorooctane magnesium bromide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC([Mg]Br)CCCC"
+  },
+  {
+    "iupac_name": "1-chloromethane magnesium iodide",
+    "common_name": "methylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "C[Mg]I"
+  },
+  {
+    "iupac_name": "1-chloroethane magnesium iodide",
+    "common_name": "ethylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CC[Mg]I"
+  },
+  {
+    "iupac_name": "1-chloropropane magnesium iodide",
+    "common_name": "propylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCC[Mg]I"
+  },
+  {
+    "iupac_name": "2-chloropropane magnesium iodide",
+    "common_name": "isopropylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)[Mg]I"
+  },
+  {
+    "iupac_name": "1-chlorobutane magnesium iodide",
+    "common_name": "butylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC[Mg]I"
+  },
+  {
+    "iupac_name": "2-chlorobutane magnesium iodide",
+    "common_name": "sec-butylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCC(C)[Mg]I"
+  },
+  {
+    "iupac_name": "1-chloropentane magnesium iodide",
+    "common_name": "pentylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCC[Mg]I"
+  },
+  {
+    "iupac_name": "2-chloropentane magnesium iodide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC(C)[Mg]I"
+  },
+  {
+    "iupac_name": "3-chloropentane magnesium iodide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCC([Mg]I)CC"
+  },
+  {
+    "iupac_name": "1-chlorohexane magnesium iodide",
+    "common_name": "hexylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCC[Mg]I"
+  },
+  {
+    "iupac_name": "2-chlorohexane magnesium iodide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCC(C)[Mg]I"
+  },
+  {
+    "iupac_name": "3-chlorohexane magnesium iodide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC([Mg]I)CC"
+  },
+  {
+    "iupac_name": "1-chloroheptane magnesium iodide",
+    "common_name": "heptylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCC[Mg]I"
+  },
+  {
+    "iupac_name": "1-chlorooctane magnesium iodide",
+    "common_name": "octylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCC[Mg]I"
+  },
+  {
+    "iupac_name": "1-chlorononane magnesium iodide",
+    "common_name": "nonylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCC[Mg]I"
+  },
+  {
+    "iupac_name": "1-chlorodecane magnesium iodide",
+    "common_name": "decylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCCC[Mg]I"
+  },
+  {
+    "iupac_name": "1-chloroundecane magnesium iodide",
+    "common_name": "undecylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCCCC[Mg]I"
+  },
+  {
+    "iupac_name": "1-chlorododecane magnesium iodide",
+    "common_name": "dodecylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCCCCCCCC[Mg]I"
+  },
+  {
+    "iupac_name": "1-chloro-2-methylpropane magnesium iodide",
+    "common_name": "isobutylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)C[Mg]I"
+  },
+  {
+    "iupac_name": "1-chloro-3-methylbutane magnesium iodide",
+    "common_name": "isoamylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)CC[Mg]I"
+  },
+  {
+    "iupac_name": "1-chloro-2,2-dimethylpropane magnesium iodide",
+    "common_name": "neopentylmagnesium iodide",
+    "functional_groups": ["grignard"],
+    "smiles": "CC(C)(C)C[Mg]I"
+  },
+  {
+    "iupac_name": "2-chloroheptane magnesium iodide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCCC(C)[Mg]I"
+  },
+  {
+    "iupac_name": "4-chloroheptane magnesium iodide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC([Mg]I)CCC"
+  },
+  {
+    "iupac_name": "3-chlorooctane magnesium iodide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCCC([Mg]I)CC"
+  },
+  {
+    "iupac_name": "4-chlorooctane magnesium iodide",
+    "common_name": null,
+    "functional_groups": ["grignard"],
+    "smiles": "CCCC([Mg]I)CCCC"
   }
 ]
