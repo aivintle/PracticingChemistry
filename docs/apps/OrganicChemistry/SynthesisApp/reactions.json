@@ -300,8 +300,8 @@
     "reagents": "PCC",
     "products": [
       {
-        "iupac_name": "hexan-3-one",
-        "smiles": "CCC(=O)CCC"
+        "iupac_name": "pentan-3-one",
+        "smiles": "CCC(=O)CC"
       }
     ],
     "functional_groups": [
@@ -753,8 +753,8 @@
     "reaction_name": "Reduction of ketone",
     "reactants": [
       {
-        "iupac_name": "hexan-3-one",
-        "smiles": "CCC(=O)CCC"
+        "iupac_name": "pentan-3-one",
+        "smiles": "CCC(=O)CC"
       }
     ],
     "reagents": "NaBH4",
@@ -1707,6 +1707,3386 @@
     "functional_groups": [
       "halide",
       "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "pentane",
+        "smiles": "CCCCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "propane",
+        "smiles": "CCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "hexane",
+        "smiles": "CCCCCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "butane",
+        "smiles": "CCCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "hexane",
+        "smiles": "CCCCCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "hexane",
+        "smiles": "CCCCCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "pentane",
+        "smiles": "CCCCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "hexane",
+        "smiles": "CCCCCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "hexane",
+        "smiles": "CCCCCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "butane",
+        "smiles": "CCCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "ethane",
+        "smiles": "CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "pentane",
+        "smiles": "CCCCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "isobutane",
+        "smiles": "CC(C)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Catalytic Hydrogenation (Alkene to Alkane)",
+    "reactants": [
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      }
+    ],
+    "reagents": "H2, Pd/C",
+    "products": [
+      {
+        "iupac_name": "butane",
+        "smiles": "CCCC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alkane"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "pent-2-yne",
+        "smiles": "CCC#CC"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "propyne",
+        "smiles": "CC#C"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "hex-2-yne",
+        "smiles": "CCCC#CC"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "but-2-yne",
+        "smiles": "CC#CC"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "hex-1-yne",
+        "smiles": "CCCCC#C"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "hex-2-yne",
+        "smiles": "CCCC#CC"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "pent-1-yne",
+        "smiles": "CCCC#C"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "hex-3-yne",
+        "smiles": "CCC#CCC"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "hex-3-yne",
+        "smiles": "CCC#CCC"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "but-1-yne",
+        "smiles": "CCC#C"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "ethyne",
+        "smiles": "C#C"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "pent-2-yne",
+        "smiles": "CCC#CC"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropyne",
+        "smiles": "C#C(C)C"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Partial Hydrogenation (Alkyne to Alkene)",
+    "reactants": [
+      {
+        "iupac_name": "but-2-yne",
+        "smiles": "CC#CC"
+      }
+    ],
+    "reagents": "H2, Lindlar's catalyst",
+    "products": [
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      }
+    ],
+    "functional_groups": [
+      "alkyne",
+      "alkene"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "pentane-2,3-diol",
+        "smiles": "CCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "pentane-2,3-diol",
+        "smiles": "CCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "pentane-2,3-diol",
+        "smiles": "CCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "3-bromopentan-2-ol",
+        "smiles": "CCC(Br)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "2,3-dibromopentane",
+        "smiles": "CCC(Br)C(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "propane-1,2-diol",
+        "smiles": "CC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "propane-1,2-diol",
+        "smiles": "CC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "propane-1,2-diol",
+        "smiles": "CC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "1-bromopropan-2-ol",
+        "smiles": "CC(O)CBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "1,2-dibromopropane",
+        "smiles": "CC(Br)CBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "hexane-2,3-diol",
+        "smiles": "CCCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "hexane-2,3-diol",
+        "smiles": "CCCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "hexane-2,3-diol",
+        "smiles": "CCCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "3-bromohexan-2-ol",
+        "smiles": "CCCC(Br)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "2,3-dibromohexane",
+        "smiles": "CCCC(Br)C(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "butane-2,3-diol",
+        "smiles": "CC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "butane-2,3-diol",
+        "smiles": "CC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "butane-2,3-diol",
+        "smiles": "CC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "3-bromobutan-2-ol",
+        "smiles": "CC(Br)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "2,3-dibromobutane",
+        "smiles": "CC(Br)C(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "hexane-1,2-diol",
+        "smiles": "CCCCC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "hexane-1,2-diol",
+        "smiles": "CCCCC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "hexane-1,2-diol",
+        "smiles": "CCCCC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "1-bromohexan-2-ol",
+        "smiles": "CCCCC(O)CBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "1,2-dibromohexane",
+        "smiles": "CCCCC(Br)CBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "hexane-2,3-diol",
+        "smiles": "CCCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "hexane-2,3-diol",
+        "smiles": "CCCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "hexane-2,3-diol",
+        "smiles": "CCCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "3-bromohexan-2-ol",
+        "smiles": "CCCC(Br)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "2,3-dibromohexane",
+        "smiles": "CCCC(Br)C(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "pentane-1,2-diol",
+        "smiles": "CCCC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "pentane-1,2-diol",
+        "smiles": "CCCC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "pentane-1,2-diol",
+        "smiles": "CCCC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "1-bromopentan-2-ol",
+        "smiles": "CCCC(O)CBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "1,2-dibromopentane",
+        "smiles": "CCCC(Br)CBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "hexane-3,4-diol",
+        "smiles": "CCC(O)C(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "hexane-3,4-diol",
+        "smiles": "CCC(O)C(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "hexane-3,4-diol",
+        "smiles": "CCC(O)C(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "4-bromohexan-3-ol",
+        "smiles": "CCC(Br)C(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "3,4-dibromohexane",
+        "smiles": "CCC(Br)C(Br)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "hexane-3,4-diol",
+        "smiles": "CCC(O)C(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "hexane-3,4-diol",
+        "smiles": "CCC(O)C(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "hexane-3,4-diol",
+        "smiles": "CCC(O)C(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "4-bromohexan-3-ol",
+        "smiles": "CCC(Br)C(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "3,4-dibromohexane",
+        "smiles": "CCC(Br)C(Br)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "butane-1,2-diol",
+        "smiles": "CCC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "butane-1,2-diol",
+        "smiles": "CCC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "butane-1,2-diol",
+        "smiles": "CCC(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "1-bromobutan-2-ol",
+        "smiles": "CCC(O)CBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "1,2-dibromobutane",
+        "smiles": "CCC(Br)CBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "ethane-1,2-diol",
+        "smiles": "OCCO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "ethane-1,2-diol",
+        "smiles": "OCCO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "ethane-1,2-diol",
+        "smiles": "OCCO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "2-bromoethanol",
+        "smiles": "C(Br)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "1,2-dibromoethane",
+        "smiles": "C(Br)C(Br)"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "pentane-2,3-diol",
+        "smiles": "CCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "pentane-2,3-diol",
+        "smiles": "CCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "pentane-2,3-diol",
+        "smiles": "CCC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "3-bromopentan-2-ol",
+        "smiles": "CCC(Br)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "2,3-dibromopentane",
+        "smiles": "CCC(Br)C(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "2-methylpropane-1,2-diol",
+        "smiles": "CC(C)(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "2-methylpropane-1,2-diol",
+        "smiles": "CC(C)(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "2-methylpropane-1,2-diol",
+        "smiles": "CC(C)(O)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "1-bromo-2-methylpropan-2-ol",
+        "smiles": "CC(C)(O)CBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "1,2-dibromo-2-methylpropane",
+        "smiles": "CC(C)(Br)CBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (OsO4)",
+    "reactants": [
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      }
+    ],
+    "reagents": "1) OsO4, 2) NaHSO3, H2O",
+    "products": [
+      {
+        "iupac_name": "butane-2,3-diol",
+        "smiles": "CC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Syn-dihydroxylation (KMnO4)",
+    "reactants": [
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      }
+    ],
+    "reagents": "KMnO4, NaOH, cold",
+    "products": [
+      {
+        "iupac_name": "butane-2,3-diol",
+        "smiles": "CC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Anti-dihydroxylation (epoxidation)",
+    "reactants": [
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      }
+    ],
+    "reagents": "1) RCO3H, 2) H3O+",
+    "products": [
+      {
+        "iupac_name": "butane-2,3-diol",
+        "smiles": "CC(O)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "diol"
+    ]
+  },
+  {
+    "reaction_name": "Halohydrin Formation",
+    "reactants": [
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      }
+    ],
+    "reagents": "Br2, H2O",
+    "products": [
+      {
+        "iupac_name": "3-bromobutan-2-ol",
+        "smiles": "CC(Br)C(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halohydrin"
+    ]
+  },
+  {
+    "reaction_name": "Halogenation",
+    "reactants": [
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      }
+    ],
+    "reagents": "Br2",
+    "products": [
+      {
+        "iupac_name": "2,3-dibromobutane",
+        "smiles": "CC(Br)C(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "3-bromopentane",
+        "smiles": "CCC(Br)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "2-bromopentane",
+        "smiles": "CCCC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "pentan-3-ol",
+        "smiles": "CCC(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "cis-pent-2-ene",
+        "smiles": "CC/C=C\\C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "pentan-2-ol",
+        "smiles": "CCCC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "2-bromopropane",
+        "smiles": "CC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "1-bromopropane",
+        "smiles": "CCCBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "propan-2-ol",
+        "smiles": "CC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "propene",
+        "smiles": "CC=C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "propan-1-ol",
+        "smiles": "CCCO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "3-bromohexane",
+        "smiles": "CCCC(Br)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "2-bromohexane",
+        "smiles": "CCCCC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "hexan-3-ol",
+        "smiles": "CCCC(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-2-ene",
+        "smiles": "CCC/C=C/C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "hexan-2-ol",
+        "smiles": "CCCCC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "2-bromobutane",
+        "smiles": "CCC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "2-bromobutane",
+        "smiles": "CCC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "butan-2-ol",
+        "smiles": "CCC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "trans-but-2-ene",
+        "smiles": "C/C=C/C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "butan-2-ol",
+        "smiles": "CCC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "2-bromohexane",
+        "smiles": "CCCCC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "1-bromohexane",
+        "smiles": "CCCCCCBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "hexan-2-ol",
+        "smiles": "CCCCC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "hex-1-ene",
+        "smiles": "CCCCC=C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "hexan-1-ol",
+        "smiles": "CCCCCCO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "3-bromohexane",
+        "smiles": "CCCC(Br)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "2-bromohexane",
+        "smiles": "CCCCC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "hexan-3-ol",
+        "smiles": "CCCC(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-2-ene",
+        "smiles": "CCC/C=C\\C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "hexan-2-ol",
+        "smiles": "CCCCC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "2-bromopentane",
+        "smiles": "CCCC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "1-bromopentane",
+        "smiles": "CCCCCBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "pentan-2-ol",
+        "smiles": "CCCC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "pent-1-ene",
+        "smiles": "CCCC=C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "pentan-1-ol",
+        "smiles": "CCCCCO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "3-bromohexane",
+        "smiles": "CCCC(Br)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "3-bromohexane",
+        "smiles": "CCCC(Br)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "hexan-3-ol",
+        "smiles": "CCCC(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "trans-hex-3-ene",
+        "smiles": "CC/C=C/CC"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "hexan-3-ol",
+        "smiles": "CCCC(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "3-bromohexane",
+        "smiles": "CCCC(Br)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "3-bromohexane",
+        "smiles": "CCCC(Br)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "hexan-3-ol",
+        "smiles": "CCCC(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "cis-hex-3-ene",
+        "smiles": "CC/C=C\\CC"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "hexan-3-ol",
+        "smiles": "CCCC(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "2-bromobutane",
+        "smiles": "CCC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "1-bromobutane",
+        "smiles": "CCCCBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "butan-2-ol",
+        "smiles": "CCC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "but-1-ene",
+        "smiles": "CCC=C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "butan-1-ol",
+        "smiles": "CCCCO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "bromoethane",
+        "smiles": "CCBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "bromoethane",
+        "smiles": "CCBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "ethanol",
+        "smiles": "CCO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "ethene",
+        "smiles": "C=C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "ethanol",
+        "smiles": "CCO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "3-bromopentane",
+        "smiles": "CCC(Br)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "2-bromopentane",
+        "smiles": "CCCC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "pentan-3-ol",
+        "smiles": "CCC(O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "trans-pent-2-ene",
+        "smiles": "CC/C=C/C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "pentan-2-ol",
+        "smiles": "CCCC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "2-bromo-2-methylpropane",
+        "smiles": "CC(C)(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "1-bromo-2-methylpropane",
+        "smiles": "CC(C)CBr"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "2-methylpropan-2-ol",
+        "smiles": "CC(C)(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "2-methylpropene",
+        "smiles": "C=C(C)C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "2-methylpropan-1-ol",
+        "smiles": "CC(C)CO"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      }
+    ],
+    "reagents": "HBr",
+    "products": [
+      {
+        "iupac_name": "2-bromobutane",
+        "smiles": "CCC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Hydrohalogenation (Anti-Markovnikov)",
+    "reactants": [
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      }
+    ],
+    "reagents": "HBr, ROOR",
+    "products": [
+      {
+        "iupac_name": "2-bromobutane",
+        "smiles": "CCC(Br)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "halide"
+    ]
+  },
+  {
+    "reaction_name": "Oxymercuration-Demercuration",
+    "reactants": [
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      }
+    ],
+    "reagents": "1) Hg(OAc)2, H2O, 2) NaBH4",
+    "products": [
+      {
+        "iupac_name": "butan-2-ol",
+        "smiles": "CCC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Hydroboration-Oxidation",
+    "reactants": [
+      {
+        "iupac_name": "cis-but-2-ene",
+        "smiles": "C/C=C\\C"
+      }
+    ],
+    "reagents": "1) BH3, THF, 2) H2O2, NaOH",
+    "products": [
+      {
+        "iupac_name": "butan-2-ol",
+        "smiles": "CCC(O)C"
+      }
+    ],
+    "functional_groups": [
+      "alkene",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "hexan-3-ol",
+        "smiles": "CCC(O)CCC"
+      }
+    ],
+    "reagents": "PCC",
+    "products": [
+      {
+        "iupac_name": "hexan-3-one",
+        "smiles": "CCC(=O)CCC"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Reduction of ketone",
+    "reactants": [
+      {
+        "iupac_name": "hexan-3-one",
+        "smiles": "CCC(=O)CCC"
+      }
+    ],
+    "reagents": "NaBH4",
+    "products": [
+      {
+        "iupac_name": "hexan-3-ol",
+        "smiles": "CCC(O)CCC"
+      }
+    ],
+    "functional_groups": [
+      "ketone",
+      "alcohol"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to aldehyde)",
+    "reactants": [
+      {
+        "iupac_name": "ethanol",
+        "smiles": "CCO"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "ethanal",
+        "smiles": "CC=O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "aldehyde"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "propan-2-ol",
+        "smiles": "CC(O)C"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "propan-2-one",
+        "smiles": "CC(=O)C"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to aldehyde)",
+    "reactants": [
+      {
+        "iupac_name": "methanol",
+        "smiles": "CO"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "methanal",
+        "smiles": "C=O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "aldehyde"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (primary to aldehyde)",
+    "reactants": [
+      {
+        "iupac_name": "propan-1-ol",
+        "smiles": "CCCO"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "propanal",
+        "smiles": "CCC=O"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "aldehyde"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "butan-2-ol",
+        "smiles": "CCC(C)O"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "butan-2-one",
+        "smiles": "CCC(=O)C"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "pentan-2-ol",
+        "smiles": "CCCC(C)O"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "pentan-2-one",
+        "smiles": "CCCC(=O)C"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "pentan-3-ol",
+        "smiles": "CCC(O)CC"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "pentan-3-one",
+        "smiles": "CCC(=O)CC"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "hexan-2-ol",
+        "smiles": "CCCCC(C)O"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "hexan-2-one",
+        "smiles": "CCCCC(=O)C"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "heptan-2-ol",
+        "smiles": "CCCCCC(C)O"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "heptan-2-one",
+        "smiles": "CCCCCC(=O)C"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "heptan-4-ol",
+        "smiles": "CCCC(O)CCC"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "heptan-4-one",
+        "smiles": "CCCC(=O)CCC"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "octan-3-ol",
+        "smiles": "CCCCC(O)CC"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "octan-3-one",
+        "smiles": "CCC(=O)CCCCC"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "octan-4-ol",
+        "smiles": "CCCC(O)CCCC"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "octan-4-one",
+        "smiles": "CCCC(=O)CCCC"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
+    ]
+  },
+  {
+    "reaction_name": "Alcohol oxidation (secondary to ketone)",
+    "reactants": [
+      {
+        "iupac_name": "hexan-3-ol",
+        "smiles": "CCC(O)CCC"
+      }
+    ],
+    "reagents": "DMP",
+    "products": [
+      {
+        "iupac_name": "hexan-3-one",
+        "smiles": "CCC(=O)CCC"
+      }
+    ],
+    "functional_groups": [
+      "alcohol",
+      "ketone"
     ]
   }
 ]
