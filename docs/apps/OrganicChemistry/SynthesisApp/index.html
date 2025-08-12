@@ -18,14 +18,61 @@
       color: var(--siena-gold, #fbb040);
       text-shadow: 1px 1px 6px rgba(251,176,64,0.12);
     }
+    .select-deselect-btns {
+      margin-bottom: 0.5em;
+      margin-top: 0.5em;
+    }
+    .step-range-fields {
+      margin-bottom: 1em;
+      display: flex;
+      gap: 1.5em;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .step-range-fields label {
+      display: inline-block;
+      margin: 0;
+      font-weight: 500;
+      padding: 0;
+      background: none;
+      border: none;
+    }
+    .step-range-fields input[type="number"] {
+      width: 3em;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+    }
+    #step-range-error {
+      color: red;
+      font-size: 0.95em;
+      margin-left: 1.5em;
+      margin-top: 0.5em;
+      display: block;
+    }
+    .app-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      text-align: center;
+      margin: 1.5rem 0 2rem 0;
+      letter-spacing: 2px;
+      color: var(--siena-green, #006341);
+      text-shadow: 1px 1px 3px rgba(0,99,65,0.08);
+    }
+    @media (max-width: 700px) {
+      .app-title {
+        font-size: 1.45rem;
+        margin: 0.7rem 0 1.2rem 0;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <a href="/PracticingChemistry/index.html" class="header-title-link">Practicing Chemistry</a>
-    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
+    <button class="theme-toggle">Toggle Theme</button>
   </header>
   <nav>
+    <a href="/PracticingChemistry/index.html">Home</a>
     <a href="/PracticingChemistry/apps/GeneralChemistry/index.html">General Chemistry</a>
     <div class="dropdown">
       <a href="/PracticingChemistry/apps/OrganicChemistry/index.html">Organic Chemistry</a>
@@ -35,21 +82,72 @@
       </div>
     </div>
   </nav>
+  <h1 class="app-title">Synthesis Practice App</h1>
   <main>
-    <h2>Organic Chemistry Synthesis Practice App</h2>
-    <p>
-      This is a stub for the Organic Chemistry Synthesis Practice App. Interactive synthesis practice tools will appear here in the future!
-    </p>
+    <section id="settings-panel-section">
+      <button id="settings-toggle-button" type="button" aria-expanded="false" aria-controls="settings-panel" style="margin-bottom: 0.5rem;">
+        Show Settings
+      </button>
+      <div id="settings-panel" style="display:none;">
+        <h2>Settings</h2>
+        <form id="settings-form" autocomplete="off">
+          <fieldset>
+            <legend>Number of Synthetic Steps</legend>
+            <div class="step-range-fields">
+              <label>
+                Min Steps:
+                <input type="number" id="min-steps" min="1" max="15" value="1" required />
+              </label>
+              <label>
+                Max Steps:
+                <input type="number" id="max-steps" min="1" max="15" value="3" required />
+              </label>
+              <span id="step-range-error" style="display:none;"></span>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Functional Groups</legend>
+            <div class="select-deselect-btns">
+              <button type="button" id="select-all-fg-btn">Select All</button>
+              <button type="button" id="deselect-all-fg-btn">Deselect All</button>
+            </div>
+            <div id="functional-group-checkboxes">
+              <!-- JS will fill this in -->
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </section>
+    <button id="new-problem-button">New Synthesis Problem</button>
+    <button id="show-solution-button" style="display:none;">Show Solution</button>
+    <section id="problem-display">
+      <h2>Synthesis Problem</h2>
+      <div id="problem-content"></div>
+    </section>
+    <section id="solution-display" style="display: none;">
+      <h2>Solution Path</h2>
+      <div id="solution-content"></div>
+    </section>
   </main>
   <footer>
     <p>&copy; 2025 Practicing Chemistry. All rights reserved.</p>
-    <p>Version 1.000</p>
+    <p>Version 1.002</p>
   </footer>
+  <script src="synthesis-app.js"></script>
   <script>
-    function toggleTheme() {
-      const currentTheme = document.body.getAttribute("data-theme");
-      document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
-    }
+    // Min/Max Step Live Validation in HTML
+    const minStepsInput = document.getElementById('min-steps');
+    const maxStepsInput = document.getElementById('max-steps');
+    minStepsInput.addEventListener('input', function() {
+      if (parseInt(minStepsInput.value, 10) > parseInt(maxStepsInput.value, 10)) {
+        maxStepsInput.value = minStepsInput.value;
+      }
+    });
+    maxStepsInput.addEventListener('input', function() {
+      if (parseInt(maxStepsInput.value, 10) < parseInt(minStepsInput.value, 10)) {
+        minStepsInput.value = maxStepsInput.value;
+      }
+    });
   </script>
 </body>
 </html>
