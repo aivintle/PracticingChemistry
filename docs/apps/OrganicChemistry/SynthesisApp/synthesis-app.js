@@ -1,21 +1,19 @@
-// Theme toggle
-document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
-function toggleTheme() {
-  const currentTheme = document.body.getAttribute("data-theme");
-  document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
-}
+// --- Basic Setup: Theme and Settings Panel Toggle ---
+document.querySelector('.theme-toggle').addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+});
 
-// Settings panel toggle
 const toggleButton = document.getElementById('settings-toggle-button');
 const settingsPanel = document.getElementById('settings-panel');
 toggleButton.addEventListener('click', () => {
   const isHidden = settingsPanel.style.display === "none";
   settingsPanel.style.display = isHidden ? "block" : "none";
   toggleButton.textContent = isHidden ? "Hide Settings" : "Show Settings";
-  toggleButton.setAttribute('aria-expanded', isHidden ? "true" : "false");
+  toggleButton.setAttribute('aria-expanded', isHidden);
 });
 
-// DOM elements for rest of app
+// --- DOM Elements ---
 const fgCheckboxesDiv = document.getElementById("functional-group-checkboxes");
 const newProblemButton = document.getElementById("new-problem-button");
 const showSolutionButton = document.getElementById("show-solution-button");
@@ -28,269 +26,253 @@ const minStepsInput = document.getElementById("min-steps");
 const maxStepsInput = document.getElementById("max-steps");
 const stepRangeError = document.getElementById("step-range-error");
 
-// App state
-let compounds = [];
+// --- App State ---
 let reactions = [];
-let selectedFunctionalGroups = [];
-let currentProblem = null; // {start: compound, end: compound, path: [steps]}
+let compounds = [];
+let currentProblem = null;
 
-// Fetch compounds and reactions data
-Promise.all([
-  fetch("../NomenclatureApp/data.json").then(res => res.json()),
-  fetch("reactions.json").then(res => res.json())
-]).then(([compoundsData, reactionsData]) => {
-  compounds = compoundsData;
-  reactions = reactionsData;
-  populateFunctionalGroupCheckboxes();
-});
+// --- Data Fetching and Initialization ---
+fetch("reactions.json")
+  .then(res => res.json())
+  .then(reactionsData => {
+    reactions = reactionsData;
+    // Extract all unique compounds from the reactions data to create a master list
+    const uniqueCompoundsMap = new Map();
+    reactions.flatMap(r => [...r.reactants, ...r.products]).forEach(c => {
+        if (c && c.smiles && !uniqueCompoundsMap.has(c.smiles)) {
+            uniqueCompoundsMap.set(c.smiles, c);
+        }
+    });
+    compounds = Array.from(uniqueCompoundsMap.values());
+    populateFunctionalGroupCheckboxes();
+  }).catch(error => {
+      console.error("Failed to load reactions.json:", error);
+      problemContent.innerHTML = `<span class="text-red-500">Error: Could not load reaction data. Please check the console.</span>`;
+  });
 
-// Populate functional group checkboxes dynamically based on all functional groups in the database
+// --- UI and Settings Functions ---
+
 function populateFunctionalGroupCheckboxes() {
-  const allGroups = new Set();
-  for (const cmpd of compounds) {
-    if (Array.isArray(cmpd.functional_groups))
-      cmpd.functional_groups.forEach(g => allGroups.add(g));
-  }
+  const allGroups = new Set(reactions.flatMap(r => r.functional_groups || []));
   const sortedGroups = Array.from(allGroups).sort();
-  fgCheckboxesDiv.innerHTML = sortedGroups.map(group =>
-    `<label><input type="checkbox" name="functional-group" value="${group}" checked /> ${group.replace(/-/g, " ")}</label>`
-  ).join("\n");
+  fgCheckboxesDiv.innerHTML = sortedGroups.map(group => `
+    <label class="flex items-center space-x-2 cursor-pointer">
+      <input type="checkbox" name="functional-group" value="${group}" checked class="h-4 w-4 rounded" />
+      <span class="capitalize">${group.replace(/-/g, " ")}</span>
+    </label>
+  `).join("\n");
 }
 
-// Select/Deselect All Functional Group Checkboxes
-selectAllBtn.addEventListener('click', function() {
+selectAllBtn.addEventListener('click', () => {
   fgCheckboxesDiv.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = true);
 });
-deselectAllBtn.addEventListener('click', function() {
+
+deselectAllBtn.addEventListener('click', () => {
   fgCheckboxesDiv.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
 });
 
-// Validate min/max steps as positive integers and min ≤ max
 function validateStepRange() {
-  let min = Number(minStepsInput.value);
-  let max = Number(maxStepsInput.value);
-
-  // Only allow positive integers within the range 1-15
-  if (!Number.isInteger(min) || min < 1) min = 1;
-  if (min > 15) min = 15;
-  if (!Number.isInteger(max) || max < 1) max = 1;
-  if (max > 15) max = 15;
-
-  minStepsInput.value = min;
-  maxStepsInput.value = max;
-
+  const min = parseInt(minStepsInput.value, 10);
+  const max = parseInt(maxStepsInput.value, 10);
   if (min > max) {
-    stepRangeError.style.display = '';
-    stepRangeError.textContent = "Min steps must be less than or equal to max steps.";
+    stepRangeError.textContent = "Min steps cannot be greater than max.";
+    stepRangeError.style.display = 'block';
     return false;
-  } else {
-    stepRangeError.style.display = 'none';
-    stepRangeError.textContent = "";
-    return true;
   }
+  stepRangeError.style.display = 'none';
+  return true;
 }
 minStepsInput.addEventListener('input', validateStepRange);
 maxStepsInput.addEventListener('input', validateStepRange);
 
-// Get the functional groups selected by the user
 function getSelectedFunctionalGroups() {
-  return Array.from(fgCheckboxesDiv.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+  return Array.from(fgCheckboxesDiv.querySelectorAll('input:checked')).map(cb => cb.value);
 }
 
-// --- Find a path from start to end compound using allowed reactions (DFS, no cycles), up to maxDepth ---
-function findSynthesisPathWithExactSteps(start, end, allowedReactions, allowedCompounds, steps, visited = new Set()) {
-  if (steps < 1) return null;
-  if (steps === 1) {
-    // Direct connection
-    const direct = allowedReactions.find(r =>
-      r.reactants.length === 1 &&
-      r.reactants[0].smiles === start.smiles &&
-      r.products.length === 1 &&
-      r.products[0].smiles === end.smiles
-    );
-    if (direct) {
-      return [{ reaction: direct, from: start, to: end }];
-    } else {
-      return null;
+// --- Core Problem Generation Logic ---
+
+/**
+ * Backtracks from a given end product to find a synthesis path of a specific length.
+ * @param {object} endProduct - The target compound object.
+ * @param {number} steps - The desired number of steps in the synthesis.
+ * @param {Array} allowedReactions - The pool of reactions to use.
+ * @returns {object|null} A problem object or null if no path is found.
+ */
+function backtrackToFindPath(endProduct, steps, allowedReactions) {
+    let path = [];
+    let currentCompoundSMILES = endProduct.smiles;
+    let givenStartingMaterials = [];
+
+    for (let i = 0; i < steps; i++) {
+        const precursorReactions = allowedReactions.filter(r =>
+            r.products.some(p => p.smiles === currentCompoundSMILES)
+        );
+
+        if (precursorReactions.length === 0) return null; // Dead end
+
+        const reaction = precursorReactions[Math.floor(Math.random() * precursorReactions.length)];
+        const reactants = reaction.reactants;
+        const currentCompoundObject = compounds.find(c => c.smiles === currentCompoundSMILES);
+
+        path.unshift({ reaction, from: reactants, to: currentCompoundObject });
+
+        if (reactants.length > 1) {
+            const backtrackReactant = reactants[Math.floor(Math.random() * reactants.length)];
+            currentCompoundSMILES = backtrackReactant.smiles;
+            reactants.forEach(r => {
+                if (r.smiles !== backtrackReactant.smiles) {
+                    givenStartingMaterials.push(r);
+                }
+            });
+        } else {
+            currentCompoundSMILES = reactants[0].smiles;
+        }
     }
-  }
-  visited.add(start.smiles);
-  // Try all reactions from start
-  const nextReactions = allowedReactions.filter(r =>
-    r.reactants.length === 1 &&
-    r.reactants[0].smiles === start.smiles &&
-    r.products.length === 1 &&
-    !visited.has(r.products[0].smiles)
-  );
-  for (const reaction of nextReactions) {
-    const nextCompound = allowedCompounds.find(c => c.smiles === reaction.products[0].smiles);
-    if (!nextCompound) continue;
-    if (nextCompound.smiles === end.smiles) continue; // Don't shortcut
-    const subpath = findSynthesisPathWithExactSteps(nextCompound, end, allowedReactions, allowedCompounds, steps - 1, new Set(visited));
-    if (subpath !== null) {
-      return [{ reaction, from: start, to: nextCompound }, ...subpath];
-    }
-  }
-  return null;
+
+    const mainStartingMaterial = compounds.find(c => c.smiles === currentCompoundSMILES);
+    const finalStartingMaterials = [mainStartingMaterial, ...givenStartingMaterials];
+    
+    const convergentStep = path.find(step => step.from.length > 1);
+    const keyIntermediate = (convergentStep && convergentStep.to.smiles !== endProduct.smiles) ? convergentStep.to : null;
+
+    return {
+        startingMaterials: finalStartingMaterials,
+        targetProduct: endProduct,
+        keyIntermediate,
+        path
+    };
 }
 
-// Generate a new synthesis problem
 newProblemButton.addEventListener('click', () => {
-  selectedFunctionalGroups = getSelectedFunctionalGroups();
-  if (selectedFunctionalGroups.length === 0) {
-    problemContent.innerHTML = `<span style="color:red;">Please select at least one functional group.</span>`;
-    showSolutionButton.style.display = "none";
-    solutionDisplay.style.display = "none";
-    return;
-  }
-  if (!validateStepRange()) {
-    problemContent.innerHTML = `<span style="color:red;">Please enter a valid step range (min ≤ max, both 1-15, integers only).</span>`;
-    showSolutionButton.style.display = "none";
-    solutionDisplay.style.display = "none";
-    return;
-  }
-  // Get min/max steps from settings
-  const minSteps = parseInt(minStepsInput.value, 10);
-  const maxSteps = parseInt(maxStepsInput.value, 10);
-
-  // Filter reactions that only use allowed functional groups
-  const allowedReactions = reactions.filter(r =>
-    r.functional_groups.some(fg => selectedFunctionalGroups.includes(fg))
-  );
-
-  // Find all unique reactant SMILES from allowed reactions
-  const allowedReactantSmiles = new Set();
-  allowedReactions.forEach(r => {
-    r.reactants.forEach(reactant => {
-      allowedReactantSmiles.add(reactant.smiles);
-    });
-  });
-
-  // Only include compounds that are used as reactants in allowed reactions
-  const allowedCompounds = compounds.filter(
-    c =>
-      allowedReactantSmiles.has(c.smiles) &&
-      c.functional_groups.some(fg => selectedFunctionalGroups.includes(fg))
-  );
-
-  if (allowedCompounds.length < 2 || allowedReactions.length === 0) {
-    problemContent.innerHTML = `<span style="color:red;">Not enough data for selected functional groups. Please select more.</span>`;
-    showSolutionButton.style.display = "none";
-    solutionDisplay.style.display = "none";
-    return;
-  }
-
-  // --- Only allow a problem if there is a valid solution (with the desired step count) ---
-  let found = false;
-  let path = [];
-  let product = null;
-  let start = null;
-  let maxTries = 80;
-
-  // Build a pool of possible start/end pairs (excluding same compound)
-  let possiblePairs = [];
-  for (let i = 0; i < allowedCompounds.length; i++) {
-    for (let j = 0; j < allowedCompounds.length; j++) {
-      if (i !== j) {
-        possiblePairs.push([allowedCompounds[i], allowedCompounds[j]]);
-      }
+    const selectedFGs = getSelectedFunctionalGroups();
+    if (selectedFGs.length === 0) {
+        problemContent.innerHTML = `<p class="text-red-500">Please select at least one functional group.</p>`;
+        return;
     }
-  }
+    if (!validateStepRange()) return;
 
-  // Shuffle the possiblePairs array (Fisher-Yates)
-  for (let i = possiblePairs.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [possiblePairs[i], possiblePairs[j]] = [possiblePairs[j], possiblePairs[i]];
-  }
+    const minSteps = parseInt(minStepsInput.value, 10);
+    const maxSteps = parseInt(maxStepsInput.value, 10);
 
-  for (let tries = 0; tries < maxTries && !found && possiblePairs.length > 0; tries++) {
-    // Pick a pair
-    let [tryStart, tryEnd] = possiblePairs.pop();
-    // Pick a random pathLen in allowed range
-    let pathLen = (maxSteps === minSteps) ? minSteps 
-                  : minSteps + Math.floor(Math.random() * (maxSteps - minSteps + 1));
-    // Find a path of exactly pathLen steps
-    let out = findSynthesisPathWithExactSteps(tryStart, tryEnd, allowedReactions, allowedCompounds, pathLen);
-    if (out !== null && out.length === pathLen) {
-      path = out;
-      product = tryEnd;
-      start = tryStart;
-      found = true;
+    const allowedReactions = reactions.filter(r =>
+        r.functional_groups.some(fg => selectedFGs.includes(fg))
+    );
+    const productSmiles = new Set(allowedReactions.flatMap(r => r.products.map(p => p.smiles)));
+    const productPool = compounds.filter(c => productSmiles.has(c.smiles));
+
+    if (productPool.length < 1 || allowedReactions.length === 0) {
+        problemContent.innerHTML = `<p class="text-red-500">Not enough data for the selected functional groups. Please select more.</p>`;
+        return;
     }
-  }
 
-  if (!found || !product) {
-    problemContent.innerHTML = `<span style="color:red;">Failed to generate a synthesis path. Please try again or select more functional groups, or a different step range.</span>`;
-    showSolutionButton.style.display = "none";
-    solutionDisplay.style.display = "none";
-    return;
-  }
+    let problem = null;
+    let maxTries = 100;
+    let shuffledProducts = [...productPool].sort(() => 0.5 - Math.random());
 
-  currentProblem = { start, end: product, path };
-  renderProblem(start, product);
-  showSolutionButton.style.display = "inline-block";
-  solutionDisplay.style.display = "none";
+    for (let i = 0; i < maxTries; i++) {
+        const targetProduct = shuffledProducts[i % shuffledProducts.length];
+        const pathLength = Math.floor(Math.random() * (maxSteps - minSteps + 1)) + minSteps;
+        
+        const potentialProblem = backtrackToFindPath(targetProduct, pathLength, allowedReactions);
+        
+        if (potentialProblem) {
+            const startSmiles = new Set(potentialProblem.startingMaterials.map(s => s.smiles));
+            if (!startSmiles.has(potentialProblem.targetProduct.smiles)) {
+                problem = potentialProblem;
+                break;
+            }
+        }
+    }
+    
+    if (problem) {
+        currentProblem = problem;
+        renderProblem(problem);
+        showSolutionButton.style.display = "inline-block";
+        solutionDisplay.style.display = "none";
+    } else {
+        problemContent.innerHTML = `<p class="text-red-500 font-semibold">Failed to generate a synthesis path.</p><p class="text-sm">Please try again, select more functional groups, or adjust the step range.</p>`;
+        showSolutionButton.style.display = "none";
+        solutionDisplay.style.display = "none";
+    }
 });
 
-// Render the synthesis problem
-function renderProblem(start, end) {
-  // Use cactus.nci.nih.gov to display structures
+// --- Rendering Functions ---
+
+function renderProblem(problem) {
+  const { startingMaterials, targetProduct, keyIntermediate } = problem;
+
+  const startingMaterialsHtml = startingMaterials.map(start => `
+    <div class="text-center">
+      <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(start.smiles)}/image" 
+           alt="${start.iupac_name}" class="chem-img h-24 w-24 object-contain mx-auto mb-2">
+      <div class="text-sm font-medium">${start.iupac_name}</div>
+    </div>
+  `).join('<div class="text-4xl font-light self-center mx-2">+</div>');
+
+  const keyIntermediateHtml = keyIntermediate ? `
+    <div class="mt-6 text-center border-t pt-4">
+      <strong class="text-md font-semibold">Key Intermediate to Form:</strong>
+      <p class="text-sm">${keyIntermediate.iupac_name}</p>
+      <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(keyIntermediate.smiles)}/image" 
+           alt="${keyIntermediate.iupac_name}" class="chem-img h-20 w-20 object-contain mx-auto mt-2">
+    </div>
+  ` : '';
+
   problemContent.innerHTML = `
-    <div style="display:flex;align-items:center;flex-wrap:wrap;gap:1.5rem;">
-      <div style="text-align:center;">
-        <div><strong>Start:</strong></div>
-        <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(start.smiles)}/image" 
-             alt="${start.iupac_name}" style="max-width:96px;display:block;margin:auto;">
-        <div>${start.iupac_name}${start.common_name ? " (" + start.common_name + ")" : ""}</div>
-      </div>
-      <div style="font-size:2.5rem;padding-top:2.5rem;">&#8594;</div>
-      <div style="text-align:center;">
-        <div><strong>Product:</strong></div>
-        <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(end.smiles)}/image"
-             alt="${end.iupac_name}" style="max-width:96px;display:block;margin:auto;">
-        <div>${end.iupac_name}${end.common_name ? " (" + end.common_name + ")" : ""}</div>
-      </div>
+    <div class="text-center mb-4">
+        <h3 class="font-semibold">Starting Material(s)</h3>
     </div>
-    <div style="margin-top:1.5rem;font-size:1.05rem;color:#555;">
-      <em>Can you propose a plausible sequence of reactions from the starting material to the product?</em>
+    <div class="flex justify-center items-start flex-wrap gap-2">
+      ${startingMaterialsHtml}
     </div>
+    <div class="text-5xl text-center my-4 font-thin text-blue-500 dark:text-blue-400">&#x2193;</div>
+    <div class="text-center">
+        <h3 class="font-semibold">Final Product</h3>
+        <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(targetProduct.smiles)}/image"
+             alt="${targetProduct.iupac_name}" class="chem-img h-24 w-24 object-contain mx-auto mt-2 mb-2">
+        <div class="text-sm font-medium">${targetProduct.iupac_name}</div>
+    </div>
+    ${keyIntermediateHtml}
   `;
 }
 
-// Show solution button
 showSolutionButton.addEventListener('click', () => {
   if (!currentProblem) return;
   renderSolution(currentProblem.path);
   solutionDisplay.style.display = "block";
 });
 
-// Render the solution path
 function renderSolution(path) {
-  if (!path || !Array.isArray(path) || path.length === 0) {
-    solutionContent.innerHTML = `<span style="color:red;">No solution path found.</span>`;
+  if (!path || path.length === 0) {
+    solutionContent.innerHTML = `<p class="text-red-500">No solution path found.</p>`;
     return;
   }
-  const html = path.map((step, idx) => {
+  solutionContent.innerHTML = path.map((step, idx) => {
     const { reaction, from, to } = step;
-    return `
-      <div style="margin-bottom:1.2rem;">
-        <div><strong>Step ${idx + 1}${reaction.reaction_name ? ": " + reaction.reaction_name : ""}</strong></div>
-        <div style="display:flex;align-items:center;gap:1.2rem;margin:0.4em 0;">
-          <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(from.smiles)}/image" 
-               alt="${from.iupac_name}" style="max-width:64px;">
-          <span style="font-size:2rem;">&#8594;</span>
-          <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(to.smiles)}/image" 
-               alt="${to.iupac_name}" style="max-width:64px;">
+    const fromHtml = from.map(r => `
+        <div class="text-center">
+            <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(r.smiles)}/image" 
+                 alt="${r.iupac_name}" class="chem-img h-20 w-20 object-contain mx-auto">
+            <p class="text-xs mt-1">${r.iupac_name}</p>
         </div>
-        <div><strong>Reagents:</strong> ${reaction.reagents}</div>
-        <div><strong>Functional Groups:</strong> ${reaction.functional_groups.join(", ")}</div>
+    `).join('<div class="text-2xl self-center mx-2">+</div>');
+
+    return `
+      <div class="border-b pb-4 mb-4 dark:border-gray-600">
+        <h4 class="text-lg font-semibold mb-2">Step ${idx + 1}: <span class="font-normal">${reaction.reaction_name}</span></h4>
+        <div class="flex items-center justify-center flex-wrap gap-4">
+          <div class="flex items-center gap-2">${fromHtml}</div>
+          <div class="flex flex-col items-center">
+            <div class="text-sm font-mono px-2 py-1 rounded bg-gray-100 dark:bg-gray-800">${reaction.reagents}</div>
+            <div class="text-3xl font-thin text-blue-500 dark:text-blue-400 my-1">&#x2192;</div>
+          </div>
+          <div class="text-center">
+            <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(to.smiles)}/image" 
+                 alt="${to.iupac_name}" class="chem-img h-20 w-20 object-contain mx-auto">
+            <p class="text-xs mt-1">${to.iupac_name}</p>
+          </div>
+        </div>
       </div>
     `;
   }).join("");
-  solutionContent.innerHTML = html;
 }
-
-// Hide solution on new problem
-newProblemButton.addEventListener('click', () => {
-  solutionDisplay.style.display = "none";
-});
