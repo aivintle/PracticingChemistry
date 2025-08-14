@@ -1,10 +1,8 @@
 // --- Basic Setup: Theme and Settings Panel Toggle ---
-// Theme toggle based on original file's method
-document.querySelector('.theme-toggle').addEventListener('click', toggleTheme);
-function toggleTheme() {
-  const currentTheme = document.body.getAttribute("data-theme");
-  document.body.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
-}
+document.querySelector('.theme-toggle').addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+});
 
 const toggleButton = document.getElementById('settings-toggle-button');
 const settingsPanel = document.getElementById('settings-panel');
@@ -49,7 +47,7 @@ fetch("reactions.json")
     populateFunctionalGroupCheckboxes();
   }).catch(error => {
       console.error("Failed to load reactions.json:", error);
-      problemContent.innerHTML = `<span style="color:red;">Error: Could not load reaction data. Please check the console.</span>`;
+      problemContent.innerHTML = `<span class="text-red-500">Error: Could not load reaction data. Please check the console.</span>`;
   });
 
 // --- UI and Settings Functions ---
@@ -57,10 +55,12 @@ fetch("reactions.json")
 function populateFunctionalGroupCheckboxes() {
   const allGroups = new Set(reactions.flatMap(r => r.functional_groups || []));
   const sortedGroups = Array.from(allGroups).sort();
-  // Use original HTML structure for checkboxes
-  fgCheckboxesDiv.innerHTML = sortedGroups.map(group =>
-    `<label><input type="checkbox" name="functional-group" value="${group}" checked /> ${group.replace(/-/g, " ")}</label>`
-  ).join("\n");
+  fgCheckboxesDiv.innerHTML = sortedGroups.map(group => `
+    <label class="flex items-center space-x-2 cursor-pointer">
+      <input type="checkbox" name="functional-group" value="${group}" checked class="h-4 w-4 rounded" />
+      <span class="capitalize">${group.replace(/-/g, " ")}</span>
+    </label>
+  `).join("\n");
 }
 
 selectAllBtn.addEventListener('click', () => {
@@ -130,9 +130,6 @@ function backtrackToFindPath(endProduct, steps, allowedReactions) {
     }
 
     const mainStartingMaterial = compounds.find(c => c.smiles === currentCompoundSMILES);
-    // Ensure mainStartingMaterial is not null before proceeding
-    if (!mainStartingMaterial) return null;
-    
     const finalStartingMaterials = [mainStartingMaterial, ...givenStartingMaterials];
     
     const convergentStep = path.find(step => step.from.length > 1);
@@ -149,7 +146,7 @@ function backtrackToFindPath(endProduct, steps, allowedReactions) {
 newProblemButton.addEventListener('click', () => {
     const selectedFGs = getSelectedFunctionalGroups();
     if (selectedFGs.length === 0) {
-        problemContent.innerHTML = `<p style="color:red;">Please select at least one functional group.</p>`;
+        problemContent.innerHTML = `<p class="text-red-500">Please select at least one functional group.</p>`;
         return;
     }
     if (!validateStepRange()) return;
@@ -164,7 +161,7 @@ newProblemButton.addEventListener('click', () => {
     const productPool = compounds.filter(c => productSmiles.has(c.smiles));
 
     if (productPool.length < 1 || allowedReactions.length === 0) {
-        problemContent.innerHTML = `<p style="color:red;">Not enough data for the selected functional groups. Please select more.</p>`;
+        problemContent.innerHTML = `<p class="text-red-500">Not enough data for the selected functional groups. Please select more.</p>`;
         return;
     }
 
@@ -193,7 +190,7 @@ newProblemButton.addEventListener('click', () => {
         showSolutionButton.style.display = "inline-block";
         solutionDisplay.style.display = "none";
     } else {
-        problemContent.innerHTML = `<p style="color:red; font-weight: bold;">Failed to generate a synthesis path.</p><p style="font-size: 0.9em;">Please try again, select more functional groups, or adjust the step range.</p>`;
+        problemContent.innerHTML = `<p class="text-red-500 font-semibold">Failed to generate a synthesis path.</p><p class="text-sm">Please try again, select more functional groups, or adjust the step range.</p>`;
         showSolutionButton.style.display = "none";
         solutionDisplay.style.display = "none";
     }
@@ -205,35 +202,35 @@ function renderProblem(problem) {
   const { startingMaterials, targetProduct, keyIntermediate } = problem;
 
   const startingMaterialsHtml = startingMaterials.map(start => `
-    <div style="text-align:center;">
+    <div class="text-center">
       <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(start.smiles)}/image" 
-           alt="${start.iupac_name}" style="max-width:96px;display:block;margin:auto;background:white;border-radius:8px;padding:4px; border: 1px solid #ddd;">
-      <div style="font-size:0.9em; margin-top: 0.5rem;">${start.iupac_name}</div>
+           alt="${start.iupac_name}" class="chem-img h-24 w-24 object-contain mx-auto mb-2">
+      <div class="text-sm font-medium">${start.iupac_name}</div>
     </div>
-  `).join('<div style="font-size:2.5rem;align-self:center;margin:0 0.5rem;">+</div>');
+  `).join('<div class="text-4xl font-light self-center mx-2">+</div>');
 
   const keyIntermediateHtml = keyIntermediate ? `
-    <div style="margin-top:1.5rem;text-align:center;border-top:1px solid #ddd;padding-top:1rem;">
-      <strong>Key Intermediate to Form:</strong>
-      <p style="font-size:0.9em;">${keyIntermediate.iupac_name}</p>
+    <div class="mt-6 text-center border-t pt-4">
+      <strong class="text-md font-semibold">Key Intermediate to Form:</strong>
+      <p class="text-sm">${keyIntermediate.iupac_name}</p>
       <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(keyIntermediate.smiles)}/image" 
-           alt="${keyIntermediate.iupac_name}" style="max-width:80px;display:block;margin:0.5rem auto 0;background:white;border-radius:8px;padding:4px; border: 1px solid #ddd;">
+           alt="${keyIntermediate.iupac_name}" class="chem-img h-20 w-20 object-contain mx-auto mt-2">
     </div>
   ` : '';
 
   problemContent.innerHTML = `
-    <div style="text-align:center;margin-bottom:1rem;">
-        <h3>Starting Material(s)</h3>
+    <div class="text-center mb-4">
+        <h3 class="font-semibold">Starting Material(s)</h3>
     </div>
-    <div style="display:flex;justify-content:center;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;">
+    <div class="flex justify-center items-start flex-wrap gap-2">
       ${startingMaterialsHtml}
     </div>
-    <div style="font-size:3rem;text-align:center;margin:1rem 0;color:#4a5568;">&#x2193;</div>
-    <div style="text-align:center;">
-        <h3>Final Product</h3>
+    <div class="text-5xl text-center my-4 font-thin text-blue-500 dark:text-blue-400">&#x2193;</div>
+    <div class="text-center">
+        <h3 class="font-semibold">Final Product</h3>
         <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(targetProduct.smiles)}/image"
-             alt="${targetProduct.iupac_name}" style="max-width:96px;display:block;margin:0.5rem auto 0;background:white;border-radius:8px;padding:4px; border: 1px solid #ddd;">
-        <div style="font-size:0.9em; margin-top: 0.5rem;">${targetProduct.iupac_name}</div>
+             alt="${targetProduct.iupac_name}" class="chem-img h-24 w-24 object-contain mx-auto mt-2 mb-2">
+        <div class="text-sm font-medium">${targetProduct.iupac_name}</div>
     </div>
     ${keyIntermediateHtml}
   `;
@@ -247,41 +244,32 @@ showSolutionButton.addEventListener('click', () => {
 
 function renderSolution(path) {
   if (!path || path.length === 0) {
-    solutionContent.innerHTML = `<span style="color:red;">No solution path found.</span>`;
+    solutionContent.innerHTML = `<p class="text-red-500">No solution path found.</p>`;
     return;
   }
   solutionContent.innerHTML = path.map((step, idx) => {
     const { reaction, from, to } = step;
-    
     const fromHtml = from.map(r => `
-        <div style="text-align: center;">
+        <div class="text-center">
             <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(r.smiles)}/image" 
-                 alt="${r.iupac_name}" style="max-width: 80px; background: white; border-radius: 8px; padding: 4px; border: 1px solid #ddd;">
-            <p style="font-size: 0.8em; margin-top: 0.25rem;">${r.iupac_name}</p>
+                 alt="${r.iupac_name}" class="chem-img h-20 w-20 object-contain mx-auto">
+            <p class="text-xs mt-1">${r.iupac_name}</p>
         </div>
-    `).join('<div style="font-size: 2rem; align-self: center; margin: 0 0.5rem;">+</div>');
+    `).join('<div class="text-2xl self-center mx-2">+</div>');
 
     return `
-      <div style="margin-bottom: 2rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.5rem;">
-        <h4 style="font-size: 1.1rem; font-weight: bold; margin-bottom: 1rem;">Step ${idx + 1}: <span style="font-weight: normal;">${reaction.reaction_name}</span></h4>
-        <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 1rem;">
-          
-          <!-- Reactants -->
-          <div style="display: flex; align-items: center; gap: 0.5rem;">
-            ${fromHtml}
+      <div class="border-b pb-4 mb-4 dark:border-gray-600">
+        <h4 class="text-lg font-semibold mb-2">Step ${idx + 1}: <span class="font-normal">${reaction.reaction_name}</span></h4>
+        <div class="flex items-center justify-center flex-wrap gap-4">
+          <div class="flex items-center gap-2">${fromHtml}</div>
+          <div class="flex flex-col items-center">
+            <div class="text-sm font-mono px-2 py-1 rounded bg-gray-100 dark:bg-gray-800">${reaction.reagents}</div>
+            <div class="text-3xl font-thin text-blue-500 dark:text-blue-400 my-1">&#x2192;</div>
           </div>
-          
-          <!-- Arrow and Reagents -->
-          <div style="text-align: center; margin: 0 1rem;">
-            <div style="font-family: monospace; font-size: 0.9em; margin-bottom: 0.25rem; padding: 0.25rem 0.5rem; background-color: #f7fafc; border-radius: 4px;">${reaction.reagents}</div>
-            <div style="font-size: 2.5rem; color: #4299e1;">&#x2192;</div>
-          </div>
-          
-          <!-- Product -->
-          <div style="text-align: center;">
+          <div class="text-center">
             <img src="https://cactus.nci.nih.gov/chemical/structure/${encodeURIComponent(to.smiles)}/image" 
-                 alt="${to.iupac_name}" style="max-width: 80px; background: white; border-radius: 8px; padding: 4px; border: 1px solid #ddd;">
-            <p style="font-size: 0.8em; margin-top: 0.25rem;">${to.iupac_name}</p>
+                 alt="${to.iupac_name}" class="chem-img h-20 w-20 object-contain mx-auto">
+            <p class="text-xs mt-1">${to.iupac_name}</p>
           </div>
         </div>
       </div>
