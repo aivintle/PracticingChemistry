@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Organic Chemistry Synthesis Practice App</title>
   <link rel="stylesheet" href="/PracticingChemistry/css/style.css" />
+  <!-- Vis.js Network Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" xintegrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" xintegrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     .header-title-link {
       color: inherit;
@@ -58,6 +61,18 @@
       color: var(--siena-green, #006341);
       text-shadow: 1px 1px 3px rgba(0,99,65,0.08);
     }
+    /* Style for the network container */
+    #solution-network {
+        width: 100%;
+        height: 500px; /* You can adjust the height */
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+    }
+    [data-theme="dark"] #solution-network {
+        border-color: #4a5568;
+        background-color: #2d3748;
+    }
     @media (max-width: 700px) {
       .app-title {
         font-size: 1.45rem;
@@ -66,7 +81,7 @@
     }
   </style>
 </head>
-<body>
+<body data-theme="light">
   <header>
     <a href="/PracticingChemistry/index.html" class="header-title-link">Practicing Chemistry</a>
     <button class="theme-toggle">Toggle Theme</button>
@@ -126,12 +141,14 @@
     </section>
     <section id="solution-display" style="display: none;">
       <h2>Solution Path</h2>
-      <div id="solution-content"></div>
+      <div id="solution-content">
+        <!-- The network graph will be rendered here -->
+      </div>
     </section>
   </main>
   <footer>
     <p>&copy; 2025 Practicing Chemistry. All rights reserved.</p>
-    <p>Version 1.004</p>
+    <p>Version 1.002</p>
   </footer>
   <script src="synthesis-app.js"></script>
   <script>
