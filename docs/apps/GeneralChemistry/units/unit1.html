@@ -4,7 +4,185 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit 1 Practice | Practicing Chemistry</title>
+    <!-- Relative path to find your global CSS file -->
     <link rel="stylesheet" href="../../css/style.css">
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --primary-hover: #004085;
+            --text-dark: #212529;
+            --text-muted: #6c757d;
+            --border-color: #dee2e6;
+            --bg-card: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .site-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+        }
+
+        .breadcrumbs {
+            margin-bottom: 0.75rem;
+        }
+
+        .breadcrumbs a {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumbs a:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.25rem;
+            color: var(--text-dark);
+        }
+
+        .subtitle {
+            margin: 0.5rem 0 0 0;
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+
+        .intro-text {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        /* Responsive Grid for Module Cards */
+        .app-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .app-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .app-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.75rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .app-card:hover:not(.disabled) {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.06);
+        }
+
+        .app-card.disabled {
+            background-color: #f1f3f5;
+            border-style: dashed;
+            opacity: 0.75;
+        }
+
+        .badge {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 0.25rem 0.6rem;
+            border-radius: 50px;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .badge-active {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .badge-upcoming {
+            background-color: #e9ecef;
+            color: #495057;
+        }
+
+        .app-card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.25rem;
+            color: var(--text-dark);
+        }
+
+        .app-card p {
+            margin: 0 0 1.5rem 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            padding: 0.65rem 1.25rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: #ffffff;
+            border: 1px solid var(--primary-blue);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+        }
+
+        .btn-disabled {
+            background-color: #dee2e6;
+            color: #6c757d;
+            border: 1px solid #dee2e6;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .site-footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 3rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,48 +191,72 @@
             <nav class="breadcrumbs">
                 <a href="../index.html">&larr; Back to Dashboard</a>
             </nav>
-            <h1>Unit 1 Practice</h1>
-            <p class="subtitle">Chapters E–2: Matter, Measurement, Atoms, and Elements</p>
+            <h1>Unit 1 Practice Hub</h1>
+            <p class="subtitle">Chapters E–2: Foundations, Measurement, Atoms, and Elements</p>
         </div>
     </header>
 
     <main class="container">
-        <section class="app-directory">
-            <p class="intro-text">Master the fundamentals. Choose an application module below to practice your skills:</p>
+        <p class="intro-text">Welcome to the Unit 1 study station! Select any of the interactive practice modules below to test your skills, practice core techniques, and get immediate conceptual feedback.</p>
+        
+        <div class="app-grid">
             
-            <div class="app-grid">
-                
-                <div class="app-card">
-                    <h3>Significant Figures</h3>
-                    <p>Practice identifying significant digits, rounding, and tracking precision through calculations.</p>
-                    <a href="unit1/sig-figs.html" class="btn-primary">Launch App</a>
+            <!-- Module 1: Matter & Energy (ACTIVE) -->
+            <div class="app-card">
+                <div>
+                    <span class="badge badge-active">Active Module</span>
+                    <h3>Chapter E: Matter & Energy</h3>
+                    <p>Practice describing types of matter, distinguishing intrinsic vs. extrinsic properties, and studying the fundamental laws of energy conservation.</p>
                 </div>
-
-                <div class="app-card">
-                    <h3>Dimensional Analysis</h3>
-                    <p>Master unit conversions, metric prefixes ($mu$, $m$, $c$, $k$), and density calculation problems.</p>
-                    <a href="unit1/dimensional-analysis.html" class="btn-primary">Launch App</a>
-                </div>
-
-                <div class="app-card">
-                    <h3>Atoms, Isotopes, & Ions</h3>
-                    <p>Given an element name or symbol, calculate the number of protons, neutrons, electrons, and net charge.</p>
-                    <a href="unit1/atoms-isotopes.html" class="btn-primary">Launch App</a>
-                </div>
-
-                <div class="app-card">
-                    <h3>The Mole & Mass Conversions</h3>
-                    <p>Practice translating between mass (grams), substance amount (moles), and particle count (atoms) using Avogadro's number.</p>
-                    <a href="unit1/mole-conversions.html" class="btn-primary">Launch App</a>
-                </div>
-
+                <a href="unit1/matter-energy.html" class="btn btn-primary">Launch Application &rarr;</a>
             </div>
-        </section>
+
+            <!-- Module 2: Significant Figures (UPCOMING) -->
+            <div class="app-card disabled">
+                <div>
+                    <span class="badge badge-upcoming">Coming Soon</span>
+                    <h3>Chapter 1: Significant Figures</h3>
+                    <p>Master rules for identifying significant digits, rounding, and keeping track of mathematical precision during complex calculations.</p>
+                </div>
+                <a href="#" class="btn btn-disabled">Module Locked</a>
+            </div>
+
+            <!-- Module 3: Dimensional Analysis (UPCOMING) -->
+            <div class="app-card disabled">
+                <div>
+                    <span class="badge badge-upcoming">Coming Soon</span>
+                    <h3>Chapter 1: Dimensional Analysis</h3>
+                    <p>Learn how to map units smoothly using conversion factors, practice key metric prefixes, and solve density problems.</p>
+                </div>
+                <a href="#" class="btn btn-disabled">Module Locked</a>
+            </div>
+
+            <!-- Module 4: Atoms, Isotopes, & Ions (UPCOMING) -->
+            <div class="app-card disabled">
+                <div>
+                    <span class="badge badge-upcoming">Coming Soon</span>
+                    <h3>Chapter 2: Atoms, Isotopes, & Ions</h3>
+                    <p>Determine the precise count of protons, neutrons, and electrons in neutral atoms, isotopic configurations, and ions.</p>
+                </div>
+                <a href="#" class="btn btn-disabled">Module Locked</a>
+            </div>
+
+            <!-- Module 5: The Mole Concept (UPCOMING) -->
+            <div class="app-card disabled" style="grid-column: 1 / -1;">
+                <div>
+                    <span class="badge badge-upcoming">Coming Soon</span>
+                    <h3>Chapter 2: The Mole & Mass Conversions</h3>
+                    <p>Bridge the gap between microscopic atoms and macroscopic laboratory quantities using Avogadro's number and molar masses.</p>
+                </div>
+                <a href="#" class="btn btn-disabled" style="width: auto; max-width: 200px; margin: 0 auto;">Module Locked</a>
+            </div>
+
+        </div>
     </main>
 
     <footer class="site-footer">
         <div class="container">
-            <p>&copy; 2026 Practicing Chemistry. Open source on GitHub.</p>
+            <p>&copy; 2026 Practicing Chemistry. Open source study platform.</p>
         </div>
     </footer>
 
