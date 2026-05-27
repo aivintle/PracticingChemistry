@@ -6,7 +6,7 @@ Welcome to Practicing Chemistry Projects! This website is a hub for interactive 
 Website link: [https://aivintle.github.io/PracticingChemistry/apps/OrganicChemistry/SynthesisApp/index.html](https://aivintle.github.io/PracticingChemistry/apps/OrganicChemistry/SynthesisApp/index.html)
 
 ## Featured Project: Organic Chemistry Synthesis Practice App
-The Organic Chemistry Synthesis Practice App is one of our flagship tools, aimed at helping students prepare for Organic Chemistry Exams by practicing synthesis problems.
+The Organic Chemistry Synthesis Practice App aims to help students prepare for Organic Chemistry Exams wiht practice synthesis problems.
 
 ### Features
 - Automatically generated synthesis problems tailored to your course level.
