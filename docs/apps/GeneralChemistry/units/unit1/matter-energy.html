@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter E: Matter & Energy Practice | Practicing Chemistry</title>
     
-    <!-- Link to the global stylesheet -->
+    <!-- Link to your website's global stylesheet -->
     <link rel="stylesheet" href="../../../css/style.css">
     
     <!-- KaTeX CDN for mathematical, physical, and chemical formulas -->
@@ -15,42 +15,14 @@
     <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
 
     <style>
-        :root {
-            --primary-blue: #0056b3;
-            --primary-hover: #004085;
-            --correct-color: #2e7d32;
-            --correct-light: #e8f5e9;
-            --incorrect-color: #c62828;
-            --incorrect-light: #ffebee;
-            --bg-card: #ffffff;
-            --border-color: #dee2e6;
-            --text-dark: #212529;
-            --text-muted: #6c757d;
-            --modal-bg: rgba(0, 0, 0, 0.5);
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: var(--text-dark);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        .practice-container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
+        /* Essential interactive layout styles that do not override your global theme assets */
         .quiz-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 8px;
             padding: 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            margin-bottom: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
             position: relative;
         }
 
@@ -73,7 +45,7 @@
 
         .progress-fill {
             height: 100%;
-            background-color: var(--primary-blue);
+            background-color: var(--primary-color, #0056b3); /* Uses global primary color fallback */
             width: 0%;
             transition: width 0.3s ease;
         }
@@ -89,30 +61,30 @@
             padding: 1rem;
             text-align: left;
             background: #ffffff;
-            border: 2px solid var(--border-color);
+            border: 2px solid rgba(0,0,0,0.1);
             border-radius: 8px;
             cursor: pointer;
             font-size: 1rem;
             transition: all 0.2s ease;
-            color: var(--text-dark);
         }
 
         .option-btn:hover:not(:disabled) {
-            background: #f1f3f5;
-            border-color: #6c757d;
+            background: rgba(0,0,0,0.02);
+            border-color: rgba(0,0,0,0.2);
         }
 
+        /* Color-coded feedback states for interactive elements */
         .option-btn.correct {
-            background-color: var(--correct-light) !important;
-            border-color: var(--correct-color) !important;
-            color: var(--correct-color) !important;
+            background-color: #e8f5e9 !important;
+            border-color: #2e7d32 !important;
+            color: #2e7d32 !important;
             font-weight: bold;
         }
 
         .option-btn.incorrect {
-            background-color: var(--incorrect-light) !important;
-            border-color: var(--incorrect-color) !important;
-            color: var(--incorrect-color) !important;
+            background-color: #ffebee !important;
+            border-color: #c62828 !important;
+            color: #c62828 !important;
         }
 
         .feedback-box {
@@ -123,8 +95,19 @@
             line-height: 1.6;
         }
 
-        .feedback-box.correct { display: block; background-color: var(--correct-light); color: var(--correct-color); border-left: 5px solid var(--correct-color); }
-        .feedback-box.incorrect { display: block; background-color: var(--incorrect-light); color: var(--incorrect-color); border-left: 5px solid var(--incorrect-color); }
+        .feedback-box.correct { 
+            display: block; 
+            background-color: #e8f5e9; 
+            color: #2e7d32; 
+            border-left: 5px solid #2e7d32; 
+        }
+        
+        .feedback-box.incorrect { 
+            display: block; 
+            background-color: #ffebee; 
+            color: #c62828; 
+            border-left: 5px solid #c62828; 
+        }
 
         .nav-actions {
             display: flex;
@@ -133,13 +116,13 @@
             margin-top: 1.5rem;
         }
 
-        /* Responsive Graphic Area Styles */
+        /* Interactive Graphic Media Layouts */
         .media-container {
             display: flex;
             justify-content: center;
             align-items: center;
             margin: 1.5rem 0;
-            background: #f1f3f5;
+            background: rgba(0,0,0,0.02);
             border-radius: 8px;
             padding: 1.5rem;
             min-height: 200px;
@@ -149,7 +132,7 @@
             max-width: 100%;
             max-height: 240px;
             border-radius: 6px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             object-fit: contain;
         }
 
@@ -157,31 +140,39 @@
             width: 180px;
             height: 180px;
             background: #ffffff;
-            border: 2px dashed #6c757d;
+            border: 2px dashed rgba(0,0,0,0.3);
             border-radius: 6px;
         }
 
-        .results-screen { display: none; text-align: center; }
-        .score-display { font-size: 3.5rem; font-weight: bold; color: var(--primary-blue); margin: 1rem 0; }
+        .results-screen { 
+            display: none; 
+            text-align: center; 
+        }
+        
+        .score-display { 
+            font-size: 3.5rem; 
+            font-weight: bold; 
+            margin: 1rem 0; 
+        }
 
-        /* Settings Modal Custom Styles */
+        /* Settings Modal Layout */
         .modal-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-color: var(--modal-bg);
+            background-color: rgba(0, 0, 0, 0.5);
             z-index: 1000;
             justify-content: center;
             align-items: center;
         }
 
         .modal-content {
-            background: white;
+            background: #ffffff;
             padding: 2rem;
             border-radius: 12px;
             max-width: 550px;
             width: 90%;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
 
         .objective-option {
@@ -196,54 +187,29 @@
             transition: background 0.2s;
         }
 
-        .objective-option:hover { background: #f8f9fa; }
-        .objective-option input { margin-top: 0.25rem; transform: scale(1.1); }
+        .objective-option:hover { 
+            background: rgba(0,0,0,0.02); 
+        }
         
-        .btn {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
+        .objective-option input { 
+            margin-top: 0.25rem; 
+            transform: scale(1.1); 
         }
-        .btn:hover { background-color: var(--primary-hover); }
-
-        .btn-alt {
-            background-color: transparent;
-            border: 2px solid var(--border-color);
-            color: var(--text-dark);
-        }
-        .btn-alt:hover { background: #f1f3f5; }
-
-        .btn-settings {
-            background: #6c757d;
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-        .btn-settings:hover { background: #5a6268; }
     </style>
 </head>
 <body>
 
-    <header class="site-header" style="background: #ffffff; border-bottom: 1px solid var(--border-color); padding: 1.5rem 0;">
-        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 1rem;">
-            <nav class="breadcrumbs" style="margin-bottom: 0.5rem;">
-                <a href="../unit1.html" style="color: var(--primary-blue); text-decoration: none;">&larr; Back to Unit 1</a>
+    <header class="site-header">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <a href="../unit1.html">&larr; Back to Unit 1</a>
             </nav>
-            <h1 style="margin: 0; font-size: 1.75rem;">Chapter E Practice Application</h1>
-            <p class="subtitle" style="color: var(--text-muted); margin: 0.25rem 0 0 0;">Matter, Classification, Properties, and Energy Foundations</p>
+            <h1>Chapter E Practice Application</h1>
+            <p class="subtitle">Matter, Classification, Properties, and Energy Foundations</p>
         </div>
     </header>
 
-    <main class="practice-container">
+    <main class="container">
         <!-- Interactive Quiz App Frame -->
         <div id="quiz-app" class="quiz-card">
             <div class="progress-bar">
@@ -251,11 +217,11 @@
             </div>
             
             <div class="quiz-header-layout">
-                <div id="meta-info" style="font-weight: 600; color: var(--text-muted); font-size: 0.9rem;"></div>
-                <button class="btn-settings" onclick="app.openSettings()">⚙️ Settings</button>
+                <div id="meta-info"></div>
+                <button class="btn btn-secondary" onclick="app.openSettings()">⚙️ Settings</button>
             </div>
             
-            <h2 id="question-text" style="margin-top: 0; font-size: 1.35rem; line-height: 1.4;">Loading Question...</h2>
+            <h2 id="question-text">Loading Question...</h2>
 
             <!-- Graphic container supports diagrams and images with fallbacks -->
             <div id="media-area" class="media-container" style="display: none;"></div>
@@ -264,8 +230,8 @@
             <div id="feedback" class="feedback-box"></div>
 
             <div class="nav-actions">
-                <span id="score-counter" style="font-weight: 600; color: var(--text-muted);">Score: 0/0</span>
-                <button id="next-btn" class="btn" style="display: none;" onclick="app.nextQuestion()">Next Question &rarr;</button>
+                <span id="score-counter">Score: 0/0</span>
+                <button id="next-btn" class="btn btn-primary" style="display: none;" onclick="app.nextQuestion()">Next Question &rarr;</button>
             </div>
         </div>
 
@@ -273,9 +239,9 @@
         <div id="summary-app" class="quiz-card results-screen">
             <h2>Practice Run Complete!</h2>
             <div id="final-score" class="score-display">0%</div>
-            <p id="performance-feedback" style="font-size: 1.1rem; color: var(--text-muted);"></p>
+            <p id="performance-feedback"></p>
             <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
-                <button class="btn" onclick="app.restartQuiz()">Retry Current Pool</button>
+                <button class="btn btn-primary" onclick="app.restartQuiz()">Retry Current Pool</button>
                 <button class="btn btn-alt" onclick="app.openSettings()">Modify Settings</button>
             </div>
         </div>
@@ -284,21 +250,21 @@
     <!-- Settings Filter Overlay -->
     <div id="settings-modal" class="modal-overlay">
         <div class="modal-content">
-            <h3 style="margin-top: 0; font-size: 1.25rem;">Practice Customization</h3>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Select the learning objectives you want to target in this session:</p>
+            <h3>Practice Customization</h3>
+            <p>Select the learning objectives you want to target in this session:</p>
             
             <div id="objectives-selector" style="margin: 1.5rem 0;">
-                <!-- Filled via js -->
+                <!-- Filled via JS -->
             </div>
 
             <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
                 <button class="btn btn-alt" onclick="app.closeSettings()">Cancel</button>
-                <button class="btn" onclick="app.applySettings()">Apply & Restart</button>
+                <button class="btn btn-primary" onclick="app.applySettings()">Apply & Restart</button>
             </div>
         </div>
     </div>
 
-    <footer class="site-footer" style="text-align: center; padding: 2rem 0; color: var(--text-muted); font-size: 0.9rem;">
+    <footer class="site-footer">
         <div class="container">
             <p>&copy; 2026 Practicing Chemistry. Custom visual media fallbacks enabled.</p>
         </div>
@@ -352,7 +318,6 @@
 
         class ConfigurableQuiz {
             constructor(masterData) {
-                // Read database array exported by questions.js
                 this.masterData = masterData || [];
                 this.selectedObjectives = this.getUniqueObjectives();
                 this.activePool = [];
@@ -389,7 +354,6 @@
             generateActivePool() {
                 let filtered = this.masterData.filter(q => this.selectedObjectives.includes(q.objective));
                 
-                // Secure backup configuration if student clears all options
                 if (filtered.length === 0) {
                     filtered = [...this.masterData];
                     this.selectedObjectives = this.getUniqueObjectives();
@@ -427,7 +391,6 @@
                 feedbackBox.className = "feedback-box";
                 feedbackBox.textContent = "";
 
-                // Graphic view setup
                 const mediaArea = document.getElementById("media-area");
                 mediaArea.innerHTML = "";
                 mediaArea.style.display = "none";
@@ -441,7 +404,6 @@
                     img.alt = q.objective;
                     img.className = "question-image";
                     
-                    // Render custom vector fallbacks gracefully if the asset is missing
                     img.onerror = () => {
                         img.onerror = null;
                         const placeholderType = q.imagePlaceholderType || 'beaker';
@@ -453,7 +415,6 @@
                     mediaArea.style.display = "flex";
                 }
 
-                // Render options
                 const optionsContainer = document.getElementById("options");
                 optionsContainer.innerHTML = "";
                 
@@ -465,7 +426,6 @@
                     optionsContainer.appendChild(btn);
                 });
 
-                // Auto render scientific equations with KaTeX
                 this.triggerMathFormatting();
             }
 
@@ -560,9 +520,7 @@
             }
         }
 
-        // Initialize quiz sequence once DOM structure binds
         window.onload = function() {
-            // Check if questions.js loaded properly
             const questionData = typeof chapterEQuestions !== 'undefined' ? chapterEQuestions : [];
             window.app = new ConfigurableQuiz(questionData);
         }

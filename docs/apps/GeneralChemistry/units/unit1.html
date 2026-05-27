@@ -7,78 +7,12 @@
     <!-- Relative path to find your global CSS file -->
     <link rel="stylesheet" href="../../css/style.css">
     <style>
-        :root {
-            --primary-blue: #0056b3;
-            --primary-hover: #004085;
-            --text-dark: #212529;
-            --text-muted: #6c757d;
-            --border-color: #dee2e6;
-            --bg-card: #ffffff;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: var(--text-dark);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .site-header {
-            background-color: #ffffff;
-            border-bottom: 1px solid var(--border-color);
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-        }
-
-        .breadcrumbs {
-            margin-bottom: 0.75rem;
-        }
-
-        .breadcrumbs a {
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .breadcrumbs a:hover {
-            color: var(--primary-hover);
-            text-decoration: underline;
-        }
-
-        h1 {
-            margin: 0;
-            font-size: 2.25rem;
-            color: var(--text-dark);
-        }
-
-        .subtitle {
-            margin: 0.5rem 0 0 0;
-            font-size: 1.1rem;
-            color: var(--text-muted);
-        }
-
-        .intro-text {
-            font-size: 1.1rem;
-            color: var(--text-dark);
-            margin-bottom: 2rem;
-        }
-
-        /* Responsive Grid for Module Cards */
+        /* Minimal layout-only helper styles that won't override your global theme assets */
         .app-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
-            margin-bottom: 3rem;
+            margin: 2rem 0;
         }
 
         @media (min-width: 768px) {
@@ -87,38 +21,31 @@
             }
         }
 
+        /* Letting your global .card or structural styles handle aesthetics, using this simply for alignment */
         .app-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 1.75rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .app-card:hover:not(.disabled) {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.06);
+            padding: 1.5rem;
+            border-radius: 8px;
+            /* Adaptive fallback styling in case global styles are missing these attributes */
+            border: 1px solid rgba(0,0,0,0.1);
+            background: #ffffff;
         }
 
         .app-card.disabled {
-            background-color: #f1f3f5;
-            border-style: dashed;
-            opacity: 0.75;
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         .badge {
             align-self: flex-start;
             font-size: 0.75rem;
             font-weight: bold;
-            text-transform: uppercase;
-            padding: 0.25rem 0.6rem;
-            border-radius: 50px;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
             margin-bottom: 0.75rem;
-            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         .badge-active {
@@ -131,56 +58,9 @@
             color: #495057;
         }
 
-        .app-card h3 {
-            margin: 0 0 0.5rem 0;
-            font-size: 1.25rem;
-            color: var(--text-dark);
-        }
-
-        .app-card p {
-            margin: 0 0 1.5rem 0;
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            flex-grow: 1;
-        }
-
-        .btn {
-            display: inline-block;
-            text-align: center;
-            padding: 0.65rem 1.25rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: background-color 0.2s ease, border-color 0.2s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-blue);
-            color: #ffffff;
-            border: 1px solid var(--primary-blue);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-hover);
-            border-color: var(--primary-hover);
-        }
-
-        .btn-disabled {
-            background-color: #dee2e6;
-            color: #6c757d;
-            border: 1px solid #dee2e6;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-
-        .site-footer {
-            border-top: 1px solid var(--border-color);
-            padding: 2rem 0;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-top: 3rem;
+        /* Ensuring the grid column span works gracefully on desktops */
+        .grid-span-full {
+            grid-column: 1 / -1;
         }
     </style>
 </head>
@@ -191,13 +71,13 @@
             <nav class="breadcrumbs">
                 <a href="../index.html">&larr; Back to Dashboard</a>
             </nav>
-            <h1>Unit 1 Practice Hub</h1>
+            <h1>Unit 1 Practice</h1>
             <p class="subtitle">Chapters E–2: Foundations, Measurement, Atoms, and Elements</p>
         </div>
     </header>
 
     <main class="container">
-        <p class="intro-text">Welcome to the Unit 1 study station! Select any of the interactive practice modules below to test your skills, practice core techniques, and get immediate conceptual feedback.</p>
+        <p class="intro-text">Select one of the interactive practice modules below to test your chemistry skills and receive immediate feedback.</p>
         
         <div class="app-grid">
             
@@ -242,13 +122,13 @@
             </div>
 
             <!-- Module 5: The Mole Concept (UPCOMING) -->
-            <div class="app-card disabled" style="grid-column: 1 / -1;">
+            <div class="app-card disabled grid-span-full">
                 <div>
                     <span class="badge badge-upcoming">Coming Soon</span>
                     <h3>Chapter 2: The Mole & Mass Conversions</h3>
                     <p>Bridge the gap between microscopic atoms and macroscopic laboratory quantities using Avogadro's number and molar masses.</p>
                 </div>
-                <a href="#" class="btn btn-disabled" style="width: auto; max-width: 200px; margin: 0 auto;">Module Locked</a>
+                <a href="#" class="btn btn-disabled" style="display: inline-block; width: auto; max-width: 200px; margin: 0 auto;">Module Locked</a>
             </div>
 
         </div>
