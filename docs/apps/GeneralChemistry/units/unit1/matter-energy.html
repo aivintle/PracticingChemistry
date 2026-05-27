@@ -1,0 +1,571 @@
+<!-- apps/GeneralChemistry/units/unit1/matter-energy.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter E: Matter & Energy Practice | Practicing Chemistry</title>
+    
+    <!-- Link to the global stylesheet -->
+    <link rel="stylesheet" href="../../../css/style.css">
+    
+    <!-- KaTeX CDN for mathematical, physical, and chemical formulas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+
+    <style>
+        :root {
+            --primary-blue: #0056b3;
+            --primary-hover: #004085;
+            --correct-color: #2e7d32;
+            --correct-light: #e8f5e9;
+            --incorrect-color: #c62828;
+            --incorrect-light: #ffebee;
+            --bg-card: #ffffff;
+            --border-color: #dee2e6;
+            --text-dark: #212529;
+            --text-muted: #6c757d;
+            --modal-bg: rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .practice-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .quiz-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .quiz-header-layout {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--primary-blue);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .option-btn {
+            padding: 1rem;
+            text-align: left;
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            color: var(--text-dark);
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background: #f1f3f5;
+            border-color: #6c757d;
+        }
+
+        .option-btn.correct {
+            background-color: var(--correct-light) !important;
+            border-color: var(--correct-color) !important;
+            color: var(--correct-color) !important;
+            font-weight: bold;
+        }
+
+        .option-btn.incorrect {
+            background-color: var(--incorrect-light) !important;
+            border-color: var(--incorrect-color) !important;
+            color: var(--incorrect-color) !important;
+        }
+
+        .feedback-box {
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            display: none;
+            line-height: 1.6;
+        }
+
+        .feedback-box.correct { display: block; background-color: var(--correct-light); color: var(--correct-color); border-left: 5px solid var(--correct-color); }
+        .feedback-box.incorrect { display: block; background-color: var(--incorrect-light); color: var(--incorrect-color); border-left: 5px solid var(--incorrect-color); }
+
+        .nav-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1.5rem;
+        }
+
+        /* Responsive Graphic Area Styles */
+        .media-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1.5rem 0;
+            background: #f1f3f5;
+            border-radius: 8px;
+            padding: 1.5rem;
+            min-height: 200px;
+        }
+
+        .question-image {
+            max-width: 100%;
+            max-height: 240px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            object-fit: contain;
+        }
+
+        .particle-box {
+            width: 180px;
+            height: 180px;
+            background: #ffffff;
+            border: 2px dashed #6c757d;
+            border-radius: 6px;
+        }
+
+        .results-screen { display: none; text-align: center; }
+        .score-display { font-size: 3.5rem; font-weight: bold; color: var(--primary-blue); margin: 1rem 0; }
+
+        /* Settings Modal Custom Styles */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--modal-bg);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            max-width: 550px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .objective-option {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+            padding: 0.5rem;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .objective-option:hover { background: #f8f9fa; }
+        .objective-option input { margin-top: 0.25rem; transform: scale(1.1); }
+        
+        .btn {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn:hover { background-color: var(--primary-hover); }
+
+        .btn-alt {
+            background-color: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-dark);
+        }
+        .btn-alt:hover { background: #f1f3f5; }
+
+        .btn-settings {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .btn-settings:hover { background: #5a6268; }
+    </style>
+</head>
+<body>
+
+    <header class="site-header" style="background: #ffffff; border-bottom: 1px solid var(--border-color); padding: 1.5rem 0;">
+        <div class="container" style="max-width: 800px; margin: 0 auto; padding: 0 1rem;">
+            <nav class="breadcrumbs" style="margin-bottom: 0.5rem;">
+                <a href="../unit1.html" style="color: var(--primary-blue); text-decoration: none;">&larr; Back to Unit 1</a>
+            </nav>
+            <h1 style="margin: 0; font-size: 1.75rem;">Chapter E Practice Application</h1>
+            <p class="subtitle" style="color: var(--text-muted); margin: 0.25rem 0 0 0;">Matter, Classification, Properties, and Energy Foundations</p>
+        </div>
+    </header>
+
+    <main class="practice-container">
+        <!-- Interactive Quiz App Frame -->
+        <div id="quiz-app" class="quiz-card">
+            <div class="progress-bar">
+                <div id="progress" class="progress-fill"></div>
+            </div>
+            
+            <div class="quiz-header-layout">
+                <div id="meta-info" style="font-weight: 600; color: var(--text-muted); font-size: 0.9rem;"></div>
+                <button class="btn-settings" onclick="app.openSettings()">⚙️ Settings</button>
+            </div>
+            
+            <h2 id="question-text" style="margin-top: 0; font-size: 1.35rem; line-height: 1.4;">Loading Question...</h2>
+
+            <!-- Graphic container supports diagrams and images with fallbacks -->
+            <div id="media-area" class="media-container" style="display: none;"></div>
+
+            <div id="options" class="options-container"></div>
+            <div id="feedback" class="feedback-box"></div>
+
+            <div class="nav-actions">
+                <span id="score-counter" style="font-weight: 600; color: var(--text-muted);">Score: 0/0</span>
+                <button id="next-btn" class="btn" style="display: none;" onclick="app.nextQuestion()">Next Question &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Completion / Scoreboard screen -->
+        <div id="summary-app" class="quiz-card results-screen">
+            <h2>Practice Run Complete!</h2>
+            <div id="final-score" class="score-display">0%</div>
+            <p id="performance-feedback" style="font-size: 1.1rem; color: var(--text-muted);"></p>
+            <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                <button class="btn" onclick="app.restartQuiz()">Retry Current Pool</button>
+                <button class="btn btn-alt" onclick="app.openSettings()">Modify Settings</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Settings Filter Overlay -->
+    <div id="settings-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3 style="margin-top: 0; font-size: 1.25rem;">Practice Customization</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Select the learning objectives you want to target in this session:</p>
+            
+            <div id="objectives-selector" style="margin: 1.5rem 0;">
+                <!-- Filled via js -->
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+                <button class="btn btn-alt" onclick="app.closeSettings()">Cancel</button>
+                <button class="btn" onclick="app.applySettings()">Apply & Restart</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer" style="text-align: center; padding: 2rem 0; color: var(--text-muted); font-size: 0.9rem;">
+        <div class="container">
+            <p>&copy; 2026 Practicing Chemistry. Custom visual media fallbacks enabled.</p>
+        </div>
+    </footer>
+
+    <!-- Safe relative loading of decoupled questions.js file -->
+    <script src="questions.js"></script>
+
+    <script>
+        // Microscopic particle SVGs loaded locally inside the engine
+        const vectorDiagrams = {
+            compound: `
+                <svg viewBox="0 0 100 100" class="particle-box">
+                    <circle cx="25" cy="25" r="8" fill="#0056b3"/>
+                    <circle cx="37" cy="29" r="5" fill="#6c757d"/>
+                    <circle cx="70" cy="30" r="8" fill="#0056b3"/>
+                    <circle cx="82" cy="34" r="5" fill="#6c757d"/>
+                    <circle cx="45" cy="70" r="8" fill="#0056b3"/>
+                    <circle cx="57" cy="74" r="5" fill="#6c757d"/>
+                </svg>`,
+            homo_mixture: `
+                <svg viewBox="0 0 100 100" class="particle-box">
+                    <circle cx="20" cy="25" r="6" fill="#c62828"/>
+                    <circle cx="50" cy="20" r="6" fill="#0056b3"/>
+                    <circle cx="80" cy="35" r="6" fill="#c62828"/>
+                    <circle cx="30" cy="65" r="6" fill="#0056b3"/>
+                    <circle cx="65" cy="75" r="6" fill="#c62828"/>
+                    <circle cx="15" cy="80" r="6" fill="#0056b3"/>
+                </svg>`,
+            hetero_mixture: `
+                <svg viewBox="0 0 100 100" class="particle-box">
+                    <circle cx="20" cy="20" r="6" fill="#ffb300"/>
+                    <circle cx="50" cy="25" r="6" fill="#ffb300"/>
+                    <circle cx="80" cy="20" r="6" fill="#ffb300"/>
+                    <circle cx="25" cy="70" r="6" fill="#2e7d32"/>
+                    <circle cx="45" cy="80" r="6" fill="#2e7d32"/>
+                    <circle cx="70" cy="75" r="6" fill="#2e7d32"/>
+                </svg>`
+        };
+
+        // Fully styled vector fallback schematics for missing image assets
+        const fallbackSVGs = {
+            beaker: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" fill="#f8f9fa" rx="8"/><path d="M35 25 H65 M40 25 V75 A5 5 0 0 0 45 80 H55 A5 5 0 0 0 60 75 V25" fill="none" stroke="#495057" stroke-width="3"/><path d="M43 45 H57 M43 55 H57 M43 65 H50" stroke="#adb5bd" stroke-width="2"/><path d="M41 50 Q50 48 59 50 V74 Q50 76 41 74 Z" fill="#0056b3" fill-opacity="0.3"/><text x="50" y="92" font-family="sans-serif" font-weight="bold" font-size="6" text-anchor="middle" fill="#6c757d">[Chemical Sample Liquid]</text></svg>`,
+            metal: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" fill="#f8f9fa" rx="8"/><rect x="25" y="45" width="50" height="10" rx="3" fill="#ced4da" stroke="#495057" stroke-width="2.5"/><line x1="28" y1="48" x2="35" y2="48" stroke="#ffffff" stroke-width="1.5"/><line x1="28" y1="52" x2="72" y2="52" stroke="#495057" stroke-dasharray="2 2"/><text x="50" y="35" font-family="sans-serif" font-weight="bold" font-size="6" text-anchor="middle" fill="#6c757d">[Solid Metal Alloy Sample]</text></svg>`,
+            gas: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" fill="#f8f9fa" rx="8"/><path d="M40 35 V75 A10 10 0 0 0 50 85 H50 A10 10 0 0 0 60 75 V35 A10 10 0 0 0 40 35 Z" fill="none" stroke="#495057" stroke-width="3"/><circle cx="50" cy="22" r="5" fill="none" stroke="#495057" stroke-width="3"/><rect x="47" y="27" width="6" height="8" fill="#495057"/><circle cx="50" cy="50" r="2" fill="#2e7d32"/><circle cx="45" cy="65" r="2" fill="#2e7d32"/><circle cx="55" cy="60" r="2" fill="#2e7d32"/><text x="50" y="94" font-family="sans-serif" font-weight="bold" font-size="6" text-anchor="middle" fill="#6c757d">[Helium Gas Tank Cylinder]</text></svg>`,
+            cylinder: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" fill="#f8f9fa" rx="8"/><line x1="45" y1="20" x2="45" y2="80" stroke="#495057" stroke-width="2"/><line x1="55" y1="20" x2="55" y2="80" stroke="#495057" stroke-width="2"/><path d="M45 80 A5 2 0 0 0 55 80" fill="none" stroke="#495057" stroke-width="2"/><line x1="45" y1="30" x2="50" y2="30" stroke="#adb5bd" stroke-width="1.5"/><line x1="45" y1="40" x2="52" y2="40" stroke="#adb5bd" stroke-width="1.5"/><line x1="45" y1="50" x2="50" y2="50" stroke="#adb5bd" stroke-width="1.5"/><line x1="45" y1="60" x2="52" y2="60" stroke="#adb5bd" stroke-width="1.5"/><line x1="45" y1="70" x2="50" y2="70" stroke="#adb5bd" stroke-width="1.5"/><rect x="46" y="55" width="8" height="24" fill="#0056b3" fill-opacity="0.3"/><text x="50" y="92" font-family="sans-serif" font-weight="bold" font-size="6" text-anchor="middle" fill="#6c757d">[Graduated Volume Cylinder]</text></svg>`,
+            mixture: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" fill="#f8f9fa" rx="8"/><circle cx="50" cy="50" r="30" fill="#e9ecef" stroke="#495057" stroke-width="2"/><circle cx="42" cy="45" r="5" fill="#8d6e63"/><circle cx="58" cy="42" r="4" fill="#a1887f"/><rect x="44" y="58" width="12" height="6" rx="1" fill="#ffffff" stroke="#495057" stroke-width="1"/><text x="50" y="92" font-family="sans-serif" font-weight="bold" font-size="6" text-anchor="middle" fill="#6c757d">[Heterogeneous Mixture Sample]</text></svg>`,
+            waterfall: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" fill="#f8f9fa" rx="8"/><path d="M15 40 H40 V85 H85" fill="none" stroke="#495057" stroke-width="3"/><path d="M40 40 Q43 45 45 55 T44 85" fill="none" stroke="#0056b3" stroke-width="2" stroke-dasharray="3 2"/><text x="50" y="25" font-family="sans-serif" font-weight="bold" font-size="6" text-anchor="middle" fill="#6c757d">[Gravitational Potential Energy]</text></svg>`,
+            billiard: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%"><rect width="100" height="100" fill="#f8f9fa" rx="8"/><rect x="20" y="35" width="60" height="30" rx="3" fill="#2e7d32" stroke="#495057" stroke-width="2"/><circle cx="40" cy="50" r="5" fill="#c62828"/><circle cx="60" cy="50" r="5" fill="#ffffff" stroke="#495057" stroke-width="1"/><line x1="45" y1="50" x2="55" y2="50" stroke="#adb5bd" stroke-dasharray="2 2" stroke-width="1.5"/><text x="50" y="25" font-family="sans-serif" font-weight="bold" font-size="6" text-anchor="middle" fill="#6c757d">[Energy Conservation: Ball Collision]</text></svg>`
+        };
+
+        class ConfigurableQuiz {
+            constructor(masterData) {
+                // Read database array exported by questions.js
+                this.masterData = masterData || [];
+                this.selectedObjectives = this.getUniqueObjectives();
+                this.activePool = [];
+                this.currentIdx = 0;
+                this.score = 0;
+
+                this.renderSettingsPanel();
+                this.generateActivePool();
+                this.loadQuestion();
+            }
+
+            getUniqueObjectives() {
+                return [...new Set(this.masterData.map(q => q.objective))];
+            }
+
+            renderSettingsPanel() {
+                const container = document.getElementById("objectives-selector");
+                container.innerHTML = "";
+                const uniqueObjectives = this.getUniqueObjectives();
+
+                uniqueObjectives.forEach((obj, idx) => {
+                    const label = document.createElement("label");
+                    label.className = "objective-option";
+                    
+                    const checked = this.selectedObjectives.includes(obj) ? "checked" : "";
+                    label.innerHTML = `
+                        <input type="checkbox" value="${obj}" ${checked} class="obj-cb">
+                        <span>${obj}</span>
+                    `;
+                    container.appendChild(label);
+                });
+            }
+
+            generateActivePool() {
+                let filtered = this.masterData.filter(q => this.selectedObjectives.includes(q.objective));
+                
+                // Secure backup configuration if student clears all options
+                if (filtered.length === 0) {
+                    filtered = [...this.masterData];
+                    this.selectedObjectives = this.getUniqueObjectives();
+                    this.renderSettingsPanel();
+                }
+
+                this.activePool = this.shuffleArray([...filtered]);
+                this.currentIdx = 0;
+                this.score = 0;
+            }
+
+            shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            loadQuestion() {
+                document.getElementById("summary-app").style.display = "none";
+                document.getElementById("quiz-app").style.display = "block";
+
+                if (this.activePool.length === 0) return;
+
+                const q = this.activePool[this.currentIdx];
+                
+                document.getElementById("progress").style.width = `${(this.currentIdx / this.activePool.length) * 100}%`;
+                document.getElementById("meta-info").textContent = `Objective: ${q.objective}`;
+                document.getElementById("question-text").textContent = q.question;
+                document.getElementById("score-counter").textContent = `Score: ${this.score}/${this.currentIdx}`;
+                
+                document.getElementById("next-btn").style.display = "none";
+                const feedbackBox = document.getElementById("feedback");
+                feedbackBox.className = "feedback-box";
+                feedbackBox.textContent = "";
+
+                // Graphic view setup
+                const mediaArea = document.getElementById("media-area");
+                mediaArea.innerHTML = "";
+                mediaArea.style.display = "none";
+
+                if (q.assetType === "diagram" && q.diagramType && vectorDiagrams[q.diagramType]) {
+                    mediaArea.innerHTML = vectorDiagrams[q.diagramType];
+                    mediaArea.style.display = "flex";
+                } else if (q.assetType === "image") {
+                    const img = document.createElement("img");
+                    img.src = q.imageUrl;
+                    img.alt = q.objective;
+                    img.className = "question-image";
+                    
+                    // Render custom vector fallbacks gracefully if the asset is missing
+                    img.onerror = () => {
+                        img.onerror = null;
+                        const placeholderType = q.imagePlaceholderType || 'beaker';
+                        const fallbackSvg = fallbackSVGs[placeholderType] || fallbackSVGs.beaker;
+                        img.src = "data:image/svg+xml;utf8," + encodeURIComponent(fallbackSvg);
+                    };
+
+                    mediaArea.appendChild(img);
+                    mediaArea.style.display = "flex";
+                }
+
+                // Render options
+                const optionsContainer = document.getElementById("options");
+                optionsContainer.innerHTML = "";
+                
+                q.options.forEach((opt, index) => {
+                    const btn = document.createElement("button");
+                    btn.className = "option-btn";
+                    btn.innerHTML = opt;
+                    btn.onclick = () => this.checkAnswer(index, btn);
+                    optionsContainer.appendChild(btn);
+                });
+
+                // Auto render scientific equations with KaTeX
+                this.triggerMathFormatting();
+            }
+
+            checkAnswer(selectedIndex, selectedBtn) {
+                const q = this.activePool[this.currentIdx];
+                const buttons = document.querySelectorAll(".option-btn");
+                const feedbackBox = document.getElementById("feedback");
+
+                buttons.forEach(btn => btn.disabled = true);
+
+                if (selectedIndex === q.answer) {
+                    selectedBtn.classList.add("correct");
+                    feedbackBox.className = "feedback-box correct";
+                    feedbackBox.innerHTML = `<strong>Correct!</strong> ${q.explanation}`;
+                    this.score++;
+                } else {
+                    selectedBtn.classList.add("incorrect");
+                    buttons[q.answer].classList.add("correct");
+                    feedbackBox.className = "feedback-box incorrect";
+                    feedbackBox.innerHTML = `<strong>Incorrect.</strong> ${q.explanation}`;
+                }
+
+                this.triggerMathFormatting();
+
+                document.getElementById("score-counter").textContent = `Score: ${this.score}/${this.currentIdx + 1}`;
+                document.getElementById("next-btn").style.display = "inline-block";
+            }
+
+            nextQuestion() {
+                this.currentIdx++;
+                if (this.currentIdx < this.activePool.length) {
+                    this.loadQuestion();
+                } else {
+                    this.showSummary();
+                }
+            }
+
+            showSummary() {
+                document.getElementById("quiz-app").style.display = "none";
+                const summary = document.getElementById("summary-app");
+                summary.style.display = "block";
+
+                const percentage = Math.round((this.score / this.activePool.length) * 100);
+                document.getElementById("final-score").textContent = `${percentage}%`;
+
+                let reportMsg = `You answered ${this.score} out of ${this.activePool.length} questions correctly. `;
+                if (percentage === 100) {
+                    reportMsg += "Exceptional! You have achieved total mastery of Chapter E's foundations.";
+                } else if (percentage >= 80) {
+                    reportMsg += "Excellent work! You have a highly reliable understanding of these concepts.";
+                } else {
+                    reportMsg += "Solid practice attempt! Review your notes and target specific objectives to shore up any gaps.";
+                }
+                document.getElementById("performance-feedback").textContent = reportMsg;
+            }
+
+            restartQuiz() {
+                this.generateActivePool();
+                this.loadQuestion();
+            }
+
+            openSettings() {
+                document.getElementById("settings-modal").style.display = "flex";
+            }
+
+            closeSettings() {
+                document.getElementById("settings-modal").style.display = "none";
+            }
+
+            applySettings() {
+                const checkboxes = document.querySelectorAll(".obj-cb");
+                const selected = [];
+                checkboxes.forEach(cb => {
+                    if (cb.checked) selected.push(cb.value);
+                });
+
+                this.selectedObjectives = selected;
+                this.closeSettings();
+                this.restartQuiz();
+            }
+
+            triggerMathFormatting() {
+                if (typeof renderMathInElement === 'function') {
+                    renderMathInElement(document.body, {
+                        delimiters: [
+                            {left: "$$", right: "$$", display: true},
+                            {left: "$", right: "$", display: false}
+                        ],
+                        throwOnError: false
+                    });
+                }
+            }
+        }
+
+        // Initialize quiz sequence once DOM structure binds
+        window.onload = function() {
+            // Check if questions.js loaded properly
+            const questionData = typeof chapterEQuestions !== 'undefined' ? chapterEQuestions : [];
+            window.app = new ConfigurableQuiz(questionData);
+        }
+    </script>
+</body>
+</html>
